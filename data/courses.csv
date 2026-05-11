@@ -1,0 +1,13 @@
+course_name,provider,career_track,skill,level,learning_style,url
+Complete SQL Bootcamp,Udemy,Data Engineering,SQL,Beginner,Video Courses,https://www.udemy.com/
+Python for Data Engineering,Coursera,Data Engineering,Python,Beginner,Video Courses,https://www.coursera.org/
+Spark Essentials,Databricks Academy,Data Engineering,Spark,Intermediate,Hands-on Labs,https://academy.databricks.com/
+Azure Data Engineer Associate,Microsoft Learn,Data Engineering,Azure,Intermediate,Documentation,https://learn.microsoft.com/
+Airflow Fundamentals,Udemy,Data Engineering,Airflow,Intermediate,Video Courses,https://www.udemy.com/
+Snowflake Quickstart,Snowflake,Data Engineering,Snowflake,Intermediate,Documentation,https://quickstarts.snowflake.com/
+Power BI Masterclass,Udemy,Business Intelligence,Power BI,Beginner,Video Courses,https://www.udemy.com/
+Statistics for Data Analysis,edX,Statistical Analysis,Statistics,Beginner,Video Courses,https://www.edx.org/
+Machine Learning A-Z,Udemy,Machine Learning,Python,Intermediate,Video Courses,https://www.udemy.com/
+TensorFlow Developer,Coursera,Machine Learning,TensorFlow,Intermediate,Hands-on Labs,https://www.coursera.org/
+Tableau Fundamentals,Coursera,Business Intelligence,Tableau,Beginner,Video Courses,https://www.coursera.org/
+Data Analysis with Python,freeCodeCamp,Data Analysis,Python,Beginner,YouTube Tutorials,https://www.youtube.com/
