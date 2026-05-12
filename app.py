@@ -89,7 +89,7 @@ if "learning_style" not in st.session_state:
 # Sidebar
 # -----------------------------------
 
-st.sidebar.header("Learner Profile")
+st.sidebar.header("Learning Requirements")
 
 courses_df = pd.read_csv("data/courses.csv")
 
@@ -98,7 +98,7 @@ career_tracks = sorted(
 )
 
 career_track = st.sidebar.selectbox(
-    "Select Career Track",
+    "Select Learning Track",
     career_tracks,
     key="career_track"
 )
@@ -110,7 +110,7 @@ available_skills = sorted(
 )
 
 selected_skills = st.sidebar.multiselect(
-    "Current Skills",
+    "Upskill Areas",
     available_skills,
     key="selected_skills"
 )
@@ -124,7 +124,7 @@ learning_style_options = [
 ] + learning_styles
 
 learning_style = st.sidebar.selectbox(
-    "Preferred Learning Style",
+    "Learning Format",
     learning_style_options,
     key="learning_style"
 )
