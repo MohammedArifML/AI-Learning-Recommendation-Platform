@@ -1,13 +1,14 @@
 import streamlit as st
+import pandas as pd
 from logic.recommender import recommend_courses
-from logic.roadmap import generate_roadmap
+#from logic.roadmap import generate_roadmap
 
 # -----------------------------------
 # Page Config
 # -----------------------------------
 
 st.set_page_config(
-    page_title="NPC DataPath",
+    page_title="SSD DataPath",
     layout="wide"
 )
 
@@ -42,6 +43,11 @@ st.markdown("""
 
 section[data-testid="stSidebar"] {
     width: 320px !important;
+    background-color: #f5f7fb;
+}
+            
+.main .block-container {
+    max-width: 1200px;
 }
 </style>
 """, unsafe_allow_html=True)
@@ -58,7 +64,7 @@ st.markdown("""
 </div>
 
 <div style='font-size:30px; font-weight:700;'>
-NPC DataPath
+SSD DataPath
 </div>
 
 </div>
@@ -73,14 +79,8 @@ st.markdown("---")
 if "career_track" not in st.session_state:
     st.session_state.career_track = "Data Engineering"
 
-if "experience_level" not in st.session_state:
-    st.session_state.experience_level = "Choose an option"
-
 if "selected_skills" not in st.session_state:
     st.session_state.selected_skills = []
-
-if "goal" not in st.session_state:
-    st.session_state.goal = "Choose an option"
 
 if "learning_style" not in st.session_state:
     st.session_state.learning_style = "Choose an option"
@@ -91,98 +91,41 @@ if "learning_style" not in st.session_state:
 
 st.sidebar.header("Learner Profile")
 
+courses_df = pd.read_csv("data/courses.csv")
+
+career_tracks = sorted(
+    courses_df["career_track"].dropna().unique()
+)
+
 career_track = st.sidebar.selectbox(
     "Select Career Track",
-    [
-        "Data Engineering",
-        "Data Analysis",
-        "Business Intelligence",
-        "Machine Learning",
-        "Statistical Analysis"
-    ],
+    career_tracks,
     key="career_track"
 )
 
-experience_level = st.sidebar.selectbox(
-    "Experience Level",
-    [
-        "Choose an option",
-        "Beginner",
-        "Intermediate",
-        "Advanced"
-    ],
-    key="experience_level"
+available_skills = sorted(
+    courses_df[
+        courses_df["career_track"] == career_track
+    ]["skill"].dropna().unique()
 )
-
-skills_mapping = {
-    "Data Engineering": [
-        "SQL",
-        "Python",
-        "Spark",
-        "Databricks",
-        "Airflow",
-        "Azure",
-        "Snowflake"
-    ],
-    "Data Analysis": [
-        "SQL",
-        "Excel",
-        "Power BI",
-        "Tableau",
-        "Python",
-        "Statistics"
-    ],
-    "Business Intelligence": [
-        "Power BI",
-        "Tableau",
-        "SQL",
-        "Data Modeling"
-    ],
-    "Machine Learning": [
-        "Python",
-        "Scikit-learn",
-        "TensorFlow",
-        "PyTorch",
-        "MLOps"
-    ],
-    "Statistical Analysis": [
-        "R",
-        "Python",
-        "Statistics",
-        "Hypothesis Testing",
-        "Regression"
-    ]
-}
 
 selected_skills = st.sidebar.multiselect(
     "Current Skills",
-    skills_mapping[career_track],
+    available_skills,
     key="selected_skills"
 )
 
-goal = st.sidebar.selectbox(
-    "Learning Goal",
-    [
-        "Choose an option",
-        "Job Switch",
-        "Promotion",
-        "Certification",
-        "Project Building",
-        "Interview Preparation"
-    ],
-    key="goal"
+learning_styles = sorted(
+    courses_df["learning_style"].dropna().unique()
 )
+
+learning_style_options = [
+    "Choose an option"
+] + learning_styles
 
 learning_style = st.sidebar.selectbox(
     "Preferred Learning Style",
-    [
-        "Choose an option",
-        "Video Courses",
-        "Hands-on Labs",
-        "Documentation",
-        "Books",
-        "YouTube Tutorials"
-    ],
+    learning_style_options,
     key="learning_style"
 )
 
@@ -191,9 +134,7 @@ learning_style = st.sidebar.selectbox(
 # -----------------------------------
 
 is_valid = (
-    experience_level != "Choose an option"
-    and goal != "Choose an option"
-    and learning_style != "Choose an option"
+    learning_style != "Choose an option"
 )
 
 # -----------------------------------
@@ -213,9 +154,7 @@ with col2:
 
         keys_to_clear = [
         "career_track",
-        "experience_level",
         "selected_skills",
-        "goal",
         "learning_style"
     ]
 
@@ -241,7 +180,7 @@ st.markdown(
 )
 
 st.markdown(
-    '<div class="sub-text">Personalized learning roadmap generator for data professionals.</div>',
+    '<div class="sub-text">Personalized learning roadmap generator for SSD data professionals.</div>',
     unsafe_allow_html=True
 )
 
@@ -253,13 +192,33 @@ st.markdown("")
 
 if generate:
 
-    st.subheader("Learner Summary")
+    st.subheader("🎯 Learner Summary")
 
-    st.write(f"**Career Track:** {career_track}")
-    st.write(f"**Experience Level:** {experience_level}")
-    st.write(f"**Current Skills:** {', '.join(selected_skills) if selected_skills else 'None'}")
-    st.write(f"**Goal:** {goal}")
-    st.write(f"**Learning Style:** {learning_style}")
+    col1, col2, col3 = st.columns(3)
+
+    with col1:
+        st.metric(
+            "Career Track",
+            career_track
+        )
+
+    with col2:
+        st.metric(
+            "Skills Selected",
+            len(selected_skills)
+        )
+
+    with col3:
+        st.metric(
+            "Learning Style",
+            learning_style
+        )
+
+    if selected_skills:
+
+        st.markdown(
+            f"**Selected Skills:** {', '.join(selected_skills)}"
+        )
 
     recommended_courses = recommend_courses(
         career_track,
@@ -267,30 +226,13 @@ if generate:
         learning_style
     )
 
-    roadmap = generate_roadmap(
-    career_track,
-    experience_level
+    st.markdown("---")
+
+    st.subheader("📚 Recommended Courses")
+
+    st.write(
+        f"Found {len(recommended_courses)} recommended courses."
     )
-
-    st.subheader("Learning Roadmap")
-
-    if roadmap:
-
-        for phase in roadmap:
-
-            st.markdown(f"""
-            ### {phase['phase']}
-            """)
-
-            for skill in phase["skills"]:
-
-                st.markdown(f"- {skill}")
-
-    else:
-
-        st.warning("No roadmap available.")
-
-    st.subheader("Recommended Courses")
 
     if recommended_courses.empty:
 
@@ -300,13 +242,55 @@ if generate:
 
         for _, row in recommended_courses.iterrows():
 
-            st.markdown(f"""
-            ### {row['course_name']}
+            left, center, right = st.columns([1, 5, 1])
 
-            - Provider: {row['provider']}
-            - Skill: {row['skill']}
-            - Level: {row['level']}
-            - Learning Style: {row['learning_style']}
+            with center:
 
-            [Open Course]({row['url']})
-            """)
+                with st.container(border=True):
+
+                    st.markdown(
+                        f"### {row['course_name']}"
+                    )
+
+                    col1, col2 = st.columns(2)
+
+                    with col1:
+
+                        st.caption(f"🏢 Provider: {row['provider']}")
+                        st.write(f"**Skill:** {row['skill']}")
+                        st.write(f"**Learning Style:** {row['learning_style']}")
+
+                    with col2:
+
+                        duration = row['duration_hours']
+
+                        if pd.notna(duration):
+                            st.write(f"**Duration:** {duration} Hours")
+
+                        badge = "🟢 Free" if row['is_free'] else "🔵 Paid"
+
+                        st.markdown(badge)
+
+                    st.markdown(f"""
+                    <a href="{row['url']}" target="_blank">
+                        <button style="
+                            background-color:#2563eb;
+                            color:white;
+                            border:none;
+                            padding:10px 18px;
+                            border-radius:8px;
+                            cursor:pointer;
+                            font-weight:600;
+                        ">
+                            Open Course
+                        </button>
+                    </a>
+                    """, unsafe_allow_html=True)
+
+                    st.markdown("")
+
+st.markdown("---")
+
+st.caption(
+    "SSD DataPath • Learning Intelligence Platform"
+)

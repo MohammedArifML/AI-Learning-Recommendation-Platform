@@ -10,17 +10,8 @@ def load_roadmaps():
     return roadmaps
 
 
-def generate_roadmap(
-    career_track,
-    experience_level
-):
+def generate_roadmap(career_track):
 
     roadmaps = load_roadmaps()
 
-    return roadmaps.get(
-        career_track,
-        {}
-    ).get(
-        experience_level,
-        []
-    )
+    return roadmaps.get(career_track, [])
