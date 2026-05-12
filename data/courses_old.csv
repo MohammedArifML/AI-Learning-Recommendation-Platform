@@ -1,0 +1,43 @@
+course_id,career_track,skill,course_name,provider,learning_style,duration_hours,is_free,url
+DE-01,Data Engineering,SQL,Comprehensive SQL Course For Data Professionals,Udemy,Video Courses,14,FALSE,https://www.udemy.com/course/comprehensive-sql-course-hands-on-project-coding-exercises/?couponCode=PMNVD3025
+DE-02,Data Engineering,SQL,The Complete SQL Bootcamp: Go from Zero to Hero,Udemy,Video Courses,9,FALSE,https://www.udemy.com/course/the-complete-sql-bootcamp/?couponCode=PMNVD3025
+DE-03,Data Engineering,SQL,SQL Documentation,Oracle,Documentation,,TRUE,https://docs.oracle.com/en/database/oracle/oracle-database/19/sqlrf/index.html
+DE-04,Data Engineering,Informatica IDMC,Informatica Documentation,Informatica,Documentation,,TRUE,https://informaticadocs-prod-65.adobecqms.net/
+DE-05,Data Engineering,Informatica IDMC,Informatica Cloud (IICS) - The Complete Guide 2025 Edition,Udemy,Video Courses,10,FALSE,https://www.udemy.com/course/informatica-cloud-iics-the-complete-guide-2023-edition/?couponCode=PMNVD3025
+DE-06,Data Engineering,Informatica IDMC,Informatica Support,Informatica,Video Courses,20,TRUE,https://www.youtube.com/watch?v=u-PLIYsUYDo&list=PLmi6HWWEAjKoy9cjvhFQwgpCFTUq0PdQ0
+DE-07,Data Engineering,Databricks,Azure Databricks documentation,Microsoft,Documentation,,TRUE,https://learn.microsoft.com/en-us/azure/databricks/
+DE-08,Data Engineering,Databricks,Azure Databricks & Spark for Data Engineers,Udemy,Video Courses,35,FALSE,https://www.udemy.com/course/azure-databricks-spark-core-for-data-engineers/?couponCode=PMNVD3025
+DE-09,Data Engineering,Databricks,Databricks Architecture,YouTube,Video Courses,40,TRUE,https://www.youtube.com/watch?v=4JP0XqsjwCI&list=PLgPb8HXOGtsQeiFz1y9dcLuXjRh8teQtw
+DE-10,Data Engineering,Databricks,Microsoft Certified: Azure Databricks Data Engineer Associate (beta),Microsoft,Certification,23,TRUE,https://learn.microsoft.com/en-us/credentials/certifications/implementing-data-engineering-solutions-using-azure-databricks/?practice-assessment-type=certification
+DE-11,Data Engineering,Python,Python for Everybody Specialization,Coursera (University of Michigan),Video Courses,80,FALSE,https://www.coursera.org/specializations/python
+DE-12,Data Engineering,Python,Complete 2026 Python Bootcamp: Learn Python from Scratch,Udemy,Video Courses,18,FALSE,https://www.udemy.com/course/codewithharry-python/?couponCode=PMNVD3025
+DE-13,Data Engineering,Spark / PySpark,Databricks | Spark: Learning Series,YouTube,Video Courses,40,TRUE,https://www.youtube.com/watch?v=4JP0XqsjwCI&list=PLgPb8HXOGtsQeiFz1y9dcLuXjRh8teQtw
+DE-14,Data Engineering,SQL for Data Science,Databases and SQL for Data Science with Python,,Video Courses,20,FALSE,https://www.coursera.org/learn/sql-data-science
+OA-01,Oracle Apex,Oracle APEX Development,Oracle APEX: Foundations,Oracle,Video Courses,4,TRUE,https://mylearn.oracle.com/ou/learning-path/oracle-apex-foundations/112444
+OA-02,Oracle Apex,Oracle APEX Development,Become An Oracle APEX Developer Professional (2025),Oracle,Certification,22,TRUE,https://mylearn.oracle.com/ou/learning-path/become-an-oracle-apex-developer-professional-2025/146080
+OA-03,Oracle Apex,SQL & PL/SQL,PL/SQL on Oracle Cloud,Oracle,Certification,18,TRUE,https://mylearn.oracle.com/ou/learning-path/plsql-on-oracle-cloud/89476
+OA-04,Oracle Apex,SQL & PL/SQL,PL/SQL on Oracle Cloud,Oracle,Video Courses,18,TRUE,https://mylearn.oracle.com/ou/learning-path/plsql-on-oracle-cloud/89476
+DA-01,Data Analysis,Power BI,Power BI Documentation,Microsoft,Documentation,,TRUE,https://learn.microsoft.com/en-us/power-bi/fundamentals/service-get-started
+DA-02,Data Analysis,Power BI,Learn Power BI in Under 3 Hours,YouTube,Video Courses,3,TRUE,https://www.youtube.com/watch?v=I0vQ_VLZTWg
+DA-03,Data Analysis,Power BI,Microsoft Power BI Desktop for Business Intelligence,Udemy,Video Courses,17,FALSE,https://www.udemy.com/course/microsoft-power-bi-up-running-with-power-bi-desktop/?couponCode=PMNVD3025
+DA-04,Data Analysis,Power BI,Microsoft Certified: Power BI Data Analyst Associate,Microsoft,Certification,21,TRUE,https://learn.microsoft.com/en-us/credentials/certifications/data-analyst-associate/?practice-assessment-type=certification
+DA-05,Data Analysis,Power BI,Microsoft Certified: Power BI Data Analyst Associate,Microsoft,Video Courses,21,TRUE,https://learn.microsoft.com/en-us/credentials/certifications/data-analyst-associate/?practice-assessment-type=certification
+DA-06,Data Analysis,Oracle BI,Oracle BI 12c: Overview,Oracle,Video Courses,13,TRUE,https://mylearn.oracle.com/ou/course/oracle-bi-12c-overview/56531/
+DA-07,Data Analysis,Oracle BI,Oracle BI 12c: Administration / Implementation,Oracle,Video Courses,75,TRUE,https://mylearn.oracle.com/ou/learning-path/oracle-bi-12c-administration-implementation/51833
+DA-08,Data Analysis,SQL,Comprehensive SQL Course For Data Professionals,Udemy,Video Courses,14,FALSE,https://www.udemy.com/course/comprehensive-sql-course-hands-on-project-coding-exercises/?couponCode=PMNVD3025
+DA-09,Data Analysis,SQL,The Complete SQL Bootcamp: Go from Zero to Hero,Udemy,Video Courses,9,FALSE,https://www.udemy.com/course/the-complete-sql-bootcamp/?couponCode=PMNVD3025
+DA-10,Data Analysis,SQL,SQL Documentation,Oracle,Documentation,,TRUE,https://docs.oracle.com/en/database/oracle/oracle-database/19/sqlrf/index.html
+DA-11,Data Analysis,Statistical Analysis,Probability & Statistical Analysis,DataCamp,Video Courses,20,TRUE,https://www.datacamp.com/category/probability-and-statistics?page=1&duration=2%3A5
+DA-12,Data Analysis,Statistical Analysis,Introduction to Statistics,Coursera (Stanford University),Video Courses,10,FALSE,https://www.coursera.org/learn/stanford-statistics
+DA-13,Data Analysis,Python,Python for Everybody Specialization,Coursera (University of Michigan),Video Courses,80,FALSE,https://www.coursera.org/specializations/python
+DA-14,Data Analysis,Python,Complete 2026 Python Bootcamp: Learn Python from Scratch,Udemy,Video Courses,18,FALSE,https://www.udemy.com/course/codewithharry-python/?couponCode=PMNVD3025
+OC-01,OCI,OCI Core Services,Become An OCI Foundations Associate (2025),Oracle,Certification,6,TRUE,https://mylearn.oracle.com/ou/learning-path/become-an-oci-foundations-associate-2025/148056
+OC-02,OCI,OCI Architect,Become an OCI Architect Professional (2025),Oracle,Certification,37,TRUE,https://mylearn.oracle.com/ou/learning-path/become-an-oci-architect-professional-2025/148057
+OC-03,OCI,ADB,Become an Oracle AI Autonomous Database Professional (2025),Oracle,Certification,6,TRUE,https://mylearn.oracle.com/ou/learning-path/become-an-oracle-ai-autonomous-database-professional-2025/148511
+OC-04,OCI,Oracle AI & Analytics,Become An Oracle Analytics Cloud Professional (2025),Oracle,Certification,34,TRUE,https://mylearn.oracle.com/ou/learning-path/become-an-oracle-analytics-cloud-professional-2025/147801
+OC-05,OCI,Oracle AI & Analytics,ecome an OCI Generative AI Professional,Oracle,Certification,14,TRUE,https://mylearn.oracle.com/ou/learning-path/become-an-oci-generative-ai-professional/148888
+OC-06,OCI,OCI Core Services,Become An OCI Foundations Associate (2025),Oracle,Video Courses,6,TRUE,https://mylearn.oracle.com/ou/learning-path/become-an-oci-foundations-associate-2025/148056
+OC-07,OCI,OCI Architect,Become an OCI Architect Professional (2025),Oracle,Video Courses,37,TRUE,https://mylearn.oracle.com/ou/learning-path/become-an-oci-architect-professional-2025/148057
+OC-08,OCI,ADB,Become an Oracle AI Autonomous Database Professional (2025),Oracle,Video Courses,6,TRUE,https://mylearn.oracle.com/ou/learning-path/become-an-oracle-ai-autonomous-database-professional-2025/148511
+OC-09,OCI,Oracle AI & Analytics,Become An Oracle Analytics Cloud Professional (2025),Oracle,Video Courses,34,TRUE,https://mylearn.oracle.com/ou/learning-path/become-an-oracle-analytics-cloud-professional-2025/147801
+OC-10,OCI,Oracle AI & Analytics,Become an OCI Generative AI Professional,Oracle,Video Courses,14,TRUE,https://mylearn.oracle.com/ou/learning-path/become-an-oci-generative-ai-professional/148888

@@ -251,6 +251,9 @@ if generate:
                     st.markdown(
                         f"### {row['course_name']}"
                     )
+                    st.write(row["ai_summary"])
+                    st.info(row["ai_recommendation_reason"])
+                    st.markdown("---")
 
                     col1, col2 = st.columns(2)
 
