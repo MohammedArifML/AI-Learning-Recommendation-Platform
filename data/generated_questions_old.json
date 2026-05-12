@@ -1,0 +1,344 @@
+{
+    "SQL": [
+        {
+            "question": "You are optimizing a reporting query that aggregates sales data across multiple regions from a partitioned fact table in a distributed SQL database. The query frequently scans partitions corresponding to inactive regions, causing high latency. Which strategy will most effectively reduce this latency while ensuring query accuracy?",
+            "options": [
+                "Add a WHERE clause filtering on region status to exclude inactive regions",
+                "Create a clustered index on the region column to speed up lookups",
+                "Use partition pruning by explicitly specifying the active region partitions in the query",
+                "Implement materialized views pre-aggregated by region status"
+            ],
+            "correct_answer": "Use partition pruning by explicitly specifying the active region partitions in the query",
+            "explanation": "Partition pruning enables the query engine to scan only relevant partitions by filtering at the partition level, greatly reducing I/O. Explicitly specifying partitions ensures inactive regions' partitions are skipped, improving performance while maintaining accuracy. Adding WHERE filters may not trigger pruning automatically, and while materialized views help, they add maintenance overhead and may not always reflect real-time data. Clustered indexes help lookup but don't limit scanning inactive partitions."
+        },
+        {
+            "question": "In a complex OLTP database, you observe lock contention on a frequently updated table with millions of rows. Which approach to indexing and transaction design is most effective in minimizing locking issues without sacrificing data integrity?",
+            "options": [
+                "Implementing optimistic concurrency control via timestamp/version columns and reducing lock duration",
+                "Adding multiple composite indexes to support various query predicates and speed up lookups",
+                "Using thicker transactions to batch multiple updates for fewer commits",
+                "Disabling foreign key constraints temporarily during peak update windows"
+            ],
+            "correct_answer": "Implementing optimistic concurrency control via timestamp/version columns and reducing lock duration",
+            "explanation": "Optimistic concurrency control avoids long-held locks by checking data consistency only at commit, reducing lock contention in high-concurrency environments. Adding many composite indexes may improve reads but can slow writes and increase locking. Thicker transactions hold locks longer, increasing contention. Disabling constraints risks data integrity and is not advisable for enterprise systems."
+        },
+        {
+            "question": "You are tasked with designing an enterprise-grade data retention policy for archived records in a SQL Server environment where compliance requires automatic purging of records older than 7 years but they must remain queryable for legal audits. What combination of SQL Server features would best fulfill this requirement?",
+            "options": [
+                "Partition the table by date and use sliding window partition switching to switch out old data into archive tables where data is compressed and retained",
+                "Create a scheduled job that deletes old records nightly and backups are used for audit retrieval",
+                "Use temporal tables to version data and set retention periods on history tables to automatically purge data past 7 years",
+                "Implement row-level security policies to hide old rows without physically deleting them"
+            ],
+            "correct_answer": "Partition the table by date and use sliding window partition switching to switch out old data into archive tables where data is compressed and retained",
+            "explanation": "Partitioning by date with sliding window switching enables efficient movement of old data to separate archive tables, facilitating compliance through retention and reducing active table size. Data remains queryable for audits and can be compressed to optimize storage. Deleting records risks losing audit data. Temporal tables track history but purging their history removes data. Row-level security only hides data rather than managing retention."
+        },
+        {
+            "question": "During the deployment of a major schema change to a highly transactional system, you want to minimize downtime and avoid blocking user transactions. Which approach aligns best with zero-downtime deployment principles in SQL databases?",
+            "options": [
+                "Alter the table schema directly in production during a maintenance window",
+                "Use online schema changes (e.g., ALTER TABLE ... ONLINE in SQL Server or pt-online-schema-change tool in MySQL) with rolling updates",
+                "Create a new table with the updated schema and run dual writes to both old and new tables until cutover",
+                "Disable triggers, perform the schema change, and re-enable triggers after completion"
+            ],
+            "correct_answer": "Use online schema changes (e.g., ALTER TABLE ... ONLINE in SQL Server or pt-online-schema-change tool in MySQL) with rolling updates",
+            "explanation": "Online schema changes allow modifications without exclusive locks, enabling ongoing user transactions, reducing downtime. Rolling updates gradually shift load minimizing risk. Creating new tables with dual writes adds complexity and synchronization challenges. Direct schema changes cause blocking locks. Disabling triggers risks data integrity and is unsafe."
+        },
+        {
+            "question": "A multi-tenant SaaS application uses shared schema design with a tenant_id column in every table. Query performance is degrading due to inefficient tenant data segregation and large table scans. Which combined technique would best improve query scalability and governance without duplicating schema per tenant?",
+            "options": [
+                "Implement row-level security policies to restrict tenant access and add filtered indexes on tenant_id",
+                "Create separate databases per tenant to isolate data physically and scale independently",
+                "Use horizontal sharding by tenant_id with application-level routing and no database filtering",
+                "Partition tables by tenant_id and use views to abstract tenant data filtering"
+            ],
+            "correct_answer": "Implement row-level security policies to restrict tenant access and add filtered indexes on tenant_id",
+            "explanation": "Row-level security enforces access control transparently at the database layer, simplifying governance. Filtered indexes optimized on tenant_id drastically improve query performance by reducing scanned rows. Separate databases increase operational overhead. Sharding requires complex routing and does not inherently improve indexing. Partitioning by tenant_id in shared schema is challenging due to variable tenant sizes and can complicate querying."
+        }
+    ],
+    "Python": [
+        {
+            "question": "In a Python-based ETL pipeline processing large datasets, which approach optimizes memory usage and scalability while ensuring fault tolerance in a distributed environment?",
+            "options": [
+                "Using pandas with chunked reading and manual checkpointing",
+                "Leveraging Dask DataFrames with lazy evaluation and built-in task scheduling",
+                "Processing data with standard Python lists and multiprocessing pools for parallelism",
+                "Using NumPy arrays with batch in-memory processing for speed"
+            ],
+            "correct_answer": "Leveraging Dask DataFrames with lazy evaluation and built-in task scheduling",
+            "explanation": "Dask provides parallel and distributed computing with lazy evaluation, allowing it to handle datasets larger than memory efficiently, and its built-in scheduler supports fault tolerance and scalability. Pandas chunking lacks built-in distributed fault tolerance, multiprocessing with lists is inefficient for large data, and NumPy arrays are limited by in-memory capacity."
+        },
+        {
+            "question": "You have a Python web service handling thousands of concurrent requests per second executing CPU-intensive tasks. What is the best strategy to improve throughput and maintain low latency?",
+            "options": [
+                "Use Python's asyncio with single-threaded event loop and offload CPU tasks to a separate process pool",
+                "Implement multi-threading using the threading module to leverage multiple cores",
+                "Increase worker threads in a WSGI server like Gunicorn using sync workers",
+                "Optimize code to use global interpreter lock (GIL) friendly libraries exclusively"
+            ],
+            "correct_answer": "Use Python's asyncio with single-threaded event loop and offload CPU tasks to a separate process pool",
+            "explanation": "Python's GIL limits true multi-threaded CPU execution; thus, to handle CPU-bound tasks, the recommended pattern is to use async I/O for concurrency and delegate heavy CPU work to process pools, which bypass the GIL. Multi-threading won't fully utilize multiple cores, increasing WSGI sync workers affects throughput but not CPU-bound task concurrency effectively, and GIL-friendly optimizations alone don\u2019t address CPU-bound parallelism constraints."
+        },
+        {
+            "question": "In an enterprise application using Python and Redis as a caching layer, you observe stale data despite cache invalidation logic. Which architectural improvement best addresses cache coherence and data consistency?",
+            "options": [
+                "Implement Redis key expiration with TTL and evict keys aggressively",
+                "Use a write-through caching pattern where updates to the database also update the cache synchronously",
+                "Apply eventual consistency with periodic cache refresh jobs to update cached data",
+                "Switch to a client-side in-memory cache to minimize network latency"
+            ],
+            "correct_answer": "Use a write-through caching pattern where updates to the database also update the cache synchronously",
+            "explanation": "The write-through cache pattern ensures data consistency by synchronously updating the cache whenever a write to the database occurs, reducing the risk of stale cached data. TTLs and eviction strategies alone don't guarantee cache coherence, eventual consistency introduces stale reads windows, and client-side caches increase complexity and risk stale data without central coordination."
+        },
+        {
+            "question": "You are optimizing a microservices architecture where Python services perform frequent serialization/deserialization of complex nested objects between JSON and native objects. What approach minimizes CPU overhead and latency?",
+            "options": [
+                "Using Python's built-in json module with custom object_hook for decoding",
+                "Implementing Protobuf with generated Python classes for serialization",
+                "Adopting XML with lxml for its rich parsing capabilities and schema validation",
+                "Using YAML via PyYAML for human-readable serialization"
+            ],
+            "correct_answer": "Implementing Protobuf with generated Python classes for serialization",
+            "explanation": "Protocol Buffers provide highly efficient binary serialization with smaller payloads and faster encoding/decoding compared to JSON, reducing CPU overhead and latency especially for nested objects. The built-in json module is slower with large nested data, XML parsing is heavier, and YAML serialization incurs more CPU cost and larger payloads."
+        },
+        {
+            "question": "During profiling of a long-running Python data analytics service, you observe frequent memory spikes and eventual memory leaks. Which diagnostic and remediation strategy best targets identifying and fixing such leaks in enterprise-grade Python applications?",
+            "options": [
+                "Use tracemalloc to identify most memory allocated lines and refactor code to release references",
+                "Increase garbage collector thresholds to delay collection and reduce overhead",
+                "Rely on periodic worker process recycling to mitigate leaks without identifying root causes",
+                "Disable Python's cyclic garbage collector and depend on reference counting only"
+            ],
+            "correct_answer": "Use tracemalloc to identify most memory allocated lines and refactor code to release references",
+            "explanation": "Tracemalloc helps trace memory allocation back to source code lines, making it instrumental in diagnosing where leaks originate. Fixing leaks requires releasing references or restructuring code. Increasing GC thresholds delays collection worsening leaks, recycling mitigates symptoms but not cause, and disabling cyclic GC risks leaks from reference cycles."
+        }
+    ],
+    "Spark": [
+        {
+            "question": "You are maintaining a Spark Structured Streaming job that reads from Kafka and writes to an external database. The job's processing latency suddenly spikes, and checkpoints indicate increasing backpressure in the streaming source. Which of the following is the most effective strategy to mitigate this issue without compromising data consistency?",
+            "options": [
+                "Increase the batch interval in the streaming trigger to allow more time for processing each batch",
+                "Disable checkpointing to reduce overhead and latency",
+                "Enable Kafka's max.poll.records setting to a higher value to consume more messages per trigger",
+                "Reduce the number of output partitions to minimize shuffle operations during writes"
+            ],
+            "correct_answer": "Increase the batch interval in the streaming trigger to allow more time for processing each batch",
+            "explanation": "Increasing the batch interval allows Spark Structured Streaming to process more data per batch and reduces the likelihood of piling up unprocessed data, thus mitigating backpressure. Disabling checkpointing risks data loss, adjusting Kafka poll settings may increase memory pressure, and reducing partitions can cause data skew and processing bottlenecks."
+        },
+        {
+            "question": "In a Spark SQL workload running on a multi-tenant cluster, a particular job frequently fails with OOM errors during shuffles despite having sufficient executor memory. Upon inspection, stages with skewed data cause certain tasks to handle disproportionately large partitions. Which optimization technique best addresses this skew without rewriting the query extensively?",
+            "options": [
+                "Increase spark.sql.shuffle.partitions to distribute data into more partitions",
+                "Use the skew join optimization by setting spark.sql.adaptive.skewJoin.enabled to true",
+                "Avoid caching the table involved in the join to free up memory",
+                "Manually repartition the skewed DataFrame before the join to force balanced partitions"
+            ],
+            "correct_answer": "Use the skew join optimization by setting spark.sql.adaptive.skewJoin.enabled to true",
+            "explanation": "Enabling adaptive skew join optimization allows Spark to detect and split large skewed partitions during runtime, reducing OOM errors without requiring manual query changes. Increasing shuffle partitions alone may not address skew, avoiding caching is unrelated, and manual repartitioning requires query modifications."
+        },
+        {
+            "question": "A data engineering team wants to enforce data governance policies by restricting data access in Spark SQL based on user roles connected through JDBC. Which approach integrates security and row-level filtering most effectively without duplicating datasets or complicating workflow?",
+            "options": [
+                "Implement dynamic column masking and row-level security via Spark's builtin SQL views combined with user role parameterization",
+                "Create separate physical tables for each user role with pre-filtered data",
+                "Use Apache Ranger with Spark integration to enforce access control and row-level policies",
+                "Encrypt sensitive columns in datasets and decrypt only for authorized users in Spark applications"
+            ],
+            "correct_answer": "Use Apache Ranger with Spark integration to enforce access control and row-level policies",
+            "explanation": "Apache Ranger provides centralized security management with integrated Spark support, allowing enforcement of fine-grained access controls and row-level filtering without data duplication or complex query logic. While SQL views can help, they lack centralized policy management; separate tables increase maintenance; encryption/decryption adds complexity and overhead."
+        },
+        {
+            "question": "You observe that a batch job processing 100TB of Parquet data using Spark on a cloud-managed cluster is consistently slower than expected, despite scaling executors and increasing shuffle partitions. Profiling reveals frequent GC pauses and executor CPU saturation. What architectural adjustment can improve throughput while maintaining job stability?",
+            "options": [
+                "Switch from the default Tungsten sorter to the external sorter and increase memory fraction allocated to shuffle",
+                "Use columnar caching of intermediate DataFrames to speed up repeated computations",
+                "Reduce executor cores to decrease CPU contention and increase executor count for higher parallelism",
+                "Disable speculative execution to avoid redundant task overhead"
+            ],
+            "correct_answer": "Reduce executor cores to decrease CPU contention and increase executor count for higher parallelism",
+            "explanation": "Reducing executor cores reduces CPU contention and GC pressure within each executor; increasing executor count maintains overall cluster parallelism and improves throughput. External sorter helps only when memory is constrained; columnar caching is expensive for large datasets without repeated computations; disabling speculative execution can worsen overall job latency if tasks are straggling."
+        },
+        {
+            "question": "During a troubleshooting session, you find a Spark job that writes to HDFS using overwriting mode fails intermittently with inconsistent data visible in output directories. Several concurrent jobs can target the same output path. Which configuration or practice within Spark architecture best prevents these data corruption issues while supporting concurrent batch workloads?",
+            "options": [
+                "Enable Spark's dynamic partition overwrite mode and coordinate write paths among jobs",
+                "Set spark.hadoop.fs.s3a.committer.name to directory-based committers to ensure atomic writes",
+                "Configure Spark to use the Hive-style partitioning and avoid concurrent writes to overlapping partitions",
+                "Use a distributed locking mechanism outside Spark to serialize writes to output paths"
+            ],
+            "correct_answer": "Enable Spark's dynamic partition overwrite mode and coordinate write paths among jobs",
+            "explanation": "Dynamic partition overwrite mode allows Spark to atomically overwrite only the partitions being updated, reducing risks of data corruption in concurrent writes. Without proper coordination, overlapping writes can corrupt data. Directory-based committers apply to object stores, Hive partitioning does not prevent concurrent overwrites inherently, and external locking adds complexity and latency."
+        }
+    ],
+    "OCI": [
+        {
+            "question": "In an OCI architecture supporting a multi-tier web application with autoscaling requirements, which combination of OCI services and features best ensures both high availability and efficient scaling of application servers under unpredictable load patterns?",
+            "options": [
+                "Use OCI Load Balancer with a fixed number of compute instances across multiple availability domains; enable instance pools without autoscaling policies.",
+                "Deploy compute instances in a single availability domain; configure autoscaling on instance pools combined with OCI Load Balancer distributing traffic evenly.",
+                "Configure instance pools with autoscaling enabled across multiple availability domains; integrate OCI Load Balancer with session persistence disabled.",
+                "Configure compute instances manually without instance pools; use OCI FastConnect for low latency without a Load Balancer."
+            ],
+            "correct_answer": "Configure instance pools with autoscaling enabled across multiple availability domains; integrate OCI Load Balancer with session persistence disabled.",
+            "explanation": "To handle unpredictable load while ensuring high availability, deploying instance pools with autoscaling across multiple availability domains spreads the risk of failure and allows scaling based on demand. OCI Load Balancer distributes traffic effectively without session persistence to allow stateless scaling. The other options either limit availability domains, disable autoscaling, or lack load balancing, reducing scalability or resilience."
+        },
+        {
+            "question": "When designing an OCI networking architecture for a global enterprise with strict data residency and latency requirements, which strategy best optimizes cross-region communication while maintaining compliance and performance?",
+            "options": [
+                "Use OCI FastConnect with private peering established between local on-premises data centers and OCI regions, combined with Traffic Management steering policies for region-aware routing.",
+                "Rely exclusively on public internet-based VPN tunnels between regions and on-premises sites, using regional OCI load balancers for routing and distribution.",
+                "Implement OCI Local Peering Gateways (LPG) across regions, enabling direct VCN communication with minimal latency and no exposure to public internet.",
+                "Deploy OCI Service Gateway in each region and configure dynamic routing protocols for cross-region replication and failover scenarios."
+            ],
+            "correct_answer": "Use OCI FastConnect with private peering established between local on-premises data centers and OCI regions, combined with Traffic Management steering policies for region-aware routing.",
+            "explanation": "FastConnect provides dedicated, private, and high-bandwidth connections between on-premises infrastructure and OCI, which helps meet data residency and performance requirements. Combined with Traffic Management steering policies, it supports intelligent routing directing requests to the nearest regional endpoint in compliance with data policies. LPG is limited to within a single region, public internet VPNs do not guarantee latency or compliance, and Service Gateway is for accessing OCI services, not cross-region VCN communication."
+        },
+        {
+            "question": "An enterprise is experiencing intermittent delays and timeouts when accessing OCI block volumes attached to compute instances. Analysis shows elevated I/O latency during peak usage periods. Which OCI architectural or configuration change will most effectively mitigate this bottleneck in an enterprise-grade production environment?",
+            "options": [
+                "Switch the block volumes from balanced to higher performance SSD options and increase the provisioned IOPS to match workload demands.",
+                "Attach multiple smaller block volumes in RAID 0 on the compute instance to distribute I/O workload and improve throughput.",
+                "Reduce the size of the block volumes to limit I/O, forcing the system to spin up more instances for load distribution.",
+                "Migrate from block storage to object storage, as object storage provides better latency guarantees for random I/O."
+            ],
+            "correct_answer": "Switch the block volumes from balanced to higher performance SSD options and increase the provisioned IOPS to match workload demands.",
+            "explanation": "OCI block volume performance depends on the volume type and provisioned IOPS. Upgrading to a higher performance SSD volume type and increasing provisioned IOPS aligns the storage subsystem with workload requirements, lowering latency and improving throughput. RAID 0 can provide some improvements but adds complexity and potential data loss risk. Reducing volume size limits capacity without resolving I/O bottlenecks. Object storage is not designed for low-latency random I/O workloads."
+        },
+        {
+            "question": "During an OCI security audit, a company wants to implement granular, policy-driven access controls over hundreds of OCI resources distributed across compartments and availability domains. Which OCI feature combination will best provide scalable and manageable governance while adhering to least privilege principles?",
+            "options": [
+                "Create separate IAM groups with highly specific policies for each resource across compartments and manage cross-policy overlaps manually.",
+                "Leverage OCI IAM dynamic groups combined with policy variables and compartment-level policies to centralize and automate permission assignments.",
+                "Apply service gateway-level network policies and rely on VPN isolation to reduce reliance on IAM policies across compartments.",
+                "Utilize OCI tags extensively and assign IAM policies based solely on tag-based compartments for resource grouping."
+            ],
+            "correct_answer": "Leverage OCI IAM dynamic groups combined with policy variables and compartment-level policies to centralize and automate permission assignments.",
+            "explanation": "Dynamic groups in OCI IAM allow resources (like compute instances) to be grouped based on attributes, enabling flexible policy assignments. Combined with the use of policy variables and compartment-level scoped policies, this approach scales well for enterprise governance and supports least privilege access efficiently. Creating many static groups is difficult to manage and error-prone. Network policies and VPNs do not replace IAM controls. While tags help in classification, IAM policies cannot be applied solely based on tags."
+        },
+        {
+            "question": "A financial services company requires near real-time disaster recovery for critical OCI workloads across two regions, ensuring minimal RPO (Recovery Point Objective) and RTO (Recovery Time Objective). Considering OCI's architecture and services, which solution design most effectively meets these SLAs while optimizing cost and operational overhead?",
+            "options": [
+                "Implement asynchronous cross-region replication using OCI Data Guard with manual failover procedures and maintain active compute resources in both regions.",
+                "Use OCI Object Storage cross-region replication for data and deploy active-active compute instances behind a global OCI Load Balancer distributing inbound traffic with health checks.",
+                "Deploy OCI Database Autonomous Transaction Processing with built-in cross-region data replication and configure compute instance pools with autoscaling in the DR region, activated on failover.",
+                "Configure OCI Block Volume cross-region backup replication with scheduled restores and start compute instances manually in the secondary region during DR drills."
+            ],
+            "correct_answer": "Deploy OCI Database Autonomous Transaction Processing with built-in cross-region data replication and configure compute instance pools with autoscaling in the DR region, activated on failover.",
+            "explanation": "Using Autonomous Transaction Processing with built-in cross-region replication ensures near real-time data synchronization, minimizing RPO. Having compute instance pools with autoscaling in the DR region, which can scale up upon failover, balances cost (by not keeping all resources always active) with recovery time goals. Data Guard is asynchronous and requires manual failover, which might extend RTO. Object Storage replication alone doesn't cover compute and transactional database failover. Block volume backups are typically slower and operationally heavy, impacting RTO significantly."
+        }
+    ],
+    "Oracle APEX": [
+        {
+            "question": "In a high-transaction Oracle APEX application with heavy concurrent user load, which architectural strategy best ensures scalability while minimizing session state contention?",
+            "options": [
+                "Persist all session state in browser cookies and minimize database session state storage",
+                "Leverage APEX session state on the database with connection pooling and use stateless RESTful services to offload UI processing",
+                "Store session state exclusively within the APEX builder workspace and rely on multiple dedicated application workspaces",
+                "Implement session state management primarily using APEX Collections to reduce database I/O"
+            ],
+            "correct_answer": "Leverage APEX session state on the database with connection pooling and use stateless RESTful services to offload UI processing",
+            "explanation": "Oracle APEX manages session state primarily on the database side, which ensures consistency and scalability when combined with connection pooling. Offloading UI logic to stateless RESTful services reduces server load and improves scalability. Approaches that store session state in cookies or rely solely on APEX Collections may lead to data inconsistency or scalability issues under heavy concurrency."
+        },
+        {
+            "question": "During performance optimization of a complex APEX application, you observe slow page rendering times due to numerous region queries. What is the most effective approach to reduce database load without impacting data freshness?",
+            "options": [
+                "Implement server-side pagination via APEX Interactive Reports to limit fetched data volume dynamically",
+                "Increase APEX session idle timeout to reuse cached queries across multiple sessions",
+                "Pre-aggregate query results using materialized views refreshed on a scheduled basis and use these in regions",
+                "Cache query results in application items to reuse across different page requests"
+            ],
+            "correct_answer": "Pre-aggregate query results using materialized views refreshed on a scheduled basis and use these in regions",
+            "explanation": "Materialized views precompute and store aggregated data, significantly reducing query execution time during page renders. Scheduling refreshes balances data freshness against performance. Server-side pagination optimizes data volume but doesn\u2019t reduce query complexity or load. Increasing session timeouts or caching result sets in session variables risks stale data and inconsistent views."
+        },
+        {
+            "question": "An enterprise application built with Oracle APEX integrates with multiple external REST APIs for backend data. To ensure consistent governance and error handling, which design pattern is most suitable when orchestrating these API calls within APEX?",
+            "options": [
+                "Directly invoke REST calls within page processes and handle errors using JavaScript dynamic actions",
+                "Use PL/SQL packages to wrap REST API calls with centralized error logging and retry mechanisms, then call these packages from APEX processes",
+                "Implement REST API calls exclusively in browser-side JavaScript to leverage asynchronous behavior and error propagation",
+                "Create separate APEX Web Source Modules for each API and handle errors by managing native APEX error templates"
+            ],
+            "correct_answer": "Use PL/SQL packages to wrap REST API calls with centralized error logging and retry mechanisms, then call these packages from APEX processes",
+            "explanation": "Centralizing API calls in PL/SQL packages allows consistent error handling, logging, and retry logic within the controlled database environment. This approach enhances maintainability and governance. Direct browser-side calls or scattered Web Source Modules lack centralized control and complicate error management."
+        },
+        {
+            "question": "You are tasked with troubleshooting intermittent authentication failures in an Oracle APEX application that uses SSO via Oracle Access Manager (OAM). Which diagnostic step will most effectively identify the root cause related to session management?",
+            "options": [
+                "Review APEX workspace session timeout settings and extend them to reduce session expiration",
+                "Enable debug mode in APEX to capture detailed authentication logs for every login attempt",
+                "Analyze HTTP session cookies and tokens exchanged between the browser, OAM, and APEX to detect token mismatch or expiration",
+                "Increase database shared pool size to optimize session handling performance"
+            ],
+            "correct_answer": "Analyze HTTP session cookies and tokens exchanged between the browser, OAM, and APEX to detect token mismatch or expiration",
+            "explanation": "SSO-related authentication failures often stem from token or cookie expiration, or mismatches during token exchange. Investigating these at the HTTP header and cookie level is crucial to identify synchronization or session management issues between OAM and APEX. Workspace timeouts or debug logs provide limited insight into SSO token handling, and shared pool sizing is unrelated."
+        },
+        {
+            "question": "In an Oracle APEX environment supporting multiple enterprise applications, what is the most effective governance practice to ensure consistent application security policies and reduce risk exposure?",
+            "options": [
+                "Utilize Oracle Database roles and privileges assigned per workspace to control data access for all applications",
+                "Enforce all authorization schemes and session state protection policies centrally via shared RESTful services with embedded security checks",
+                "Consolidate security policies within each application\u2019s APEX authorization schemes independently for maximum flexibility",
+                "Configure a centralized Identity Provider (IdP) for SSO and delegate all user authentication and authorization decisions externally from APEX"
+            ],
+            "correct_answer": "Enforce all authorization schemes and session state protection policies centrally via shared RESTful services with embedded security checks",
+            "explanation": "Centralizing authorization and security policies in shared RESTful services enforces uniform rules across multiple applications, simplifies maintenance, and reduces risk. While database roles and IdP handle authentication and coarse-grained privileges, fine-grained authorization and session protection implemented centrally improves governance consistency better than distributed independent schemes."
+        }
+    ],
+    "Power BI": [
+        {
+            "question": "You manage a Power BI deployment for a multinational enterprise where report refresh times have increased significantly due to large datasets. Which strategy best optimizes refresh performance without compromising data granularity required for detailed analysis?",
+            "options": [
+                "Implement aggregations at the data model level while keeping detailed tables, using DirectQuery for detailed queries on demand",
+                "Convert all data sources to Import mode and increase cache refresh frequency",
+                "Partition the large tables and use Incremental Refresh with Import mode only",
+                "Switch all datasets to DirectQuery and implement composite models with calculated tables for aggregation"
+            ],
+            "correct_answer": "Implement aggregations at the data model level while keeping detailed tables, using DirectQuery for detailed queries on demand",
+            "explanation": "Using aggregations with a composite model combines Import-mode aggregated tables for fast summaries and DirectQuery for detailed data. This balances refresh performance and detailed data access, making it ideal for large datasets requiring granular analysis."
+        },
+        {
+            "question": "An enterprise Power BI deployment requires strict governance on dataset sharing to prevent sensitive data leakage across departments. Which Power BI architecture feature should be leveraged to enforce these controls at scale?",
+            "options": [
+                "Implement Row-Level Security (RLS) combined with Azure Active Directory (AAD) group membership in dataset roles",
+                "Configure workspace roles with Admin and Member permissions to restrict report access",
+                "Use Power BI Dataflows to centralize data preparation with access control applied on the Power BI Service workspace",
+                "Enable sensitivity labels and apply them on Power BI reports only, relying on end-user responsibility"
+            ],
+            "correct_answer": "Implement Row-Level Security (RLS) combined with Azure Active Directory (AAD) group membership in dataset roles",
+            "explanation": "RLS combined with AAD groups enables granular data access control embedded in the dataset itself. This ensures users only see data appropriate to their role, enforcing governance centrally and reducing risk of data leakage across departments."
+        },
+        {
+            "question": "You observe high query latency when users interact with a published DirectQuery Power BI report connected to a complex on-premises OLAP cube. What is the most suitable action to improve end-user performance without redesigning the data source?",
+            "options": [
+                "Enable the Power BI Aggregations feature to redirect common queries to import-mode summary tables",
+                "Increase Power BI Service dataset refresh frequency to cache more data",
+                "Switch from DirectQuery mode to Import mode for the entire dataset",
+                "Implement query reduction techniques such as disabling cross-filtering and adjusting visual interaction settings"
+            ],
+            "correct_answer": "Enable the Power BI Aggregations feature to redirect common queries to import-mode summary tables",
+            "explanation": "Using Aggregations allows Power BI to serve common queries from fast import-mode summary tables instead of querying the OLAP cube via DirectQuery. This reduces latency while avoiding the need to redesign the source or move entirely to Import mode."
+        },
+        {
+            "question": "In a large enterprise environment, you need to automate deployment pipelines for Power BI content involving several development, test, and production workspaces. Which approach maximizes governance and minimizes manual deployment errors?",
+            "options": [
+                "Utilize the Power BI REST API combined with Azure DevOps pipelines to automate artifact promotion with parameterized workspace targeting",
+                "Rely on Power BI's native content pack publishing features and manual workspace switching by report owners",
+                "Use Power BI Premium per user licensing to delegate deployment tasks through workspace roles",
+                "Automate deployment by scripting remote desktop sessions to execute manual uploads via Power BI Desktop"
+            ],
+            "correct_answer": "Utilize the Power BI REST API combined with Azure DevOps pipelines to automate artifact promotion with parameterized workspace targeting",
+            "explanation": "Integration of Power BI REST API with CI/CD tools like Azure DevOps enables consistent, repeatable deployments across environments. This approach enforces governance policies and minimizes errors by reducing manual intervention."
+        },
+        {
+            "question": "You are troubleshooting a Power BI Premium capacity where several reports intermittently fail with 'Query Timeout' errors during peak usage. What is the most effective method to diagnose and mitigate this issue considering capacity and workload management?",
+            "options": [
+                "Analyze workload metrics using Power BI Premium Capacity Metrics app and apply workload isolation with capacity assignment and query concurrency limits",
+                "Increase dataset refresh frequency to reduce cache misses causing timeouts",
+                "Convert all reports to use cached data by switching to Import mode exclusively",
+                "Disable report visual interactions to arbitrarily reduce query volume"
+            ],
+            "correct_answer": "Analyze workload metrics using Power BI Premium Capacity Metrics app and apply workload isolation with capacity assignment and query concurrency limits",
+            "explanation": "The Power BI Premium Capacity Metrics app provides detailed insights into resource consumption and query patterns. Applying workload isolation and concurrency limits prevents resource contention, mitigating timeouts during peak usage without compromising reporting functionality."
+        }
+    ]
+}

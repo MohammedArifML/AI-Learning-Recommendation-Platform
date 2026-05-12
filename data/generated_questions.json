@@ -1,0 +1,344 @@
+{
+    "SQL": [
+        {
+            "question": "You have a large transactional table with millions of rows, and queries filtering on a DATE column perform poorly. Which indexing strategy is likely to improve query performance for date range filters while minimizing index maintenance overhead?",
+            "options": [
+                "Create a single-column b-tree index on the DATE column",
+                "Create a composite index on DATE and all columns referenced in WHERE clauses",
+                "Partition the table by DATE range and create local indexes on each partition",
+                "Create a bitmap index on the DATE column"
+            ],
+            "correct_answer": "Partition the table by DATE range and create local indexes on each partition",
+            "explanation": "Partitioning the table by DATE range allows pruning irrelevant partitions during queries, improving performance on date filters. Local indexes on partitions reduce overhead compared to a global index on a huge table, balancing maintenance and query speed."
+        },
+        {
+            "question": "In a scenario where you need to update millions of rows in a single transaction, causing significant lock contention and long running times, which approach best balances data consistency with minimizing impact on concurrent users?",
+            "options": [
+                "Disable all indexes before the update, then rebuild them after completion",
+                "Split the update into smaller batches using a loop with commit after each batch",
+                "Perform the update in a single statement with parallel DML enabled",
+                "Use a MERGE statement instead of UPDATE to optimize processing"
+            ],
+            "correct_answer": "Split the update into smaller batches using a loop with commit after each batch",
+            "explanation": "Batching large update operations reduces transaction size and lock duration, mitigating contention and resource usage. Committing after smaller sets of rows helps maintain responsiveness for concurrent operations while preserving data consistency within each batch."
+        },
+        {
+            "question": "You need to enforce data governance by automatically masking sensitive column data (e.g., credit card numbers) for non-privileged users in your enterprise application. Which SQL Server feature allows this without requiring changes to application queries?",
+            "options": [
+                "Using Row-Level Security to filter sensitive rows",
+                "Applying Dynamic Data Masking on the sensitive columns",
+                "Encrypting the columns using Transparent Data Encryption (TDE)",
+                "Creating views that exclude sensitive columns for non-privileged users"
+            ],
+            "correct_answer": "Applying Dynamic Data Masking on the sensitive columns",
+            "explanation": "Dynamic Data Masking automatically masks sensitive data on-the-fly for non-privileged users at query time without altering application queries. This maintains data governance while simplifying implementation compared to encryption or redesigning views."
+        },
+        {
+            "question": "You join two large tables and notice query execution times are unacceptable due to inefficient join plans. Which action is most likely to lead the query optimizer to choose a more efficient hash join instead of a nested loop join?",
+            "options": [
+                "Rewrite the query to use explicit JOIN hints forcing a hash join",
+                "Ensure statistics on join columns are up-to-date and disable nested loop joins in the optimizer",
+                "Add indexes on join columns in both tables and update statistics",
+                "Increase system memory so the optimizer can cache more data during join"
+            ],
+            "correct_answer": "Add indexes on join columns in both tables and update statistics",
+            "explanation": "The optimizer relies on indexes and up-to-date statistics to select join strategies. Proper indexing on join keys and fresh statistics allow it to accurately estimate costs and prefer hash joins when it benefits performance, without disabling plan choices manually."
+        },
+        {
+            "question": "Advanced Challenge: In a distributed database environment using sharded tables, you need to perform an aggregate query across all shards with minimal network overhead and latency. Which strategy best optimizes this distributed aggregation?",
+            "options": [
+                "Perform the full aggregation query on each shard independently and then aggregate results on the application layer",
+                "Use a federated query engine that pushes aggregation operations down to each shard and combines partial aggregates",
+                "Retrieve all data from all shards to a centralized server and run the aggregation there",
+                "Create global indexes spanning shards to allow direct aggregation without data movement"
+            ],
+            "correct_answer": "Use a federated query engine that pushes aggregation operations down to each shard and combines partial aggregates",
+            "explanation": "Federated query engines optimize distributed aggregation by pushing partial aggregations to each shard (minimizing data transfer) and then combining partial results centrally. This reduces network overhead and latency compared to fetching raw data or doing all aggregation client-side."
+        }
+    ],
+    "Python": [
+        {
+            "question": "You are tasked with optimizing the loading of a very large CSV file (~10GB) into a Pandas DataFrame for further analysis. Which approach will most effectively reduce memory usage and improve loading performance?",
+            "options": [
+                "Load the entire CSV using pd.read_csv() and then downcast data types post-loading.",
+                "Use the 'chunksize' parameter in pd.read_csv() to read the file in smaller portions, process each chunk, and aggregate results.",
+                "Convert the CSV file to Excel format before loading, since Excel files load faster in Pandas.",
+                "Use the parameter 'memory_map=True' with pd.read_csv() but load the entire file at once."
+            ],
+            "correct_answer": "Use the 'chunksize' parameter in pd.read_csv() to read the file in smaller portions, process each chunk, and aggregate results.",
+            "explanation": "Reading large CSV files in chunks is an effective way to control memory usage and allows processing data in manageable portions. Converting to Excel is inefficient for large datasets, and loading the entire file at once can cause high memory usage. 'memory_map=True' provides some optimization but does not solve large memory footprint issues as well as chunking."
+        },
+        {
+            "question": "In a Pandas DataFrame, you want to replace missing values with the median of the respective columns but only for numeric columns, without affecting categorical variables. Which is the best way to do this?",
+            "options": [
+                "Use df.fillna(df.median()) directly on the entire DataFrame.",
+                "Select numeric columns with df.select_dtypes(include=[np.number]) and then apply fillna with median only on this subset.",
+                "Replace missing values separately in numeric columns and fill categorical columns with mode in the same statement.",
+                "Use df.apply(lambda x: x.fillna(x.median())) on the entire DataFrame."
+            ],
+            "correct_answer": "Select numeric columns with df.select_dtypes(include=[np.number]) and then apply fillna with median only on this subset.",
+            "explanation": "Applying fillna(df.median()) on the whole DataFrame may incorrectly attempt to compute medians on non-numeric columns, causing errors or incorrect filling. Selecting numeric columns ensures median imputation applies only to appropriate data types."
+        },
+        {
+            "question": "After merging two DataFrames on a non-unique key, you find unexpected duplication of rows due to many-to-many relationships. Which Pandas operation can you use to diagnose the source of multiplications most effectively?",
+            "options": [
+                "Use df.merge with 'validate=\"one_to_one\"' to automatically raise errors on duplication.",
+                "Inspect the merge keys using value_counts() before merging to check for duplicates in each DataFrame.",
+                "Apply drop_duplicates() to both DataFrames before merging to avoid duplication.",
+                "Ignore the issue as duplicate rows are expected in merges."
+            ],
+            "correct_answer": "Inspect the merge keys using value_counts() before merging to check for duplicates in each DataFrame.",
+            "explanation": "Checking the frequency of merge keys in both DataFrames allows you to understand the relationship cardinality causing duplication. The 'validate' parameter in merge helps, but pre-inspection is a best practice to verify key uniqueness. drop_duplicates can inadvertently remove valid records."
+        },
+        {
+            "question": "When building a time series visualization in Matplotlib for a dataset with multiple measured variables at irregular timestamps, what is a robust approach to ensure consistent x-axis representation and clear visualization?",
+            "options": [
+                "Plot the raw data directly without adjusting the timestamps or axis settings.",
+                "Resample or interpolate the dataset to uniform time intervals before plotting, then use date formatters on the x-axis.",
+                "Convert timestamps to strings to avoid formatting issues on the x-axis.",
+                "Plot scatter plots with default settings and rely on automatic scaling."
+            ],
+            "correct_answer": "Resample or interpolate the dataset to uniform time intervals before plotting, then use date formatters on the x-axis.",
+            "explanation": "Irregular timestamps cause uneven spacing on the x-axis, making trends hard to interpret. Resampling to uniform intervals and applying date formatters ensures clarity and consistent axis ticks, improving readability."
+        },
+        {
+            "question": "Advanced challenge: In an enterprise environment, you have a pipeline that fetches data from multiple SQL databases, performs complex transformations with Pandas and NumPy, and then generates interactive visualizations with Seaborn and Matplotlib. To ensure data governance and reproducibility, which practices and tools should you adopt?",
+            "options": [
+                "Implement version control for scripts; use parameterized SQL queries to avoid injection; log transformation steps with metadata; containerize the environment with Docker; and store versioned data snapshots in a data lake.",
+                "Rely only on Pandas\u2019 built-in functions without logging; use raw SQL queries embedded in scripts; run visualizations locally without saving configurations.",
+                "Use Jupyter notebooks only with no version control; perform transformations interactively; export plots as static images without metadata.",
+                "Schedule scripts on local machines manually and annotate changes in emails for tracking."
+            ],
+            "correct_answer": "Implement version control for scripts; use parameterized SQL queries to avoid injection; log transformation steps with metadata; containerize the environment with Docker; and store versioned data snapshots in a data lake.",
+            "explanation": "Enterprise-grade data pipelines require strong version control, secure query practices, detailed logging for auditability, environment consistency via containerization, and robust data storage with versioning to ensure reproducibility, governance, and compliance."
+        }
+    ],
+    "Spark/PySpark": [
+        {
+            "question": "In a PySpark job processing a large dataset, you notice that shuffles are causing significant latency. Which of the following optimizations can most effectively reduce shuffle overhead during join operations?",
+            "options": [
+                "Using broadcast joins by explicitly broadcasting the smaller DataFrame",
+                "Increasing the number of shuffle partitions to a very high value",
+                "Persisting both DataFrames in memory before the join",
+                "Using repartition() to co-locate all data on a single partition before join"
+            ],
+            "correct_answer": "Using broadcast joins by explicitly broadcasting the smaller DataFrame",
+            "explanation": "Broadcast joins avoid expensive shuffles by sending the smaller DataFrame to all worker nodes, enabling map-side joins; this significantly reduces shuffle overhead compared to other approaches."
+        },
+        {
+            "question": "You want to ensure data lineage and compliance for sensitive data transformations in a PySpark ETL pipeline running on a multi-tenant cluster. Which combination of practices offers the best governance approach?",
+            "options": [
+                "Enable Spark event logging, implement audit logging at the application layer, and use table-level permissions in the metastore",
+                "Rely on Spark UI history logs for auditing and trust cluster security groups for access control",
+                "Persist intermediate DataFrames as Parquet files without metadata and monitor file access manually",
+                "Disable caching to force re-computation and enable query plan explain outputs"
+            ],
+            "correct_answer": "Enable Spark event logging, implement audit logging at the application layer, and use table-level permissions in the metastore",
+            "explanation": "Combining Spark event logs with application-layer audit logging and enforcing table-level permissions ensures comprehensive data governance, compliance tracking, and access control in multi-tenant environments."
+        },
+        {
+            "question": "A PySpark DataFrame transform chain includes multiple complex UDFs leading to poor performance. What practical strategy should be applied to improve scalability and execution efficiency?",
+            "options": [
+                "Rewrite UDFs using PySpark SQL built-in functions or Spark SQL expressions where possible",
+                "Increase executor memory only to handle UDF overhead",
+                "Split DataFrame into multiple smaller DataFrames to parallelize UDF execution manually",
+                "Use pandas UDFs without any modification since they are inherently faster"
+            ],
+            "correct_answer": "Rewrite UDFs using PySpark SQL built-in functions or Spark SQL expressions where possible",
+            "explanation": "Built-in Spark SQL functions are optimized and run natively on the JVM, whereas Python UDFs are expensive due to serialization and lack of optimization. Rewriting logic using built-ins improves performance and scalability."
+        },
+        {
+            "question": "During a PySpark batch job, you observe skewed data distribution causing task stragglers in a groupByKey operation. Which method best mitigates data skew in this scenario?",
+            "options": [
+                "Implement salting by adding a random prefix to the keys before the groupByKey, then remove prefixes post aggregation",
+                "Increase driver memory to handle skewed task data",
+                "Replace groupByKey with collect() and perform aggregation on the driver",
+                "Disable dynamic allocation to stabilize executor count"
+            ],
+            "correct_answer": "Implement salting by adding a random prefix to the keys before the groupByKey, then remove prefixes post aggregation",
+            "explanation": "Salting keys distributes skewed keys across multiple partitions, mitigating straggler tasks during groupByKey and improving parallelism without overwhelming the driver."
+        },
+        {
+            "question": "Advanced: In a multi-stage PySpark pipeline running on a YARN cluster, executors are frequently being killed due to JVM heap space errors during the shuffle write phase. Which of the following combined actions best addresses this problem without compromising overall cluster utilization?",
+            "options": [
+                "Increase spark.shuffle.file.buffer and spark.reducer.maxSizeInFlight, tune executor memory and shuffle spill thresholds, and enable Tungsten sort-based shuffle",
+                "Reduce number of executors, disable compression to reduce CPU overhead, and increase driver memory",
+                "Use collect() to gather data on driver and repartition manually, increase number of shuffle partitions drastically",
+                "Disable dynamic allocation and reduce the shuffle fetch timeout"
+            ],
+            "correct_answer": "Increase spark.shuffle.file.buffer and spark.reducer.maxSizeInFlight, tune executor memory and shuffle spill thresholds, and enable Tungsten sort-based shuffle",
+            "explanation": "Tuning shuffle buffers and reducer in-flight data reduces memory pressure during shuffle writes, while adjusting executor memory and spill configuration prevents heap errors. Enabling Tungsten sort-based shuffle leverages optimized memory-efficient shuffles."
+        }
+    ],
+    "OCI": [
+        {
+            "question": "You are designing a highly available web application on OCI that requires sub-millisecond latency between the compute instances. Which OCI networking component should you configure to optimize communication between instances in different fault domains within the same availability domain?",
+            "options": [
+                "Use a Load Balancer to distribute traffic across instances",
+                "Deploy instances in a single subnet and configure Private IP addressing within the VCN",
+                "Configure Local Peering Gateway between the fault domains",
+                "Use OCI FastConnect for inter-instance communication"
+            ],
+            "correct_answer": "Deploy instances in a single subnet and configure Private IP addressing within the VCN",
+            "explanation": "Placing instances in the same subnet within a VCN ensures they are in the same availability domain and can communicate directly with low latency using private IPs. Local Peering Gateway is for peering between different VCNs; Load Balancer introduces additional hops; FastConnect is for on-premises to OCI connectivity."
+        },
+        {
+            "question": "During an OCI compute instance deployment, the instance fails to reach the internet despite having a public IP. Which of the following is the MOST likely cause?",
+            "options": [
+                "The instance is not in a public subnet with a route rule directing 0.0.0.0/0 to an Internet Gateway",
+                "The instance's security list allows outbound traffic but not inbound traffic",
+                "The instance does not have a NAT Gateway attached",
+                "The subnet has a private IP pool configured instead of a public IP pool"
+            ],
+            "correct_answer": "The instance is not in a public subnet with a route rule directing 0.0.0.0/0 to an Internet Gateway",
+            "explanation": "Having a public IP alone does not guarantee internet access. The subnet must be public, which means its route table must include a default route (0.0.0.0/0) pointing to an Internet Gateway. Without this, traffic destined for the internet will not leave the VCN."
+        },
+        {
+            "question": "You need to restrict an OCI compartment\u2019s users such that they can launch and manage compute instances, but cannot create or modify network resources such as VCNs, subnets, or security lists. What is the MOST appropriate approach to achieve this?",
+            "options": [
+                "Assign the users the 'Compute Administrator' dynamic group policy",
+                "Assign the users the 'Network Administrator' group policy with restrictions on compute services",
+                "Create a custom IAM policy granting compute:instance-family permissions and deny network:virtual-network-family permissions",
+                "Assign the users full administrator privileges limited only to the compartment"
+            ],
+            "correct_answer": "Create a custom IAM policy granting compute:instance-family permissions and deny network:virtual-network-family permissions",
+            "explanation": "OCI IAM policies can be finely scoped to grant compute-related permissions while explicitly restricting network resource changes. Using a custom policy allows precise control, preventing users from modifying network configurations while allowing compute management."
+        },
+        {
+            "question": "Your OCI database system requires encryption of data at rest and in transit without manual key management. Which OCI feature should you enable to achieve this with minimal operational overhead?",
+            "options": [
+                "Manually create and manage customer-managed keys in OCI Vault for encryption",
+                "Use Oracle Transparent Data Encryption (TDE) with Oracle Cloud-managed keys",
+                "Configure the database to use encrypted tablespaces with client-side encryption",
+                "Enable network-level IPSec VPN to secure data in transit"
+            ],
+            "correct_answer": "Use Oracle Transparent Data Encryption (TDE) with Oracle Cloud-managed keys",
+            "explanation": "Oracle TDE integrated with OCI Cloud-managed keys provides data-at-rest encryption transparently without requiring manual key management. This approach also handles key rotation and lifecycle, minimizing operational burden."
+        },
+        {
+            "question": "Advanced Challenge: A critical production application deployed across multiple OCI regions requires synchronous data replication with zero data loss and minimal recovery point objective (RPO). Which architecture best meets this requirement?",
+            "options": [
+                "Deploy Autonomous Data Guard between regions with asynchronous replication and configure failover routing",
+                "Configure Oracle GoldenGate for bidirectional asynchronous replication between regional databases",
+                "Use OCI's Remote Data Guard with Data Guard Broker in Maximum Protection mode for synchronous replication",
+                "Implement a custom replication solution over OCI FastConnect with batch data transfers"
+            ],
+            "correct_answer": "Use OCI's Remote Data Guard with Data Guard Broker in Maximum Protection mode for synchronous replication",
+            "explanation": "Data Guard's Maximum Protection mode uses synchronous replication ensuring zero data loss (zero RPO) between primary and standby databases, meeting strict data integrity and availability needs across regions. Asynchronous options do not guarantee zero data loss."
+        }
+    ],
+    "Oracle APEX": [
+        {
+            "question": "In an Oracle APEX application with multiple workspace users, how can you centrally enforce access control policies to restrict certain application features based on user roles without modifying each page's authorization scheme individually?",
+            "options": [
+                "Set authorization schemes at the application level and reuse them in pages",
+                "Implement row-level security in the underlying database tables",
+                "Use APEX Workspace Access Control Lists (ACLs) to define role permissions globally",
+                "Create an authentication scheme that embeds role information into session state for conditional rendering"
+            ],
+            "correct_answer": "Use APEX Workspace Access Control Lists (ACLs) to define role permissions globally",
+            "explanation": "APEX Workspace ACLs allow administrators to centrally control access permissions across multiple applications and workspaces, providing a coherent governance model without editing each page individually."
+        },
+        {
+            "question": "You have a report region in an APEX application that queries a large data set resulting in slow page load times. Which approach will most effectively improve performance while preserving dynamic filtering capabilities?",
+            "options": [
+                "Implement a materialized view with incremental refresh and query it in the report region",
+                "Add an index hint in the report's SQL query to force faster full table scans",
+                "Use a Classic Report instead of an Interactive Report to reduce overhead",
+                "Disable pagination and load all rows at once to minimize repeated queries"
+            ],
+            "correct_answer": "Implement a materialized view with incremental refresh and query it in the report region",
+            "explanation": "Materialized views cache the query results and can be incrementally refreshed, reducing query time for large datasets while maintaining filtering capabilities in the report region."
+        },
+        {
+            "question": "During deployment of an Oracle APEX application update to a production environment, you find that some dynamic actions stop working after import. Which is the most probable cause and how do you prevent it?",
+            "options": [
+                "Page numbering mismatch during import; fix by regenerating page numbers post-import",
+                "Referenced shared components (e.g., LOVs) missing in target workspace; ensure they are included in the export and import",
+                "JavaScript files not uploaded properly; always upload static files separately after deployment",
+                "Session state differences between environments; clear cache before testing"
+            ],
+            "correct_answer": "Referenced shared components (e.g., LOVs) missing in target workspace; ensure they are included in the export and import",
+            "explanation": "Dynamic actions depending on shared components like LOVs or templates may break if those components are missing in the target workspace, so include all dependent components during export/import."
+        },
+        {
+            "question": "Your APEX application requires integration with an external RESTful service to fetch data asynchronously into a report. What is the best approach to implement this integration ensuring minimal page load impact and maintainability?",
+            "options": [
+                "Use APEX_WEB_SERVICE API synchronously in a page process before page rendering",
+                "Leverage APEX's native REST Data Source feature and configure the report to consume it",
+                "Call the REST service directly in JavaScript fetch calls inside a dynamic action after page load",
+                "Create a database PL/SQL function to call the REST service and invoke it in a report query"
+            ],
+            "correct_answer": "Leverage APEX's native REST Data Source feature and configure the report to consume it",
+            "explanation": "APEX REST Data Sources allow declarative integration with REST services, enabling asynchronous data loading with caching and security features and improved maintainability compared to direct JavaScript or PL/SQL calls."
+        },
+        {
+            "question": "Advanced Challenge: An enterprise Oracle APEX application hosted in Autonomous Database needs to implement an auditing mechanism that captures end-user changes (inserts, updates, deletes) on key tables without impacting transaction performance or requiring code changes to existing CRUD processes. Which solution provides the optimal balance between audit accountability and system performance?",
+            "options": [
+                "Enable Oracle Database Flashback Data Archive (FDA) on key tables for automatic historical tracking",
+                "Create DML triggers on the tables to record audit details into custom audit tables",
+                "Use APEX built-in Activity Logging features configured at the application level per page",
+                "Implement a scheduled job to compare snapshots of tables at intervals for changes"
+            ],
+            "correct_answer": "Enable Oracle Database Flashback Data Archive (FDA) on key tables for automatic historical tracking",
+            "explanation": "Flashback Data Archive is a built-in Oracle feature offering efficient, low-overhead, automatic tracking of all DML changes for long-term audit compliance without modifying application logic or impacting transaction performance significantly."
+        }
+    ],
+    "Power BI": [
+        {
+            "question": "You have a Power BI report connected to a large DirectQuery SQL Server data source. Users report slow performance when applying multiple slicers simultaneously. Which strategy would best optimize query performance without compromising report interactivity?",
+            "options": [
+                "Enable query reduction features and limit cross-filtering between visuals.",
+                "Switch the datasource to Import mode to reduce query runtime.",
+                "Increase the report refresh rate to fetch data more frequently.",
+                "Disable all slicers and use only filters in the filter pane."
+            ],
+            "correct_answer": "Enable query reduction features and limit cross-filtering between visuals.",
+            "explanation": "In DirectQuery mode, reducing unnecessary queries is critical. Enabling query reduction features (like disabling automatic cross-filtering and disabling interactions where possible) minimizes the number of queries sent to the source, improving performance while maintaining interactivity. Switching to Import mode may not be feasible for large datasets or real-time data, and increasing refresh rate or disabling slicers altogether reduces usability rather than addressing query optimization."
+        },
+        {
+            "question": "In a Power BI dataset used across multiple reports in an enterprise, you want to enforce row-level security (RLS) so that sales managers see only their own region's data. What is the recommended best practice for implementing this scenario?",
+            "options": [
+                "Create RLS roles directly in each report that consumes the dataset.",
+                "Define RLS roles on the shared dataset in the Power BI service and manage roles centrally.",
+                "Implement RLS by filtering data in the SQL data source before ingestion.",
+                "Use report-level filters in each report to limit data visibility."
+            ],
+            "correct_answer": "Define RLS roles on the shared dataset in the Power BI service and manage roles centrally.",
+            "explanation": "Applying RLS at the dataset level ensures consistency and reusability of security definitions across multiple reports. This centralized approach reduces maintenance overhead and prevents bypassing row-level restrictions. Implementing RLS only in reports or filtering data before ingestion lacks scalability or real-time enforcement."
+        },
+        {
+            "question": "Your enterprise has Power BI Premium capacity. You notice inconsistent refresh durations and occasional memory pressure leading to refresh failures in large datasets. Which action should you take to diagnose and resolve these issues effectively?",
+            "options": [
+                "Review the Power BI Premium Metrics app and analyze refresh history and resource utilization.",
+                "Increase the dataset size limit by upgrading to the highest Premium SKU.",
+                "Move all datasets to Import mode regardless of refresh frequency.",
+                "Disable incremental refresh to simplify the refresh process."
+            ],
+            "correct_answer": "Review the Power BI Premium Metrics app and analyze refresh history and resource utilization.",
+            "explanation": "The Power BI Premium Metrics app provides detailed insights into capacity performance, showing how refreshes consume resources and highlighting bottlenecks like memory pressure. This enables targeted optimization such as adjusting dataset design or scheduling. Simply increasing SKU or disabling incremental refresh may not resolve underlying capacity or optimization issues."
+        },
+        {
+            "question": "You have a complex DAX measure used in multiple visuals that calculates monthly sales growth. Recently, the measure's performance has degraded after adding several time intelligence calculations. What practical approach will improve the measure\u2019s evaluation time without compromising accuracy?",
+            "options": [
+                "Refactor the DAX measure to use variables and CALCULATE with FILTER instead of nested IF statements.",
+                "Convert all calculations into calculated columns instead of measures.",
+                "Remove time intelligence calculations and compute them outside Power BI.",
+                "Disable query caching to force fresh calculations on each visual interaction."
+            ],
+            "correct_answer": "Refactor the DAX measure to use variables and CALCULATE with FILTER instead of nested IF statements.",
+            "explanation": "Using variables in DAX prevents repeated calculation of the same expression within a measure, improving performance. Additionally, employing CALCULATE with efficient FILTERs can reduce context transition overhead. Calculated columns add storage and reduce flexibility, while disabling caching worsens performance. Offloading calculations is not always feasible or efficient."
+        },
+        {
+            "question": "Advanced Challenge: In a Power BI Premium environment, you must build a report aggregated over billions of rows stored in Azure Synapse Analytics using DirectQuery. You need to optimize query folding and minimize data latency while supporting dynamic time-based aggregations. Which combined approach best meets these requirements?",
+            "options": [
+                "Implement incremental refresh with partitioning in Power BI, use query parameters for time filters to enable query folding, and push aggregations to Synapse via Materialized Views.",
+                "Use Import mode with pre-aggregated tables exported daily from Synapse and cache results in Power BI.",
+                "Disable incremental refresh to prioritize real-time data, implement complex DAX measures for dynamic aggregation, and avoid query parameters.",
+                "Use composite models with live connection to Synapse and Import mode tables for historical data, but avoid query folding considerations."
+            ],
+            "correct_answer": "Implement incremental refresh with partitioning in Power BI, use query parameters for time filters to enable query folding, and push aggregations to Synapse via Materialized Views.",
+            "explanation": "This approach leverages best practices for handling very large datasets: incremental refresh with partitioning reduces refresh scope and data latency; query parameters ensure filter predicates pass to the source enabling query folding; pushing aggregations into Synapse materialized views minimizes data volume and processing client side. Import mode is impractical at this scale, and disabling incremental refresh or ignoring query folding would degrade performance."
+        }
+    ]
+}
