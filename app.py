@@ -198,7 +198,7 @@ if generate:
 
     with col1:
         st.metric(
-            "Career Track",
+            "Learning Track",
             career_track
         )
 
@@ -210,7 +210,7 @@ if generate:
 
     with col3:
         st.metric(
-            "Learning Style",
+            "Learning Format",
             learning_style
         )
 
