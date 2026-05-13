@@ -12,6 +12,13 @@ st.set_page_config(
     layout="wide"
 )
 
+st.sidebar.image(
+    "assets/logo.png",
+    width=260
+)
+
+st.sidebar.markdown("---")
+
 # -----------------------------------
 # Custom CSS
 # -----------------------------------
@@ -69,6 +76,18 @@ SSD DataPath
 
 </div>
 """, unsafe_allow_html=True)
+
+st.markdown("---")
+
+# -----------------------------------
+# Header
+# -----------------------------------
+
+st.title("💡 Learning Recommendations")
+
+st.markdown("""
+Personalize your learning journey with AI-powered recommendations.
+""")
 
 st.markdown("---")
 
@@ -170,22 +189,6 @@ if not is_valid:
     st.sidebar.warning(
         "Please complete all required selections."
     )
-
-# -----------------------------------
-# Main Section
-# -----------------------------------
-
-st.markdown(
-    '<div class="main-title">AI Learning Recommendation Platform</div>',
-    unsafe_allow_html=True
-)
-
-st.markdown(
-    '<div class="sub-text">Personalized learning roadmap generator for SSD data professionals.</div>',
-    unsafe_allow_html=True
-)
-
-st.markdown("")
 
 # -----------------------------------
 # Generate Results
@@ -296,5 +299,5 @@ if generate:
 st.markdown("---")
 
 st.caption(
-    "SSD DataPath • Learning Intelligence Platform"
+    "SSD DataPath • AI-Powered Learning Intelligence Platform"
 )

@@ -2,6 +2,8 @@ import streamlit as st
 import pandas as pd
 import json
 import random
+from datetime import datetime
+import os
 
 if "assessment_started" not in st.session_state:
     st.session_state.assessment_started = False
@@ -14,9 +16,76 @@ if "assessment_completed" not in st.session_state:
 # -----------------------------------
 
 st.set_page_config(
-    page_title="Skill Assessment",
+    page_title="SSD DataPath",
     layout="wide"
 )
+
+st.sidebar.image(
+    "assets/logo.png",
+    width=260
+)
+
+st.sidebar.markdown("---")
+
+# -----------------------------------
+# Custom CSS
+# -----------------------------------
+
+st.markdown("""
+<style>
+
+.block-container {
+    padding-top: 1.5rem;
+    padding-bottom: 2rem;
+}
+
+.main-title {
+    font-size: 42px;
+    font-weight: 700;
+    margin-bottom: 0px;
+}
+
+.sub-text {
+    font-size: 18px;
+    color: gray;
+    margin-top: 0px;
+}
+
+.logo-text {
+    font-size: 26px;
+    font-weight: bold;
+}
+
+section[data-testid="stSidebar"] {
+    width: 320px !important;
+    background-color: #f5f7fb;
+}
+            
+.main .block-container {
+    max-width: 1200px;
+}
+</style>
+""", unsafe_allow_html=True)
+
+# -----------------------------------
+# Header / Branding
+# -----------------------------------
+
+st.markdown("""
+<div style='display:flex; align-items:center; gap:12px;'>
+
+<div style='font-size:40px;'>
+📘
+</div>
+
+<div style='font-size:30px; font-weight:700;'>
+SSD DataPath
+</div>
+
+</div>
+""", unsafe_allow_html=True)
+
+st.markdown("---")
 
 # -----------------------------------
 # Header
@@ -107,6 +176,52 @@ if not st.session_state.get("assessment_started"):
     )
 
 # -----------------------------------
+# Save Assessment Result
+# -----------------------------------
+
+def save_assessment_result():
+
+    history_file = "data/assessment_history.csv"
+
+    result_data = pd.DataFrame([{
+        "timestamp": datetime.now(),
+        "learner_name": st.session_state.learner_name,
+        "learner_email": st.session_state.learner_email,
+        "learning_track": st.session_state.selected_track,
+        "skill": st.session_state.selected_skill,
+        "question_count": len(
+            st.session_state.assessment_questions
+        ),
+        "score": st.session_state.final_score,
+        "percentage": round(
+            (
+                st.session_state.final_score
+                / len(st.session_state.assessment_questions)
+            ) * 100,
+            2
+        )
+    }])
+
+    if os.path.exists(history_file):
+
+        existing_data = pd.read_csv(history_file)
+
+        updated_data = pd.concat(
+            [existing_data, result_data],
+            ignore_index=True
+        )
+
+    else:
+
+        updated_data = result_data
+
+    updated_data.to_csv(
+        history_file,
+        index=False
+    )
+
+
+# -----------------------------------
 # Generate Assessment
 # -----------------------------------
 
@@ -183,22 +298,27 @@ if (
 
     st.markdown("---")
 
-    col1, col2, col3 = st.columns(3)
+    with st.container(border=True):
 
-    with col1:
-        st.info(
-            f"📘 Learning Track: {st.session_state.selected_track}"
-        )
+        col1, col2, col3 = st.columns(3)
 
-    with col2:
-        st.info(
-            f"🛠 Skill: {st.session_state.selected_skill}"
-        )
-    
-    with col3:
-        st.info(
-            f"👤 Learner: {st.session_state.learner_name}"
-        )
+        with col1:
+            st.metric(
+                "Learning Track",
+                st.session_state.selected_track
+            )
+
+        with col2:
+            st.metric(
+                "Skill",
+                st.session_state.selected_skill
+            )
+
+        with col3:
+            st.metric(
+                "Learner",
+                st.session_state.learner_name
+            )
 
     st.subheader(
         f"Question {current_index + 1} of {len(questions)}"
@@ -208,9 +328,17 @@ if (
 
     st.progress(progress)
 
+    st.caption(
+        f"Progress: {current_index + 1} / {len(questions)} questions completed"
+    )
+
     st.markdown("")
 
-    st.markdown(f"**{current_question['question']}**")
+    with st.container(border=True):
+
+        st.markdown(
+            f"### {current_question['question']}"
+        )
 
     previous_answer = st.session_state.user_answers.get(
     current_index
@@ -247,7 +375,7 @@ if (
 
         if current_index > 0:
 
-            if st.button("Previous"):
+            if st.button("Previous", use_container_width=True):
 
                 st.session_state.current_question -= 1
 
@@ -261,7 +389,7 @@ if (
 
         if current_index < len(questions) - 1:
 
-            if st.button("Next"):
+            if st.button("Next", use_container_width=True):
 
                 st.session_state.current_question += 1
 
@@ -273,7 +401,7 @@ if (
 
     with col3:
 
-        if st.button("Finish Assessment"):
+        if st.button("Finish Assessment", type="primary", use_container_width=True):
 
             score = 0
 
@@ -305,6 +433,8 @@ if (
             st.session_state.assessment_results = results
 
             st.session_state.assessment_completed = True
+
+            save_assessment_result()
 
             st.rerun()
 
@@ -389,6 +519,34 @@ if st.session_state.get("assessment_completed"):
         2
     )
 
+    if percentage >= 80:
+
+        st.success(
+            "Excellent performance demonstrated."
+        )
+
+    elif percentage >= 60:
+
+        st.info(
+            "Good performance with some improvement opportunities."
+        )
+
+    else:
+
+        st.warning(
+            "Additional learning is recommended for this skill area."
+        )
+
+    if percentage < 60:
+
+        st.warning(
+            f"""
+            Recommended Action:
+            Explore additional learning resources for
+            {st.session_state.selected_skill}.
+            """
+        )
+
     col1, col2, col3 = st.columns(3)
 
     with col1:
@@ -465,3 +623,8 @@ if st.session_state.get("assessment_completed"):
 
     render_result_action_buttons("bottom")
 
+st.markdown("---")
+
+st.caption(
+    "SSD DataPath • AI-Powered Learning Intelligence Platform"
+)
