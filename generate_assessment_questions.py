@@ -24,10 +24,10 @@ df = pd.read_csv("data/assessment_sources.csv")
 # Generate Questions
 # -----------------------------------
 
-def generate_questions(skill, knowledge_text, difficulty="Advanced"):
+def generate_questions(skill,knowledge_text,question_count=20,difficulty="Advanced"):
 
     prompt = f"""
-    Generate 5 multiple choice assessment questions.
+    Generate {question_count} multiple choice assessment questions.
 
     Skill: {skill}
 
@@ -91,6 +91,7 @@ for _, row in df.iterrows():
         questions = generate_questions(
             skill,
             row["knowledge_text"],
+            question_count=20,
             difficulty="Advanced"
         )
 
