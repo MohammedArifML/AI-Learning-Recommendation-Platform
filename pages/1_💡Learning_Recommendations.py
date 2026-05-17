@@ -263,8 +263,6 @@ if generate:
             f"**Selected Skills:** {', '.join(selected_skills)}"
         )
 
-    st.write(inspect.getfile(recommend_courses))
-    st.write(inspect.signature(recommend_courses))
     recommended_courses = recommend_courses(
     career_track,
     selected_skills,
