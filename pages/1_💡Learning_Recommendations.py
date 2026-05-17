@@ -96,7 +96,7 @@ st.markdown("---")
 # -----------------------------------
 
 if "career_track" not in st.session_state:
-    st.session_state.career_track = "Data Engineering"
+    st.session_state.career_track = "Data Analysis"
 
 if "selected_skills" not in st.session_state:
     st.session_state.selected_skills = []
@@ -104,6 +104,11 @@ if "selected_skills" not in st.session_state:
 if "learning_style" not in st.session_state:
     st.session_state.learning_style = "Choose an option"
 
+if "selected_difficulty" not in st.session_state:
+    st.session_state.selected_difficulty = "All"
+
+if "selected_category" not in st.session_state:
+    st.session_state.selected_category = "All"
 
 # -----------------------------------
 # Sidebar
@@ -120,6 +125,7 @@ career_tracks = sorted(
 career_track = st.sidebar.selectbox(
     "Select Learning Track",
     career_tracks,
+    index=0,
     key="career_track"
 )
 
@@ -129,9 +135,11 @@ available_skills = sorted(
     ]["skill"].dropna().unique()
 )
 
+skill_options = available_skills
+
 selected_skills = st.sidebar.multiselect(
     "Upskill Areas",
-    available_skills,
+    skill_options,
     key="selected_skills"
 )
 
@@ -140,22 +148,51 @@ learning_styles = sorted(
 )
 
 learning_style_options = [
-    "Choose an option"
+    "All"
 ] + learning_styles
 
 learning_style = st.sidebar.selectbox(
     "Learning Format",
     learning_style_options,
+    index=0,
     key="learning_style"
+)
+
+difficulty_options = [
+    "All"
+] + sorted(
+    courses_df["difficulty_level"]
+    .dropna()
+    .unique()
+)
+
+selected_difficulty = st.sidebar.selectbox(
+    "Difficulty Level",
+    difficulty_options,
+    index=0,
+    key="selected_difficulty"
+)
+
+category_options = [
+    "All"
+] + sorted(
+    courses_df["platform_category"]
+    .dropna()
+    .unique()
+)
+
+selected_category = st.sidebar.selectbox(
+    "Platform Category",
+    category_options,
+    index=0,
+    key="selected_category"
 )
 
 # -----------------------------------
 # Validation
 # -----------------------------------
 
-is_valid = (
-    learning_style != "Choose an option"
-)
+is_valid = (len(selected_skills) > 0)
 
 # -----------------------------------
 # Buttons
@@ -172,23 +209,25 @@ with col2:
 
     if reset:
 
-        keys_to_clear = [
-        "career_track",
-        "selected_skills",
-        "learning_style"
-    ]
+        if reset:
 
-        for key in keys_to_clear:
-            if key in st.session_state:
-                del st.session_state[key]
+            keys_to_clear = [
+                "career_track",
+                "selected_skills",
+                "learning_style",
+                "selected_difficulty",
+                "selected_category"
+            ]
 
-        st.rerun()
+            for key in keys_to_clear:
+                if key in st.session_state:
+                    del st.session_state[key]
+
+            st.rerun()
 
 if not is_valid:
 
-    st.sidebar.warning(
-        "Please complete all required selections."
-    )
+    st.sidebar.warning("Please select at least one upskill area.")
 
 # -----------------------------------
 # Generate Results
@@ -225,10 +264,12 @@ if generate:
         )
 
     recommended_courses = recommend_courses(
-        career_track,
-        selected_skills,
-        learning_style
-    )
+    career_track,
+    selected_skills,
+    learning_style,
+    selected_difficulty,
+    selected_category
+)
 
     st.markdown("---")
 
@@ -263,20 +304,65 @@ if generate:
 
                     with col1:
 
-                        st.caption(f"🏢 Provider: {row['provider']}")
-                        st.write(f"**Skill:** {row['skill']}")
-                        st.write(f"**Learning Style:** {row['learning_style']}")
+                        with col1:
+
+                            st.caption(f"🏢 Provider: {row['provider']}")
+                            st.write(f"**Skill:** {row['skill']}")
+                            st.write(f"**Difficulty:** {row['difficulty_level']}")
+                            st.write(f"**Category:** {row['platform_category']}")
+                            st.write(f"**Learning Style:** {row['learning_style']}")
 
                     with col2:
 
                         duration = row['duration_hours']
 
                         if pd.notna(duration):
-                            st.write(f"**Duration:** {duration} Hours")
 
-                        badge = "🟢 Free" if row['is_free'] else "🔵 Paid"
+                            st.write(
+                                f"**Duration:** {duration} Hours"
+                            )
+
+                        estimated_weeks = row.get(
+                            "estimated_weeks"
+                        )
+
+                        if pd.notna(estimated_weeks):
+
+                            st.write(
+                                f"**Estimated Weeks:** {estimated_weeks}"
+                            )
+
+                        certification = row.get(
+                            "certification_related"
+                        )
+
+                        if str(certification).lower() == "yes":
+
+                            st.success(
+                                "🏅 Certification Related"
+                            )
+
+                        badge = (
+                            "🟢 Free"
+                            if row['is_free']
+                            else "🔵 Paid"
+                        )
 
                         st.markdown(badge)
+
+                    
+                    prerequisites = row.get(
+                        "prerequisites"
+                    )
+
+                    if (
+                        pd.notna(prerequisites)
+                        and str(prerequisites).strip() != ""
+                    ):
+
+                        st.warning(
+                            f"Prerequisites: {prerequisites}"
+                        )
 
                     st.markdown(f"""
                     <a href="{row['url']}" target="_blank">

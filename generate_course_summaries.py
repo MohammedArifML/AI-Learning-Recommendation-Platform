@@ -33,13 +33,22 @@ def generate_summary(row):
     Learning Track: {row['career_track']}
     Skill: {row['skill']}
     Learning Style: {row['learning_style']}
+    Difficulty Level: {row['difficulty_level']}
+    Platform Category: {row['platform_category']}
+    Tags: {row['tags']}
+    Prerequisites: {row['prerequisites']}
+    Estimated Weeks: {row['estimated_weeks']}
+    Certification Related: {row['certification_related']}
 
     Explain:
     - what the learner will learn
     - who the course is suitable for
-    - how it helps SSD data professionals
+    - how it helps SSD (Statistical Systems Department) data professionals
 
     Keep response under 80 words.
+    Focus on practical enterprise learning value.
+    Use concise professional language.
+    Avoid generic statements.
     """
 
     response = client.chat.completions.create(
@@ -62,14 +71,20 @@ def generate_recommendation_reason(row):
     Learning Track: {row['career_track']}
     Skill: {row['skill']}
     Learning Style: {row['learning_style']}
+    Difficulty Level: {row['difficulty_level']}
+    Platform Category: {row['platform_category']}
+    Tags: {row['tags']}
     Course Name: {row['course_name']}
 
     Explain:
     - why this course is valuable
     - who should take it
-    - how it benefits SSD professionals
+    - how it benefits SSD (Statistical Systems Department) professionals
 
     Keep response under 40 words.
+    Focus on practical enterprise learning value.
+    Use concise professional language.
+    Avoid generic statements.
     """
 
     response = client.chat.completions.create(
@@ -116,7 +131,7 @@ df["ai_summary"] = summaries
 df["ai_recommendation_reason"] = recommendation_reasons
 
 df.to_csv(
-    "data/courses_enriched.csv",
+    "data/courses.csv",
     index=False
 )
 
