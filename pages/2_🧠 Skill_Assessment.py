@@ -4,6 +4,7 @@ import json
 import random
 from datetime import datetime
 import os
+from data.test_users import TEST_USERS
 
 if "assessment_started" not in st.session_state:
     st.session_state.assessment_started = False
@@ -17,8 +18,13 @@ if "assessment_completed" not in st.session_state:
 
 st.set_page_config(
     page_title="SSD DataPath",
+    page_icon="🧭",
     layout="wide"
 )
+
+# -----------------------------------
+# Sidebar Branding
+# -----------------------------------
 
 st.sidebar.image(
     "assets/logo.png",
@@ -26,6 +32,37 @@ st.sidebar.image(
 )
 
 st.sidebar.markdown("---")
+
+st.sidebar.image(
+    "https://cdn-icons-png.flaticon.com/512/2103/2103633.png",
+    width=100
+)
+
+st.sidebar.title("SSD DataPath")
+
+st.sidebar.markdown("""
+AI-powered learning intelligence platform
+for SSD data professionals.
+""")
+
+st.sidebar.markdown("---")
+
+st.sidebar.success(
+    "Use the navigation menu to access platform modules."
+)
+
+# -----------------------------------
+# Load CSS
+# -----------------------------------
+
+def load_css():
+    with open("styles/government_theme.css") as f:
+        st.markdown(
+            f"<style>{f.read()}</style>",
+            unsafe_allow_html=True
+        )
+
+load_css()
 
 # -----------------------------------
 # Custom CSS
@@ -75,7 +112,7 @@ st.markdown("""
 <div style='display:flex; align-items:center; gap:12px;'>
 
 <div style='font-size:40px;'>
-📘
+🧭
 </div>
 
 <div style='font-size:30px; font-weight:700;'>
@@ -120,14 +157,13 @@ if not st.session_state.get("assessment_started"):
     # Learner Information
     # -----------------------------------
 
-    learner_name = st.text_input(
-        "Learner Name"
-    )
+    selected_user = st.selectbox("Select Learner",list(TEST_USERS.keys()))
 
-    learner_email = st.text_input(
-        "Email ID"
-    )
-    
+    learner_email = TEST_USERS[selected_user]
+
+    #learner_email = st.text_input("Email ID")
+    st.text_input("Email Address",value=learner_email,disabled=True)
+
     # -----------------------------------
     # Learning Track Selection
     # -----------------------------------
@@ -184,23 +220,43 @@ def save_assessment_result():
     history_file = "data/assessment_history.csv"
 
     result_data = pd.DataFrame([{
-        "timestamp": datetime.now(),
-        "learner_name": st.session_state.learner_name,
-        "learner_email": st.session_state.learner_email,
-        "learning_track": st.session_state.selected_track,
-        "skill": st.session_state.selected_skill,
-        "question_count": len(
-            st.session_state.assessment_questions
-        ),
-        "score": st.session_state.final_score,
-        "percentage": round(
+    "assessment_id": random.randint(100000, 999999),
+    "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+    "selected_user": st.session_state.selected_user,
+    "learner_email": st.session_state.learner_email,
+    "learning_track": st.session_state.selected_track,
+    "skill": st.session_state.selected_skill,
+    "question_count": len(
+        st.session_state.assessment_questions
+    ),
+    "score": st.session_state.final_score,
+    "percentage": round(
+        (
+            st.session_state.final_score
+            / len(st.session_state.assessment_questions)
+        ) * 100,
+        2
+    ),
+    "performance_band": (
+        "Excellent"
+        if (
             (
                 st.session_state.final_score
                 / len(st.session_state.assessment_questions)
-            ) * 100,
-            2
+            ) * 100
+        ) >= 80
+        else (
+            "Good"
+            if (
+                (
+                    st.session_state.final_score
+                    / len(st.session_state.assessment_questions)
+                ) * 100
+            ) >= 60
+            else "Needs Improvement"
         )
-    }])
+    )
+}])
 
     if os.path.exists(history_file):
 
@@ -227,7 +283,7 @@ def save_assessment_result():
 
 if start_test:
 
-    if not learner_name.strip():
+    if not selected_user.strip():
 
         st.error(
             "Please enter learner name."
@@ -271,7 +327,7 @@ if start_test:
 
         st.session_state.selected_skill = selected_skill
 
-        st.session_state.learner_name = learner_name
+        st.session_state.selected_user = selected_user
 
         st.session_state.learner_email = learner_email
         
@@ -317,7 +373,7 @@ if (
         with col3:
             st.metric(
                 "Learner",
-                st.session_state.learner_name
+                st.session_state.selected_user
             )
 
     st.subheader(
@@ -487,7 +543,7 @@ def render_result_action_buttons(position):
                 "final_score",
                 "selected_track",
                 "selected_skill",
-                "learner_name",
+                "selected_user",
                 "learner_email"
             ]
 
@@ -624,6 +680,10 @@ if st.session_state.get("assessment_completed"):
     render_result_action_buttons("bottom")
 
 st.markdown("---")
+
+# -----------------------------------
+# Footer
+# -----------------------------------
 
 st.caption(
     "SSD DataPath • AI-Powered Learning Intelligence Platform"

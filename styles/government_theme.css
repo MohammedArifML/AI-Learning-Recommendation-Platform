@@ -1,0 +1,50 @@
+/* Main app background */
+.stApp {
+    background-color: #f8f9fb;
+}
+
+/* Main headings */
+h1, h2, h3 {
+    color: #8A1538 !important;
+    font-weight: 700;
+}
+
+/* Sidebar */
+[data-testid="stSidebar"] {
+    background-color: #f3f4f6;
+}
+
+/* Buttons */
+.stButton > button {
+    background-color: #8A1538;
+    color: white;
+    border-radius: 8px;
+    border: none;
+    font-weight: 600;
+}
+
+.stButton > button:hover {
+    background-color: #6f102c;
+    color: white;
+}
+
+/* Metrics */
+[data-testid="stMetricValue"] {
+    color: #8A1538;
+    font-weight: bold;
+}
+
+/* Tabs */
+button[data-baseweb="tab"] {
+    font-weight: 600;
+}
+
+/* Cards/containers */
+.block-container {
+    padding-top: 2rem;
+}
+
+/* Input labels */
+label {
+    font-weight: 600 !important;
+}

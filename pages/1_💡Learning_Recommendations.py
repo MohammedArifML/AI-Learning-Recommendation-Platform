@@ -9,6 +9,7 @@ import inspect
 
 st.set_page_config(
     page_title="SSD DataPath",
+    page_icon="🧭",
     layout="wide"
 )
 
@@ -18,6 +19,19 @@ st.sidebar.image(
 )
 
 st.sidebar.markdown("---")
+
+# -----------------------------------
+# Load CSS
+# -----------------------------------
+
+def load_css():
+    with open("styles/government_theme.css") as f:
+        st.markdown(
+            f"<style>{f.read()}</style>",
+            unsafe_allow_html=True
+        )
+
+load_css()
 
 # -----------------------------------
 # Custom CSS
@@ -67,7 +81,7 @@ st.markdown("""
 <div style='display:flex; align-items:center; gap:12px;'>
 
 <div style='font-size:40px;'>
-📘
+🧭
 </div>
 
 <div style='font-size:30px; font-weight:700;'>
@@ -383,6 +397,10 @@ if generate:
                     st.markdown("")
 
 st.markdown("---")
+
+# -----------------------------------
+# Footer
+# -----------------------------------
 
 st.caption(
     "SSD DataPath • AI-Powered Learning Intelligence Platform"
