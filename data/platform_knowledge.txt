@@ -1,0 +1,36 @@
+SSD ALIP (AI-Powered Learning Intelligence Platform) is an AI-powered workforce learning and assessment platform designed for SSD data professionals.
+
+The platform provides:
+- AI-powered learning recommendations
+- AI-generated technical skill assessments
+- Learner assessment history tracking
+- Workforce learning analytics
+- Personalized learning workflows
+- Enterprise skill intelligence dashboards
+
+Supported learning domains include:
+- Azure
+- Databricks
+- Informatica
+- SQL
+- Python
+- Power BI
+- Data Engineering
+- Data Analysis
+- Cloud Technologies
+- AI Engineering
+
+The platform supports:
+- Personalized course recommendations
+- AI-generated assessment questions
+- Skill competency evaluation
+- Performance scoring
+- Workforce learning analytics
+- Historical assessment tracking
+
+Performance bands include:
+- Excellent
+- Good
+- Needs Improvement
+
+The platform is currently a pilot proof-of-concept application developed to explore AI-assisted workforce learning modernization within SSD.

@@ -1,0 +1,17 @@
+
+SSD ALIP Platform Metadata
+
+Available Learning Tracks:
+Data Analysis, Data Engineering, Data Security, Microsoft Azure, OCI, Oracle Apex
+
+Supported Skills:
+Azure, Data Security, Databricks, Informatica IDMC, OCI Architecture, OCI Autonomous Database, OCI Core Services, Oracle AI & Analytics, Oracle APEX Development, Oracle BI, Power BI, Python for Data Engineering, SQL, SQL & PL/SQL, SQL for Data Analysis, SQL for Data Science, Spark / PySpark, Statistical Analysis
+
+Platform Categories:
+AI, Analytics, Cloud, Data Engineering, Programming, Security, Statistics
+
+Learning Providers:
+Coursera, Coursera (Stanford University), Coursera (University of Michigan), DataCamp, Databricks, Informatica, Microsoft, National Planning Council, Oracle, Udemy, YouTube
+
+Total Courses Available:
+51

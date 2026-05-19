@@ -1,0 +1,3453 @@
+# SSD ALIP Knowledge Corpus
+
+## 1. Platform Overview
+The SSD ALIP (AI-Powered Learning Intelligence Platform) is an advanced workforce learning and assessment platform tailored for SSD data professionals. It leverages artificial intelligence to provide personalized learning experiences, technical skill assessments, and comprehensive analytics, thereby modernizing workforce learning and development.
+
+## 2. Business Purpose
+The primary objective of SSD ALIP is to enhance the skills and competencies of data professionals within the organization. By utilizing AI-driven recommendations and assessments, the platform aims to streamline the learning process, ensure skill alignment with business needs, and foster a culture of continuous learning.
+
+## 3. AI Features
+- **AI-Powered Learning Recommendations**: Personalized course suggestions based on learner profiles and skill gaps.
+- **AI-Generated Technical Skill Assessments**: Automated generation of assessment questions tailored to specific skills.
+- **Learner Assessment History Tracking**: Comprehensive tracking of learner performance over time.
+- **Workforce Learning Analytics**: Insights into learning trends, skill acquisition, and workforce readiness.
+- **Personalized Learning Workflows**: Customized learning paths that adapt to individual progress and preferences.
+- **Enterprise Skill Intelligence Dashboards**: Visual dashboards that provide an overview of skill levels across the organization.
+
+## 4. Technical Architecture
+The SSD ALIP is built on a modular architecture that separates the logic layer from the presentation layer. This architecture supports AI-powered recommendation workflows and an assessment engine, ensuring scalability and maintainability.
+
+## 5. Technology Stack
+- **Frontend**: Streamlit
+- **Backend**: Python
+- **AI/LLM**: OpenAI gpt-4.1-mini
+- **Data Processing**: Pandas
+- **Storage**: CSV and JSON persistence
+- **Deployment**: Streamlit Community Cloud
+
+## 6. Learning Tracks
+The platform offers various learning tracks, including:
+- Data Analysis
+- Data Engineering
+- Data Security
+- Microsoft Azure
+- OCI (Oracle Cloud Infrastructure)
+- Oracle Apex
+
+## 7. Skills Supported
+The SSD ALIP supports a wide range of skills, including:
+- Azure
+- Data Security
+- Databricks
+- Informatica IDMC
+- OCI Architecture
+- OCI Autonomous Database
+- SQL
+- Python for Data Engineering
+- Power BI
+- Statistical Analysis
+
+## 8. Course Catalog
+The platform features a comprehensive course catalog with a total of 51 courses covering various skills and technologies relevant to data professionals.
+
+### Course Providers
+- Coursera
+- DataCamp
+- Databricks
+- Informatica
+- Microsoft
+- Oracle
+- Udemy
+- YouTube
+
+### Course URLs
+- [Coursera](https://www.coursera.org)
+- [DataCamp](https://www.datacamp.com)
+- [Databricks](https://www.databricks.com)
+- [Informatica](https://www.informatica.com)
+- [Microsoft](https://www.microsoft.com)
+- [Oracle](https://www.oracle.com)
+- [Udemy](https://www.udemy.com)
+- [YouTube](https://www.youtube.com)
+
+## 9. Course Recommendations
+The platform provides personalized course recommendations based on the learner's assessment results, skills gaps, and learning preferences.
+
+## 10. Course Providers
+The platform collaborates with various reputable course providers to ensure high-quality learning materials and resources.
+
+## 11. Course URLs
+A detailed list of course URLs is provided in the Course Catalog section.
+
+## 12. Analytics Overview
+The analytics module of SSD ALIP offers insights into learner performance, skill acquisition trends, and overall workforce readiness. Key metrics include:
+- Total Assessments: 2
+- Unique Learners: 2
+- Average Assessment Score: 20.0%
+- Top Assessed Skills: Oracle BI, Python for Data Engineering
+
+## 13. Assessment Engine
+The assessment engine generates AI-driven technical skill assessments tailored to individual learning paths. It tracks learner performance and provides insights into skill proficiency.
+
+## 14. Sample Assessment Questions
+The platform includes a variety of sample assessment questions across different skills, such as SQL, Informatica IDMC, Databricks, and more. Each question is designed to evaluate the learner's understanding and application of key concepts.
+
+## 15. Workforce Learning Insights
+The platform provides insights into workforce learning patterns, enabling organizations to identify skill gaps, track progress, and align training initiatives with business objectives.
+
+## 16. Future Roadmap
+The future roadmap for SSD ALIP includes:
+- Expanding learning tracks and course offerings.
+- Enhancing AI capabilities for more personalized learning experiences.
+- Integrating advanced analytics for deeper insights into workforce learning trends.
+
+### Learning Path
+- **Learning Path 1 - Foundations**: Focus on foundational skills such as SQL and Python.
+
+## 17. Platform Modules
+The SSD ALIP consists of several modules, including:
+- Learning Management Module
+- Assessment Module
+- Analytics Module
+- User Management Module
+
+## 18. User Workflows
+User workflows are designed to facilitate seamless navigation through the platform, including:
+1. User Registration and Profile Setup
+2. Course Enrollment and Learning Path Selection
+3. Assessment Participation and Performance Tracking
+4. Accessing Analytics and Insights
+
+## 19. Governance and AI Vision
+The governance framework for SSD ALIP ensures compliance with data security standards and ethical AI practices. The vision for AI integration focuses on enhancing learning experiences, improving assessment accuracy, and fostering a culture of continuous improvement in workforce skills.
+
+---
+
+This knowledge corpus serves as a comprehensive guide for the SSD ALIP platform, enabling the AI assistant to effectively respond to queries related to courses, analytics, AI features, platform functionalities, roadmap inquiries, and learning paths.
+
+==================================================
+FULL COURSE INVENTORY
+==================================================
+
+
+
+==================================================
+COMPLETE COURSE CATALOG
+==================================================
+
+
+
+Course #1
+
+course_id:
+DE-01
+
+career_track:
+Data Engineering
+
+skill:
+SQL
+
+course_name:
+Comprehensive SQL Course For Data Professionals
+
+provider:
+Udemy
+
+learning_style:
+Video Courses
+
+difficulty_level:
+Beginner
+
+duration_hours:
+14.0
+
+is_free:
+False
+
+estimated_weeks:
+4.0
+
+certification_related:
+No
+
+tags:
+data-engineering,sql,beginner,udemy,video
+
+prerequisites:
+N/A
+
+platform_category:
+Analytics
+
+url:
+https://www.udemy.com/course/comprehensive-sql-course-hands-on-project-coding-exercises/?couponCode=PMNVD3025
+
+ai_summary:
+The Comprehensive SQL Course for Data Professionals on Udemy equips learners with foundational SQL skills essential for querying and managing enterprise databases. Ideal for beginners and data engineers, it strengthens data extraction, transformation, and analysis capabilities. SSD data professionals will benefit by enhancing their ability to efficiently handle large datasets, streamline data workflows, and support robust statistical reporting within the organization’s analytics infrastructure.
+
+assessment_enabled:
+Yes
+
+assessment_source_url:
+https://docs.oracle.com/en/database/oracle/oracle-database/19/sqlrf/index.html
+
+assessment_knowledge_text:
+SQL fundamentals, relational databases, SELECT INSERT UPDATE DELETE, joins (inner outer), normalization, indexes, constraints, aggregation (GROUP BY HAVING), subqueries, functions, transactions, ACID properties, data types [1](https://docs.oracle.com/en/database/oracle/oracle-database/19/sqlrf/index.html)
+
+ai_recommendation_reason:
+This beginner SQL course offers SSD professionals practical, enterprise-relevant skills in data querying and management, enhancing data engineering efficiency through targeted video instruction ideal for foundational competence in analytics environments.
+
+--------------------------------------------------
+
+
+Course #2
+
+course_id:
+DE-02
+
+career_track:
+Data Engineering
+
+skill:
+SQL
+
+course_name:
+The Complete SQL Bootcamp: Go from Zero to Hero
+
+provider:
+Udemy
+
+learning_style:
+Video Courses
+
+difficulty_level:
+Intermediate
+
+duration_hours:
+9.0
+
+is_free:
+False
+
+estimated_weeks:
+3.0
+
+certification_related:
+No
+
+tags:
+data-engineering,sql,intermediate,udemy,bootcamp
+
+prerequisites:
+N/A
+
+platform_category:
+Analytics
+
+url:
+https://www.udemy.com/course/the-complete-sql-bootcamp/?couponCode=PMNVD3025
+
+ai_summary:
+The Complete SQL Bootcamp equips learners with intermediate SQL skills essential for complex data querying, manipulation, and database management. Ideal for data engineers and analysts seeking hands-on experience, the course enhances proficiency in managing large datasets and optimizing queries. SSD data professionals benefit by improving data pipeline efficiency and ensuring accurate statistical data extraction, directly supporting robust data-driven decision-making within enterprise environments.
+
+assessment_enabled:
+Yes
+
+assessment_source_url:
+https://docs.oracle.com/en/database/oracle/oracle-database/19/sqlrf/index.html
+
+assessment_knowledge_text:
+SQL fundamentals, relational databases, SELECT INSERT UPDATE DELETE, joins (inner outer), normalization, indexes, constraints, aggregation (GROUP BY HAVING), subqueries, functions, transactions, ACID properties, data types [1](https://docs.oracle.com/en/database/oracle/oracle-database/19/sqlrf/index.html)
+
+ai_recommendation_reason:
+"The Complete SQL Bootcamp equips intermediate data engineers with advanced SQL skills through practical, analytics-focused videos, enhancing SSD professionals' ability to efficiently manage and analyze statistical data for enterprise decision-making."
+
+--------------------------------------------------
+
+
+Course #3
+
+course_id:
+DE-03
+
+career_track:
+Data Engineering
+
+skill:
+SQL
+
+course_name:
+SQL Documentation
+
+provider:
+Oracle
+
+learning_style:
+Documentation
+
+difficulty_level:
+Beginner
+
+duration_hours:
+20.0
+
+is_free:
+True
+
+estimated_weeks:
+5.0
+
+certification_related:
+No
+
+tags:
+data-engineering,sql,oracle,documentation,beginner
+
+prerequisites:
+N/A
+
+platform_category:
+Analytics
+
+url:
+https://docs.oracle.com/en/database/oracle/oracle-database/19/sqlrf/index.html
+
+ai_summary:
+Oracle's SQL Documentation course equips beginners with foundational SQL skills essential for efficient data querying and management. Ideal for aspiring data engineers and analytics professionals, this 5-week program emphasizes practical application within enterprise environments. SSD data professionals benefit by enhancing their ability to document, maintain, and optimize SQL workflows, thereby improving data accuracy and operational efficiency in complex statistical systems.
+
+assessment_enabled:
+Yes
+
+assessment_source_url:
+https://docs.oracle.com/en/database/oracle/oracle-database/19/sqlrf/index.html
+
+assessment_knowledge_text:
+SQL fundamentals, relational databases, SELECT INSERT UPDATE DELETE, joins (inner outer), normalization, indexes, constraints, aggregation (GROUP BY HAVING), subqueries, functions, transactions, ACID properties, data types [1](https://docs.oracle.com/en/database/oracle/oracle-database/19/sqlrf/index.html)
+
+ai_recommendation_reason:
+This beginner SQL Documentation course equips SSD professionals with Oracle-specific query skills, enhancing data pipeline accuracy and efficiency. Ideal for data engineers seeking foundational expertise, it strengthens analytical workflows critical to enterprise statistical system operations.
+
+--------------------------------------------------
+
+
+Course #4
+
+course_id:
+DE-04
+
+career_track:
+Data Engineering
+
+skill:
+Informatica IDMC
+
+course_name:
+Informatica Documentation
+
+provider:
+Informatica
+
+learning_style:
+Documentation
+
+difficulty_level:
+Beginner
+
+duration_hours:
+20.0
+
+is_free:
+True
+
+estimated_weeks:
+5.0
+
+certification_related:
+No
+
+tags:
+data-engineering,informatica,idmc,documentation,beginner
+
+prerequisites:
+N/A
+
+platform_category:
+Cloud
+
+url:
+https://informaticadocs-prod-65.adobecqms.net/
+
+ai_summary:
+The Informatica Documentation course equips beginners with essential skills to navigate and utilize Informatica IDMC in cloud-based data engineering. Ideal for SSD data professionals seeking hands-on understanding of data integration documentation, the course enhances accuracy and efficiency in managing complex data workflows. Over five weeks, learners gain practical expertise vital for maintaining rigorous documentation standards, directly supporting SSD’s operational integrity and data governance.
+
+assessment_enabled:
+Yes
+
+assessment_source_url:
+https://docs.informatica.com/
+
+assessment_knowledge_text:
+ETL pipelines, cloud data integration, mappings, transformations, taskflows, connectors, metadata management, data governance, orchestration, data quality, ingestion, monitoring, IICS architecture, CLAIRE AI [2](https://docs.informatica.com/integration-cloud/cloud-data-integration/current-version/introduction/informatica-resources/informatica-documentation.html)
+
+ai_recommendation_reason:
+This beginner course on Informatica IDMC documentation equips SSD professionals with essential cloud-based data engineering skills, enhancing enterprise data integration accuracy and efficiency, critical for maintaining robust statistical systems and streamlined workflows.
+
+--------------------------------------------------
+
+
+Course #5
+
+course_id:
+DE-05
+
+career_track:
+Data Engineering
+
+skill:
+Informatica IDMC
+
+course_name:
+Informatica Cloud (IICS) - The Complete Guide 2025 Edition
+
+provider:
+Udemy
+
+learning_style:
+Video Courses
+
+difficulty_level:
+Intermediate
+
+duration_hours:
+10.0
+
+is_free:
+False
+
+estimated_weeks:
+3.0
+
+certification_related:
+No
+
+tags:
+data-engineering,informatica,idmc,udemy,intermediate
+
+prerequisites:
+N/A
+
+platform_category:
+Cloud
+
+url:
+https://www.udemy.com/course/informatica-cloud-iics-the-complete-guide-2023-edition/?couponCode=PMNVD3025
+
+ai_summary:
+This intermediate course equips learners with hands-on expertise in Informatica Cloud (IICS) for data integration and management. Ideal for data engineers and SSD professionals, it enhances skills in cloud-based ETL processes, automation, and real-time data workflows. By mastering IICS, SSD teams can streamline data pipelines, improve data quality, and accelerate analytics delivery within enterprise environments, driving more efficient and scalable statistical system operations.
+
+assessment_enabled:
+Yes
+
+assessment_source_url:
+https://docs.informatica.com/
+
+assessment_knowledge_text:
+ETL pipelines, cloud data integration, mappings, transformations, taskflows, connectors, metadata management, data governance, orchestration, data quality, ingestion, monitoring, IICS architecture, CLAIRE AI [2](https://docs.informatica.com/integration-cloud/cloud-data-integration/current-version/introduction/informatica-resources/informatica-documentation.html)
+
+ai_recommendation_reason:
+This intermediate video course delivers in-depth Informatica IDMC skills essential for cloud-based data engineering. Ideal for SSD professionals, it enhances enterprise data integration and management, driving efficient, scalable statistical data workflows critical to organizational success.
+
+--------------------------------------------------
+
+
+Course #6
+
+course_id:
+DE-06
+
+career_track:
+Data Engineering
+
+skill:
+Informatica IDMC
+
+course_name:
+Informatica Support
+
+provider:
+Informatica
+
+learning_style:
+Video Courses
+
+difficulty_level:
+Advanced
+
+duration_hours:
+20.0
+
+is_free:
+True
+
+estimated_weeks:
+5.0
+
+certification_related:
+No
+
+tags:
+data-engineering,informatica,idmc,advanced,support
+
+prerequisites:
+Informatica IDMC Fundamentals
+
+platform_category:
+Cloud
+
+url:
+https://www.youtube.com/watch?v=u-PLIYsUYDo&list=PLmi6HWWEAjKoy9cjvhFQwgpCFTUq0PdQ0
+
+ai_summary:
+This advanced Informatica Support course deepens expertise in Informatica IDMC for complex cloud-based data engineering tasks. Ideal for data professionals with IDMC fundamentals aiming to optimize enterprise data workflows and troubleshoot integration issues. It equips SSD analysts with critical skills to maintain system reliability, enhance data pipeline performance, and support scalable statistical data solutions effectively over a 5-week period.
+
+assessment_enabled:
+Yes
+
+assessment_source_url:
+https://docs.informatica.com/
+
+assessment_knowledge_text:
+ETL pipelines, cloud data integration, mappings, transformations, taskflows, connectors, metadata management, data governance, orchestration, data quality, ingestion, monitoring, IICS architecture, CLAIRE AI [2](https://docs.informatica.com/integration-cloud/cloud-data-integration/current-version/introduction/informatica-resources/informatica-documentation.html)
+
+ai_recommendation_reason:
+Informatica Support enhances advanced IDMC skills essential for SSD professionals managing cloud data pipelines, improving troubleshooting efficiency and enterprise data reliability. Ideal for data engineers seeking specialized support expertise in complex, large-scale environments.
+
+--------------------------------------------------
+
+
+Course #7
+
+course_id:
+DE-07
+
+career_track:
+Data Engineering
+
+skill:
+Databricks
+
+course_name:
+Azure Databricks documentation
+
+provider:
+Microsoft
+
+learning_style:
+Documentation
+
+difficulty_level:
+Beginner
+
+duration_hours:
+20.0
+
+is_free:
+True
+
+estimated_weeks:
+5.0
+
+certification_related:
+No
+
+tags:
+data-engineering,databricks,azure,microsoft,documentation
+
+prerequisites:
+N/A
+
+platform_category:
+Data Engineering
+
+url:
+https://learn.microsoft.com/en-us/azure/databricks/
+
+ai_summary:
+This beginner-level course offers comprehensive guidance on Azure Databricks, enabling learners to efficiently manage and process big data. Ideal for data engineers and analysts entering the Databricks environment, it equips SSD professionals with practical skills for scalable data pipeline development, enhancing data integration and analytics workflows within enterprise systems. Through Microsoft’s documentation, learners gain hands-on knowledge critical for optimizing data engineering tasks in Azure cloud infrastructure.
+
+assessment_enabled:
+Yes
+
+assessment_source_url:
+https://learn.microsoft.com/en-us/azure/databricks/
+
+assessment_knowledge_text:
+lakehouse architecture, Apache Spark, notebooks, clusters, data engineering, Delta Lake, data pipelines, workspace, jobs, ML lifecycle, Unity Catalog, data governance, scalable analytics [3](https://learn.microsoft.com/en-us/azure/databricks/)
+
+ai_recommendation_reason:
+This beginner-friendly Azure Databricks documentation course equips SSD professionals with practical, cloud-based data engineering skills, enhancing efficient big data processing and analytics on Microsoft Azure, vital for enterprise-scale statistical system optimization and innovation.
+
+--------------------------------------------------
+
+
+Course #8
+
+course_id:
+DE-08
+
+career_track:
+Data Engineering
+
+skill:
+Databricks
+
+course_name:
+Azure Databricks & Spark for Data Engineers
+
+provider:
+Udemy
+
+learning_style:
+Video Courses
+
+difficulty_level:
+Intermediate
+
+duration_hours:
+35.0
+
+is_free:
+False
+
+estimated_weeks:
+9.0
+
+certification_related:
+Yes
+
+tags:
+data-engineering,databricks,spark,udemy,intermediate
+
+prerequisites:
+Azure Fundamentals
+
+platform_category:
+Data Engineering
+
+url:
+https://www.udemy.com/course/azure-databricks-spark-core-for-data-engineers/?couponCode=PMNVD3025
+
+ai_summary:
+Azure Databricks & Spark for Data Engineers equips learners with hands-on skills in scalable data processing, pipeline development, and Spark optimization on Azure. Ideal for intermediate data engineers with Azure Fundamentals, the course enhances proficiency in managing big data workflows. SSD data professionals gain practical expertise to streamline data integration, improve analytics performance, and support enterprise-level statistical system operations efficiently. Certification validates applied competence in modern data engineering.
+
+assessment_enabled:
+Yes
+
+assessment_source_url:
+https://learn.microsoft.com/en-us/azure/databricks/
+
+assessment_knowledge_text:
+lakehouse architecture, Apache Spark, notebooks, clusters, data engineering, Delta Lake, data pipelines, workspace, jobs, ML lifecycle, Unity Catalog, data governance, scalable analytics [3](https://learn.microsoft.com/en-us/azure/databricks/)
+
+ai_recommendation_reason:
+This intermediate course equips SSD professionals with hands-on Azure Databricks and Spark skills, enhancing data pipeline efficiency and scalability critical for enterprise-level statistical data engineering projects. Ideal for data engineers seeking practical, cloud-based big data solutions.
+
+--------------------------------------------------
+
+
+Course #9
+
+course_id:
+DE-09
+
+career_track:
+Data Engineering
+
+skill:
+Databricks
+
+course_name:
+Databricks Architecture
+
+provider:
+YouTube
+
+learning_style:
+Video Courses
+
+difficulty_level:
+Beginner
+
+duration_hours:
+40.0
+
+is_free:
+True
+
+estimated_weeks:
+10.0
+
+certification_related:
+No
+
+tags:
+data-engineering,databricks,architecture,youtube,beginner
+
+prerequisites:
+N/A
+
+platform_category:
+Data Engineering
+
+url:
+https://www.youtube.com/watch?v=4JP0XqsjwCI&list=PLgPb8HXOGtsQeiFz1y9dcLuXjRh8teQtw
+
+ai_summary:
+Databricks Architecture offers beginner data engineers practical insights into the platform’s core components and workflow, enabling efficient data pipeline design. Ideal for SSD data professionals seeking to optimize large-scale data processing and integration, this course enhances skills in scalable, collaborative analytics using Databricks. Over 10 weeks, learners gain actionable knowledge to improve data reliability and performance within enterprise environments.
+
+assessment_enabled:
+Yes
+
+assessment_source_url:
+https://learn.microsoft.com/en-us/azure/databricks/
+
+assessment_knowledge_text:
+lakehouse architecture, Apache Spark, notebooks, clusters, data engineering, Delta Lake, data pipelines, workspace, jobs, ML lifecycle, Unity Catalog, data governance, scalable analytics [3](https://learn.microsoft.com/en-us/azure/databricks/)
+
+ai_recommendation_reason:
+This beginner Databricks Architecture course delivers practical insights into scalable data solutions, ideal for SSD professionals seeking efficient platform integration and optimized data workflows within enterprise environments.
+
+--------------------------------------------------
+
+
+Course #10
+
+course_id:
+DE-10
+
+career_track:
+Data Engineering
+
+skill:
+Databricks
+
+course_name:
+Microsoft Certified: Azure Databricks Data Engineer Associate (beta)
+
+provider:
+Microsoft
+
+learning_style:
+Certification
+
+difficulty_level:
+Advanced
+
+duration_hours:
+23.0
+
+is_free:
+True
+
+estimated_weeks:
+6.0
+
+certification_related:
+Yes
+
+tags:
+data-engineering,databricks,azure,certification,advanced
+
+prerequisites:
+Azure Fundamentals
+
+platform_category:
+Data Engineering
+
+url:
+https://learn.microsoft.com/en-us/credentials/certifications/implementing-data-engineering-solutions-using-azure-databricks/?practice-assessment-type=certification
+
+ai_summary:
+This advanced certification course equips data engineers with expertise in Azure Databricks for scalable data processing, optimized ETL pipelines, and real-time analytics. Ideal for experienced Azure professionals aiming to master Databricks integration in enterprise environments. SSD data professionals will enhance their capabilities in building robust, efficient data workflows, improving data-driven decision-making and operational efficiency across statistical systems. Completion validates skills critical for modern, cloud-based data engineering roles.
+
+assessment_enabled:
+Yes
+
+assessment_source_url:
+https://learn.microsoft.com/en-us/azure/databricks/
+
+assessment_knowledge_text:
+lakehouse architecture, Apache Spark, notebooks, clusters, data engineering, Delta Lake, data pipelines, workspace, jobs, ML lifecycle, Unity Catalog, data governance, scalable analytics [3](https://learn.microsoft.com/en-us/azure/databricks/)
+
+ai_recommendation_reason:
+This advanced certification course equips SSD professionals with expert Azure Databricks skills, enabling efficient data pipeline development and scalable analytics, directly enhancing enterprise data engineering capabilities and accelerating cloud integration projects.
+
+--------------------------------------------------
+
+
+Course #11
+
+course_id:
+DE-11
+
+career_track:
+Data Engineering
+
+skill:
+Python for Data Engineering
+
+course_name:
+Python for Everybody Specialization
+
+provider:
+Coursera (University of Michigan)
+
+learning_style:
+Video Courses
+
+difficulty_level:
+Intermediate
+
+duration_hours:
+80.0
+
+is_free:
+False
+
+estimated_weeks:
+20.0
+
+certification_related:
+No
+
+tags:
+data-engineering,python,coursera,intermediate,university
+
+prerequisites:
+N/A
+
+platform_category:
+Programming
+
+url:
+https://www.coursera.org/specializations/python
+
+ai_summary:
+The Python for Everybody Specialization equips learners with intermediate Python skills tailored for data engineering tasks, including data manipulation, APIs, and databases. Ideal for data professionals aiming to enhance automation and pipeline development, it strengthens practical coding proficiency essential for enterprise data workflows. SSD data professionals will benefit by streamlining data ingestion and processing, improving system efficiency and scalability in statistical data management environments.
+
+assessment_enabled:
+Yes
+
+assessment_source_url:
+https://docs.python.org/
+
+assessment_knowledge_text:
+python syntax, data structures, loops, functions, OOP, file handling, libraries (pandas numpy), scripting, APIs, automation, data processing, error handling, packages, virtual environments [4](https://docs.python.org/)
+
+ai_recommendation_reason:
+"Python for Everybody Specialization" equips SSD professionals with intermediate Python skills tailored for data engineering, enhancing data pipeline efficiency and integration. Ideal for practitioners seeking robust, university-backed programming expertise to optimize statistical system workflows.
+
+--------------------------------------------------
+
+
+Course #12
+
+course_id:
+DE-12
+
+career_track:
+Data Engineering
+
+skill:
+Python for Data Engineering
+
+course_name:
+Complete 2026 Python Bootcamp: Learn Python from Scratch
+
+provider:
+Udemy
+
+learning_style:
+Video Courses
+
+difficulty_level:
+Intermediate
+
+duration_hours:
+18.0
+
+is_free:
+False
+
+estimated_weeks:
+5.0
+
+certification_related:
+No
+
+tags:
+data-engineering,python,udemy,intermediate,bootcamp
+
+prerequisites:
+N/A
+
+platform_category:
+Programming
+
+url:
+https://www.udemy.com/course/codewithharry-python/?couponCode=PMNVD3025
+
+ai_summary:
+The Complete 2026 Python Bootcamp equips learners with intermediate Python skills tailored for data engineering tasks, including data manipulation, automation, and pipeline development. Ideal for SSD data professionals seeking to enhance coding efficiency and streamline data workflows. This Udemy video course delivers practical, hands-on training to optimize data processing and integration within enterprise systems, accelerating project delivery and improving data reliability across statistical operations.
+
+assessment_enabled:
+Yes
+
+assessment_source_url:
+https://docs.python.org/
+
+assessment_knowledge_text:
+python syntax, data structures, loops, functions, OOP, file handling, libraries (pandas numpy), scripting, APIs, automation, data processing, error handling, packages, virtual environments [4](https://docs.python.org/)
+
+ai_recommendation_reason:
+This intermediate Python bootcamp equips SSD professionals with data engineering skills to streamline ETL pipelines and automate workflows, enhancing data reliability and operational efficiency in enterprise environments. Ideal for data engineers seeking practical, coding-focused expertise.
+
+--------------------------------------------------
+
+
+Course #13
+
+course_id:
+DE-13
+
+career_track:
+Data Engineering
+
+skill:
+Spark / PySpark
+
+course_name:
+Databricks | Spark: Learning Series
+
+provider:
+YouTube
+
+learning_style:
+Video Courses
+
+difficulty_level:
+Intermediate
+
+duration_hours:
+40.0
+
+is_free:
+True
+
+estimated_weeks:
+10.0
+
+certification_related:
+No
+
+tags:
+data-engineering,pyspark,databricks,youtube,intermediate
+
+prerequisites:
+Databricks Fundamentals
+
+platform_category:
+Data Engineering
+
+url:
+https://www.youtube.com/watch?v=4JP0XqsjwCI&list=PLgPb8HXOGtsQeiFz1y9dcLuXjRh8teQtw
+
+ai_summary:
+The Databricks | Spark: Learning Series offers intermediate training in Spark and PySpark for data engineers. Suitable for professionals with Databricks fundamentals, it deepens skills in scalable data processing and optimized pipeline development. SSD data professionals will gain practical expertise in managing large datasets and improving data workflows, enhancing analytical efficiency and enterprise data solutions. This 10-week video course delivers focused, hands-on learning aligned with real-world data engineering challenges.
+
+assessment_enabled:
+Yes
+
+assessment_source_url:
+https://spark.apache.org/documentation.html
+
+assessment_knowledge_text:
+distributed computing, RDD, DataFrame, SparkSession, transformations, actions, lazy evaluation, Spark SQL, PySpark API, MLlib, streaming, cluster execution, parallel processing [5](https://spark.apache.org/documentation.html)
+
+ai_recommendation_reason:
+This intermediate Databricks Spark series offers SSD professionals practical PySpark skills for scalable data pipelines, enhancing enterprise analytics and processing efficiency through hands-on video learning tailored to data engineering challenges.
+
+--------------------------------------------------
+
+
+Course #14
+
+course_id:
+DE-14
+
+career_track:
+Data Engineering
+
+skill:
+SQL for Data Science
+
+course_name:
+Databases and SQL for Data Science with Python
+
+provider:
+Coursera
+
+learning_style:
+Video Courses
+
+difficulty_level:
+Intermediate
+
+duration_hours:
+20.0
+
+is_free:
+False
+
+estimated_weeks:
+5.0
+
+certification_related:
+No
+
+tags:
+data-engineering,sql,data-science,coursera,intermediate
+
+prerequisites:
+N/A
+
+platform_category:
+Data Engineering
+
+url:
+https://www.coursera.org/learn/sql-data-science
+
+ai_summary:
+This intermediate course teaches SQL querying, database design, and Python integration for data science. Ideal for data professionals seeking practical skills in managing and analyzing large datasets, it enhances SSD teams' ability to efficiently extract actionable insights from complex data. Hands-on video modules build expertise in enterprise-level data engineering workflows, improving data-driven decision-making and operational efficiency.
+
+assessment_enabled:
+Yes
+
+assessment_source_url:
+https://docs.oracle.com/en/database/oracle/oracle-database/19/sqlrf/index.html
+
+assessment_knowledge_text:
+data analysis queries, joins, aggregations, window functions, ranking, filtering, data cleaning, feature extraction, subqueries, analytical functions, dataset preparation [1](https://docs.oracle.com/en/database/oracle/oracle-database/19/sqlrf/index.html)
+
+ai_recommendation_reason:
+This course strengthens SQL proficiency with Python integration, ideal for intermediate data engineers. It enhances SSD professionals’ ability to manage, query, and analyze complex datasets, optimizing data workflows and improving statistical system reliability in enterprise environments.
+
+--------------------------------------------------
+
+
+Course #15
+
+course_id:
+OA-01
+
+career_track:
+Oracle Apex
+
+skill:
+Oracle APEX Development
+
+course_name:
+Oracle APEX: Foundations
+
+provider:
+Oracle
+
+learning_style:
+Video Courses
+
+difficulty_level:
+Beginner
+
+duration_hours:
+4.0
+
+is_free:
+True
+
+estimated_weeks:
+1.0
+
+certification_related:
+Yes
+
+tags:
+oracle-apex,apex,beginner,oracle,video
+
+prerequisites:
+N/A
+
+platform_category:
+Cloud
+
+url:
+https://mylearn.oracle.com/ou/learning-path/oracle-apex-foundations/112444
+
+ai_summary:
+Oracle APEX: Foundations by Oracle introduces core Oracle APEX development skills through video-based, beginner-friendly instruction. Suitable for data professionals and developers new to the platform, it enables rapid creation of scalable, cloud-based applications. SSD data professionals gain practical expertise to streamline data management and reporting workflows, enhancing efficiency and decision-making within enterprise environments. Completion supports certification, validating foundational Oracle APEX competencies.
+
+assessment_enabled:
+Yes
+
+assessment_source_url:
+https://apex.oracle.com/en/learn/documentation/
+
+assessment_knowledge_text:
+low-code development, web applications, SQL workshop, app builder, forms, reports, PL/SQL integration, REST APIs, authentication, session state, UI components, deployment [6](https://apex.oracle.com/en/learn/documentation/)
+
+ai_recommendation_reason:
+Oracle APEX: Foundations offers beginner-friendly video training in cloud-based app development, enabling SSD professionals to efficiently build and deploy data-driven Oracle applications, enhancing enterprise data management and statistical system integration.
+
+--------------------------------------------------
+
+
+Course #16
+
+course_id:
+OA-02
+
+career_track:
+Oracle Apex
+
+skill:
+Oracle APEX Development
+
+course_name:
+Become An Oracle APEX Developer Professional (2025)
+
+provider:
+Oracle
+
+learning_style:
+Certification
+
+difficulty_level:
+Intermediate
+
+duration_hours:
+22.0
+
+is_free:
+True
+
+estimated_weeks:
+6.0
+
+certification_related:
+Yes
+
+tags:
+oracle-apex,apex,certification,intermediate,oracle
+
+prerequisites:
+Apex Fundamentals
+
+platform_category:
+Cloud
+
+url:
+https://mylearn.oracle.com/ou/learning-path/become-an-oracle-apex-developer-professional-2025/146080
+
+ai_summary:
+This intermediate Oracle APEX course equips learners with advanced development skills to build scalable, cloud-based enterprise applications. Ideal for developers seeking certification and practical expertise, it deepens proficiency beyond fundamentals. SSD data professionals benefit by creating customized, data-driven applications that enhance reporting, workflows, and data visualization, improving operational efficiency and decision-making within statistical systems. Completion validates capability to design secure, performant APEX solutions supporting complex organizational data needs.
+
+assessment_enabled:
+Yes
+
+assessment_source_url:
+https://apex.oracle.com/en/learn/documentation/
+
+assessment_knowledge_text:
+low-code development, web applications, SQL workshop, app builder, forms, reports, PL/SQL integration, REST APIs, authentication, session state, UI components, deployment [6](https://apex.oracle.com/en/learn/documentation/)
+
+ai_recommendation_reason:
+This intermediate course certifies Oracle APEX development skills, enabling SSD professionals to build robust, cloud-based applications that streamline statistical data management and reporting, enhancing operational efficiency and enterprise agility. Ideal for developers seeking practical certification.
+
+--------------------------------------------------
+
+
+Course #17
+
+course_id:
+OA-03
+
+career_track:
+Oracle Apex
+
+skill:
+SQL & PL/SQL
+
+course_name:
+PL/SQL on Oracle Cloud
+
+provider:
+Oracle
+
+learning_style:
+Certification
+
+difficulty_level:
+Beginner
+
+duration_hours:
+18.0
+
+is_free:
+True
+
+estimated_weeks:
+5.0
+
+certification_related:
+Yes
+
+tags:
+oracle-apex,plsql,oracle-cloud,certification,beginner
+
+prerequisites:
+N/A
+
+platform_category:
+Analytics
+
+url:
+https://mylearn.oracle.com/ou/learning-path/plsql-on-oracle-cloud/89476
+
+ai_summary:
+This beginner-level course equips learners with foundational PL/SQL skills on Oracle Cloud via Oracle APEX, emphasizing practical database programming and cloud deployment. Ideal for data professionals and developers seeking certification, it enhances the ability to build and manage scalable, secure analytics solutions. For SSD data professionals, it streamlines complex data workflows, improves query efficiency, and supports robust statistical system integrations on Oracle’s cloud platform.
+
+assessment_enabled:
+Yes
+
+assessment_source_url:
+https://docs.oracle.com/en/database/oracle/oracle-database/19/sqlrf/index.html
+
+assessment_knowledge_text:
+procedural SQL, stored procedures, functions, triggers, cursors, exception handling, packages, loops, variables, control structures, performance tuning, transaction control [1](https://docs.oracle.com/en/database/oracle/oracle-database/19/sqlrf/index.html)
+
+ai_recommendation_reason:
+This beginner course equips SSD professionals with essential PL/SQL skills on Oracle Cloud, enhancing data management and analytics capabilities crucial for enterprise applications and certification-driven career advancement in Oracle APEX environments.
+
+--------------------------------------------------
+
+
+Course #18
+
+course_id:
+OA-04
+
+career_track:
+Oracle Apex
+
+skill:
+SQL & PL/SQL
+
+course_name:
+PL/SQL on Oracle Cloud
+
+provider:
+Oracle
+
+learning_style:
+Video Courses
+
+difficulty_level:
+Beginner
+
+duration_hours:
+18.0
+
+is_free:
+True
+
+estimated_weeks:
+5.0
+
+certification_related:
+No
+
+tags:
+oracle-apex,plsql,video,oracle,beginner
+
+prerequisites:
+N/A
+
+platform_category:
+Analytics
+
+url:
+https://mylearn.oracle.com/ou/learning-path/plsql-on-oracle-cloud/89476
+
+ai_summary:
+PL/SQL on Oracle Cloud equips learners with foundational skills in SQL and PL/SQL within Oracle Apex, emphasizing cloud-based analytics. Ideal for beginners in SSD, it enhances data manipulation and automation capabilities essential for enterprise database management. This course enables SSD professionals to streamline data workflows and optimize reporting efficiency on Oracle Cloud, supporting advanced statistical analysis and operational decision-making.
+
+assessment_enabled:
+Yes
+
+assessment_source_url:
+https://docs.oracle.com/en/database/oracle/oracle-database/19/sqlrf/index.html
+
+assessment_knowledge_text:
+procedural SQL, stored procedures, functions, triggers, cursors, exception handling, packages, loops, variables, control structures, performance tuning, transaction control [1](https://docs.oracle.com/en/database/oracle/oracle-database/19/sqlrf/index.html)
+
+ai_recommendation_reason:
+This beginner-friendly video course builds essential PL/SQL skills on Oracle Cloud, enabling SSD professionals to efficiently develop and optimize database applications critical for robust statistical data analysis and enterprise reporting.
+
+--------------------------------------------------
+
+
+Course #19
+
+course_id:
+DA-01
+
+career_track:
+Data Analysis
+
+skill:
+Power BI
+
+course_name:
+Power BI Documentation
+
+provider:
+Microsoft
+
+learning_style:
+Documentation
+
+difficulty_level:
+Beginner
+
+duration_hours:
+20.0
+
+is_free:
+True
+
+estimated_weeks:
+5.0
+
+certification_related:
+No
+
+tags:
+data-analysis,powerbi,microsoft,documentation,beginner
+
+prerequisites:
+N/A
+
+platform_category:
+Analytics
+
+url:
+https://learn.microsoft.com/en-us/power-bi/fundamentals/service-get-started
+
+ai_summary:
+Power BI Documentation by Microsoft equips beginners with foundational skills to navigate and utilize Power BI for effective data analysis. Ideal for SSD data professionals seeking to streamline reporting and enhance data-driven decision-making. This five-week course emphasizes practical application of Power BI tools within enterprise environments, enabling improved data visualization, documentation accuracy, and collaborative analytics workflows critical to SSD’s operational efficiency.
+
+assessment_enabled:
+Yes
+
+assessment_source_url:
+https://learn.microsoft.com/en-us/power-bi/
+
+assessment_knowledge_text:
+data visualization, dashboards, reports, Power Query, DAX, data modeling, ETL, KPIs, measures, relationships, visualization types, data sources, business intelligence, data storytelling [7](https://learn.microsoft.com/en-us/power-bi/)
+
+ai_recommendation_reason:
+This beginner-level Power BI Documentation course equips SSD professionals with essential skills to create and interpret data reports, enhancing analytical accuracy and decision-making efficiency in enterprise environments. Ideal for those new to data visualization tools.
+
+--------------------------------------------------
+
+
+Course #20
+
+course_id:
+DA-02
+
+career_track:
+Data Analysis
+
+skill:
+Power BI
+
+course_name:
+Learn Power BI in Under 3 Hours
+
+provider:
+YouTube
+
+learning_style:
+Video Courses
+
+difficulty_level:
+Beginner
+
+duration_hours:
+3.0
+
+is_free:
+True
+
+estimated_weeks:
+1.0
+
+certification_related:
+No
+
+tags:
+data-analysis,powerbi,youtube,beginner,quick
+
+prerequisites:
+N/A
+
+platform_category:
+Analytics
+
+url:
+https://www.youtube.com/watch?v=I0vQ_VLZTWg
+
+ai_summary:
+This beginner-level course equips learners with foundational Power BI skills through concise video modules, enabling efficient data visualization and reporting. Ideal for data analysts and SSD professionals seeking rapid proficiency, it enhances the ability to transform complex datasets into actionable insights. By streamlining data interpretation, it supports SSD’s mission to improve decision-making and operational analytics within enterprise environments.
+
+assessment_enabled:
+Yes
+
+assessment_source_url:
+https://learn.microsoft.com/en-us/power-bi/
+
+assessment_knowledge_text:
+data visualization, dashboards, reports, Power Query, DAX, data modeling, ETL, KPIs, measures, relationships, visualization types, data sources, business intelligence, data storytelling [7](https://learn.microsoft.com/en-us/power-bi/)
+
+ai_recommendation_reason:
+This beginner-friendly video course delivers rapid, practical Power BI skills essential for SSD professionals to efficiently analyze and visualize data, enhancing decision-making and reporting accuracy within enterprise analytics workflows.
+
+--------------------------------------------------
+
+
+Course #21
+
+course_id:
+DA-03
+
+career_track:
+Data Analysis
+
+skill:
+Power BI
+
+course_name:
+Microsoft Power BI Desktop for Business Intelligence
+
+provider:
+Udemy
+
+learning_style:
+Video Courses
+
+difficulty_level:
+Intermediate
+
+duration_hours:
+17.0
+
+is_free:
+False
+
+estimated_weeks:
+5.0
+
+certification_related:
+Yes
+
+tags:
+data-analysis,powerbi,udemy,intermediate,business
+
+prerequisites:
+SQL
+
+platform_category:
+Analytics
+
+url:
+https://www.udemy.com/course/microsoft-power-bi-up-running-with-power-bi-desktop/?couponCode=PMNVD3025
+
+ai_summary:
+This intermediate Udemy course equips learners with advanced Microsoft Power BI Desktop skills for effective data visualization and business intelligence. Ideal for data analysts with SQL knowledge, it enhances capabilities in transforming complex datasets into actionable insights. SSD data professionals will benefit from streamlined reporting, improved decision-making, and accelerated data-driven strategies, directly supporting enterprise analytics objectives within the department. Certification validates proficiency and practical application.
+
+assessment_enabled:
+Yes
+
+assessment_source_url:
+https://learn.microsoft.com/en-us/power-bi/
+
+assessment_knowledge_text:
+data visualization, dashboards, reports, Power Query, DAX, data modeling, ETL, KPIs, measures, relationships, visualization types, data sources, business intelligence, data storytelling [7](https://learn.microsoft.com/en-us/power-bi/)
+
+ai_recommendation_reason:
+This intermediate Power BI course equips SSD professionals with advanced data visualization and dashboard skills, enhancing enterprise decision-making through actionable business intelligence insights—ideal for analysts aiming to streamline reporting and drive data-driven strategies.
+
+--------------------------------------------------
+
+
+Course #22
+
+course_id:
+DA-04
+
+career_track:
+Data Analysis
+
+skill:
+Power BI
+
+course_name:
+Microsoft Certified: Power BI Data Analyst Associate
+
+provider:
+Microsoft
+
+learning_style:
+Certification
+
+difficulty_level:
+Advanced
+
+duration_hours:
+21.0
+
+is_free:
+True
+
+estimated_weeks:
+6.0
+
+certification_related:
+Yes
+
+tags:
+data-analysis,powerbi,certification,advanced,microsoft
+
+prerequisites:
+SQL
+
+platform_category:
+Analytics
+
+url:
+https://learn.microsoft.com/en-us/credentials/certifications/data-analyst-associate/?practice-assessment-type=certification
+
+ai_summary:
+This advanced course equips learners with Power BI expertise to design, develop, and optimize data models and reports. Ideal for data analysts with SQL skills, it enhances capabilities in enterprise-grade data visualization and decision support. SSD professionals gain proficiency in transforming complex datasets into actionable insights, driving data-driven strategies and improving statistical reporting accuracy in organizational analytics environments. Completion prepares candidates for Microsoft’s Power BI Data Analyst certification.
+
+assessment_enabled:
+Yes
+
+assessment_source_url:
+https://learn.microsoft.com/en-us/power-bi/
+
+assessment_knowledge_text:
+data visualization, dashboards, reports, Power Query, DAX, data modeling, ETL, KPIs, measures, relationships, visualization types, data sources, business intelligence, data storytelling [7](https://learn.microsoft.com/en-us/power-bi/)
+
+ai_recommendation_reason:
+This advanced, Microsoft-certified course equips SSD professionals with expertise in Power BI for robust data analysis and visualization, enhancing decision-making efficiency and enterprise reporting accuracy in complex analytical environments.
+
+--------------------------------------------------
+
+
+Course #23
+
+course_id:
+DA-05
+
+career_track:
+Data Analysis
+
+skill:
+Power BI
+
+course_name:
+Microsoft Certified: Power BI Data Analyst Associate
+
+provider:
+Microsoft
+
+learning_style:
+Video Courses
+
+difficulty_level:
+Advanced
+
+duration_hours:
+21.0
+
+is_free:
+True
+
+estimated_weeks:
+6.0
+
+certification_related:
+Yes
+
+tags:
+data-analysis,powerbi,video,advanced,microsoft
+
+prerequisites:
+SQL
+
+platform_category:
+Analytics
+
+url:
+https://learn.microsoft.com/en-us/credentials/certifications/data-analyst-associate/?practice-assessment-type=certification
+
+ai_summary:
+The Microsoft Certified: Power BI Data Analyst Associate course equips learners with advanced skills in data modeling, visualization, and analysis using Power BI. Ideal for data professionals with SQL knowledge, it enables efficient data-driven decision-making in enterprise environments. For the SSD, this course enhances capabilities in transforming complex datasets into actionable insights, improving reporting accuracy and accelerating statistical analysis workflows within organizational analytics operations.
+
+assessment_enabled:
+Yes
+
+assessment_source_url:
+https://learn.microsoft.com/en-us/power-bi/
+
+assessment_knowledge_text:
+data visualization, dashboards, reports, Power Query, DAX, data modeling, ETL, KPIs, measures, relationships, visualization types, data sources, business intelligence, data storytelling [7](https://learn.microsoft.com/en-us/power-bi/)
+
+ai_recommendation_reason:
+This advanced Power BI course sharpens data visualization and modeling skills, enabling SSD professionals to deliver actionable insights and optimize enterprise analytics workflows, essential for complex decision-making and enhancing organizational data proficiency.
+
+--------------------------------------------------
+
+
+Course #24
+
+course_id:
+DA-06
+
+career_track:
+Data Analysis
+
+skill:
+Oracle BI
+
+course_name:
+Oracle BI 12c: Overview
+
+provider:
+Oracle
+
+learning_style:
+Video Courses
+
+difficulty_level:
+Beginner
+
+duration_hours:
+13.0
+
+is_free:
+True
+
+estimated_weeks:
+4.0
+
+certification_related:
+No
+
+tags:
+data-analysis,oracle-bi,beginner,oracle,overview
+
+prerequisites:
+N/A
+
+platform_category:
+Analytics
+
+url:
+https://mylearn.oracle.com/ou/course/oracle-bi-12c-overview/56531/
+
+ai_summary:
+Oracle BI 12c: Overview introduces foundational Oracle Business Intelligence concepts, enabling learners to navigate and utilize BI tools effectively. Suited for data analysts and entry-level BI professionals, this beginner video course enhances practical skills in data visualization, query building, and dashboard usage. For SSD data professionals, it streamlines data-driven decision-making by improving report accuracy and accessibility, supporting efficient statistical analysis within enterprise environments.
+
+assessment_enabled:
+Yes
+
+assessment_source_url:
+https://docs.oracle.com/en-us/iaas/Content/home.htm
+
+assessment_knowledge_text:
+business intelligence, dashboards, reports, semantic layer, data warehouse, OBIEE concepts, analytics, data modeling, visualization, metadata repository, KPIs, performance metrics [8](https://docs.oracle.com/en-us/iaas/Content/home.htm)
+
+ai_recommendation_reason:
+Oracle BI 12c: Overview equips beginners with essential Oracle BI skills for enterprise data analysis, enhancing SSD professionals' ability to generate actionable insights and optimize statistical reporting within analytical environments.
+
+--------------------------------------------------
+
+
+Course #25
+
+course_id:
+DA-07
+
+career_track:
+Data Analysis
+
+skill:
+Oracle BI
+
+course_name:
+Oracle BI 12c: Administration / Implementation
+
+provider:
+Oracle
+
+learning_style:
+Video Courses
+
+difficulty_level:
+Intermediate
+
+duration_hours:
+75.0
+
+is_free:
+True
+
+estimated_weeks:
+20.0
+
+certification_related:
+Yes
+
+tags:
+data-analysis,oracle-bi,implementation,intermediate,oracle
+
+prerequisites:
+SQL
+
+platform_category:
+Analytics
+
+url:
+https://mylearn.oracle.com/ou/learning-path/oracle-bi-12c-administration-implementation/51833
+
+ai_summary:
+Oracle BI 12c: Administration/Implementation equips learners with skills to deploy, configure, and manage Oracle BI environments effectively. Ideal for data analysts and BI administrators with SQL knowledge, it enhances capabilities in data integration, security, and dashboard development. For SSD data professionals, the course streamlines enterprise analytics, optimizes reporting accuracy, and supports informed decision-making through robust BI solutions. Completion aids certification and advances career growth in BI implementation roles.
+
+assessment_enabled:
+Yes
+
+assessment_source_url:
+https://docs.oracle.com/en-us/iaas/Content/home.htm
+
+assessment_knowledge_text:
+business intelligence, dashboards, reports, semantic layer, data warehouse, OBIEE concepts, analytics, data modeling, visualization, metadata repository, KPIs, performance metrics [8](https://docs.oracle.com/en-us/iaas/Content/home.htm)
+
+ai_recommendation_reason:
+This course equips SSD professionals with hands-on Oracle BI 12c administration skills, enabling efficient data analysis implementation and system management critical for enterprise analytics and decision-making in intermediate-level roles.
+
+--------------------------------------------------
+
+
+Course #26
+
+course_id:
+DA-08
+
+career_track:
+Data Analysis
+
+skill:
+SQL for Data Analysis
+
+course_name:
+Comprehensive SQL Course For Data Professionals
+
+provider:
+Udemy
+
+learning_style:
+Video Courses
+
+difficulty_level:
+Intermediate
+
+duration_hours:
+14.0
+
+is_free:
+False
+
+estimated_weeks:
+3.5
+
+certification_related:
+No
+
+tags:
+data-analysis,sql,analysis,udemy,intermediate
+
+prerequisites:
+N/A
+
+platform_category:
+Analytics
+
+url:
+https://www.udemy.com/course/comprehensive-sql-course-hands-on-project-coding-exercises/?couponCode=PMNVD3025
+
+ai_summary:
+The Comprehensive SQL Course for Data Professionals on Udemy equips learners with intermediate SQL skills tailored for data analysis. Ideal for SSD data professionals seeking to enhance query efficiency and data manipulation within complex datasets. The course’s practical video lessons enable precise data extraction and reporting, supporting informed decision-making and improving analytics workflows critical to enterprise statistical systems. Completion strengthens analytical capabilities without requiring prior SQL experience.
+
+assessment_enabled:
+Yes
+
+assessment_source_url:
+https://docs.oracle.com/en/database/oracle/oracle-database/19/sqlrf/index.html
+
+assessment_knowledge_text:
+analytical SQL, aggregations, joins, window functions, ranking, partitions, filtering, pivoting, data summarization, reporting queries, data exploration [1](https://docs.oracle.com/en/database/oracle/oracle-database/19/sqlrf/index.html)
+
+ai_recommendation_reason:
+This intermediate SQL course enhances data querying skills vital for SSD professionals, enabling efficient database analysis and reporting. Ideal for data analysts seeking practical expertise to optimize enterprise data workflows and support informed decision-making.
+
+--------------------------------------------------
+
+
+Course #27
+
+course_id:
+DA-09
+
+career_track:
+Data Analysis
+
+skill:
+SQL for Data Analysis
+
+course_name:
+The Complete SQL Bootcamp: Go from Zero to Hero
+
+provider:
+Udemy
+
+learning_style:
+Video Courses
+
+difficulty_level:
+Intermediate
+
+duration_hours:
+9.0
+
+is_free:
+False
+
+estimated_weeks:
+3.0
+
+certification_related:
+No
+
+tags:
+data-analysis,sql,analysis,udemy,bootcamp
+
+prerequisites:
+N/A
+
+platform_category:
+Analytics
+
+url:
+https://www.udemy.com/course/the-complete-sql-bootcamp/?couponCode=PMNVD3025
+
+ai_summary:
+The Complete SQL Bootcamp equips learners with advanced SQL skills for data extraction, transformation, and complex query writing essential in enterprise analytics. Ideal for intermediate data analysts and SSD professionals, it enhances database management and reporting efficiency. This course strengthens SSD teams’ ability to deliver precise, actionable insights, optimizing statistical data workflows within organizational systems.
+
+assessment_enabled:
+Yes
+
+assessment_source_url:
+https://docs.oracle.com/en/database/oracle/oracle-database/19/sqlrf/index.html
+
+assessment_knowledge_text:
+analytical SQL, aggregations, joins, window functions, ranking, partitions, filtering, pivoting, data summarization, reporting queries, data exploration [1](https://docs.oracle.com/en/database/oracle/oracle-database/19/sqlrf/index.html)
+
+ai_recommendation_reason:
+This intermediate course sharpens SQL skills vital for efficient data retrieval and analysis. Ideal for SSD professionals seeking to enhance database querying accuracy and speed, it drives informed decision-making and operational efficiency in enterprise analytics.
+
+--------------------------------------------------
+
+
+Course #28
+
+course_id:
+DA-10
+
+career_track:
+Data Analysis
+
+skill:
+SQL for Data Analysis
+
+course_name:
+SQL Documentation
+
+provider:
+Oracle
+
+learning_style:
+Documentation
+
+difficulty_level:
+Beginner
+
+duration_hours:
+20.0
+
+is_free:
+True
+
+estimated_weeks:
+5.0
+
+certification_related:
+No
+
+tags:
+data-analysis,sql,oracle,documentation,beginner
+
+prerequisites:
+N/A
+
+platform_category:
+Analytics
+
+url:
+https://docs.oracle.com/en/database/oracle/oracle-database/19/sqlrf/index.html
+
+ai_summary:
+Oracle's SQL Documentation course equips beginners with foundational SQL skills for effective data querying and analysis. Ideal for SSD data professionals new to SQL, it enhances their capability to extract and interpret data within enterprise analytics environments. Over five weeks, learners gain practical knowledge to improve data-driven decision-making, optimizing SSD workflows and reporting accuracy without prior prerequisites.
+
+assessment_enabled:
+Yes
+
+assessment_source_url:
+https://docs.oracle.com/en/database/oracle/oracle-database/19/sqlrf/index.html
+
+assessment_knowledge_text:
+analytical SQL, aggregations, joins, window functions, ranking, partitions, filtering, pivoting, data summarization, reporting queries, data exploration [1](https://docs.oracle.com/en/database/oracle/oracle-database/19/sqlrf/index.html)
+
+ai_recommendation_reason:
+This beginner SQL Documentation course enhances SSD professionals’ data querying accuracy and efficiency, enabling precise analytics in enterprise environments. Ideal for analysts seeking to master Oracle SQL via clear documentation for improved decision-making and reporting.
+
+--------------------------------------------------
+
+
+Course #29
+
+course_id:
+DA-11
+
+career_track:
+Data Analysis
+
+skill:
+Statistical Analysis
+
+course_name:
+Probability & Statistical Analysis
+
+provider:
+DataCamp
+
+learning_style:
+Video Courses
+
+difficulty_level:
+Advanced
+
+duration_hours:
+20.0
+
+is_free:
+True
+
+estimated_weeks:
+5.0
+
+certification_related:
+No
+
+tags:
+data-analysis,statistics,advanced,datacamp,probability
+
+prerequisites:
+SQL
+
+platform_category:
+Statistics
+
+url:
+https://www.datacamp.com/category/probability-and-statistics?page=1&duration=2%3A5
+
+ai_summary:
+Probability & Statistical Analysis by DataCamp equips advanced learners with in-depth statistical modeling, probability theory, and data inference skills. Ideal for SSD data professionals with SQL background, it enhances their ability to design robust statistical solutions and drive data-driven decision-making. Over 5 weeks, learners master tools critical for precise data interpretation and predictive analytics, directly improving enterprise analytics accuracy and operational insights within the Statistical Systems Department.
+
+assessment_enabled:
+Yes
+
+assessment_source_url:
+https://www.ibm.com/topics/statistical-analysis
+
+assessment_knowledge_text:
+probability, distributions, mean median mode, variance, hypothesis testing, regression, correlation, sampling, statistical inference, p-value, confidence intervals, descriptive statistics [4](https://docs.python.org/)
+
+ai_recommendation_reason:
+This advanced course deepens statistical expertise through practical probability applications, ideal for SSD professionals enhancing data-driven decision-making and predictive analytics in enterprise environments.
+
+--------------------------------------------------
+
+
+Course #30
+
+course_id:
+DA-12
+
+career_track:
+Data Analysis
+
+skill:
+Statistical Analysis
+
+course_name:
+Introduction to Statistics
+
+provider:
+Coursera (Stanford University)
+
+learning_style:
+Video Courses
+
+difficulty_level:
+Intermediate
+
+duration_hours:
+10.0
+
+is_free:
+False
+
+estimated_weeks:
+3.0
+
+certification_related:
+No
+
+tags:
+data-analysis,statistics,coursera,intermediate,stanford
+
+prerequisites:
+N/A
+
+platform_category:
+Statistics
+
+url:
+https://www.coursera.org/learn/stanford-statistics
+
+ai_summary:
+This intermediate Stanford course on Coursera equips learners with core statistical analysis techniques for effective data interpretation. Ideal for data professionals seeking to enhance analytical accuracy, it deepens understanding of probability, hypothesis testing, and regression. SSD data specialists will leverage these skills to improve data-driven decision-making, optimize reporting, and strengthen predictive modeling within enterprise systems. The 3-week video-based format ensures focused, practical application in real-world statistical challenges.
+
+assessment_enabled:
+Yes
+
+assessment_source_url:
+https://www.ibm.com/topics/statistical-analysis
+
+assessment_knowledge_text:
+probability, distributions, mean median mode, variance, hypothesis testing, regression, correlation, sampling, statistical inference, p-value, confidence intervals, descriptive statistics [4](https://docs.python.org/)
+
+ai_recommendation_reason:
+“Introduction to Statistics” offers intermediate video-based statistical analysis expertise, ideal for SSD professionals seeking to enhance data-driven decision-making and improve analytical accuracy within enterprise-scale statistical systems.
+
+--------------------------------------------------
+
+
+Course #31
+
+course_id:
+DA-13
+
+career_track:
+Data Analysis
+
+skill:
+Python for Data Engineering
+
+course_name:
+Python for Everybody Specialization
+
+provider:
+Coursera (University of Michigan)
+
+learning_style:
+Video Courses
+
+difficulty_level:
+Intermediate
+
+duration_hours:
+80.0
+
+is_free:
+False
+
+estimated_weeks:
+20.0
+
+certification_related:
+No
+
+tags:
+data-analysis,python,coursera,intermediate
+
+prerequisites:
+N/A
+
+platform_category:
+Programming
+
+url:
+https://www.coursera.org/specializations/python
+
+ai_summary:
+The Python for Everybody Specialization equips learners with intermediate Python skills tailored for data engineering tasks. Ideal for data professionals seeking to streamline data processing and analysis workflows, it enhances coding efficiency and data manipulation capabilities. SSD data experts will benefit from mastering Python tools that optimize data integration and automate complex statistical operations, driving more robust enterprise data solutions in 20 weeks via focused video instruction.
+
+assessment_enabled:
+Yes
+
+assessment_source_url:
+https://docs.python.org/3/
+
+assessment_knowledge_text:
+python syntax, data structures, loops, functions, OOP, file handling, libraries (pandas numpy), scripting, APIs, automation, data processing, error handling, packages, virtual environments [4](https://docs.python.org/)
+
+ai_recommendation_reason:
+Recommended for SSD professionals seeking intermediate Python skills to streamline data pipelines. This Coursera specialization enhances data analysis efficiency, supporting robust statistical system development through practical, enterprise-focused programming techniques.
+
+--------------------------------------------------
+
+
+Course #32
+
+course_id:
+DA-14
+
+career_track:
+Data Analysis
+
+skill:
+Python for Data Engineering
+
+course_name:
+Complete 2026 Python Bootcamp: Learn Python from Scratch
+
+provider:
+Udemy
+
+learning_style:
+Video Courses
+
+difficulty_level:
+Beginner
+
+duration_hours:
+18.0
+
+is_free:
+False
+
+estimated_weeks:
+5.0
+
+certification_related:
+No
+
+tags:
+data-analysis,python,udemy,beginner
+
+prerequisites:
+N/A
+
+platform_category:
+Programming
+
+url:
+https://www.udemy.com/course/codewithharry-python/?couponCode=PMNVD3025
+
+ai_summary:
+The Complete 2026 Python Bootcamp equips learners with foundational Python skills essential for data engineering and analysis. Ideal for beginners in the Statistical Systems Department, it enables practical data manipulation, automation, and pipeline development using Python. Over five weeks, SSD professionals will enhance data workflow efficiency and support robust statistical system operations through hands-on video instruction tailored to enterprise data challenges.
+
+assessment_enabled:
+Yes
+
+assessment_source_url:
+https://docs.python.org/3/
+
+assessment_knowledge_text:
+python syntax, data structures, loops, functions, OOP, file handling, libraries (pandas numpy), scripting, APIs, automation, data processing, error handling, packages, virtual environments [4](https://docs.python.org/)
+
+ai_recommendation_reason:
+This beginner-friendly Udemy course equips SSD professionals with foundational Python skills essential for automating data workflows, enhancing data engineering efficiency, and supporting robust statistical analysis within enterprise data systems.
+
+--------------------------------------------------
+
+
+Course #33
+
+course_id:
+OC-01
+
+career_track:
+OCI
+
+skill:
+OCI Core Services
+
+course_name:
+Become An OCI Foundations Associate (2025)
+
+provider:
+Oracle
+
+learning_style:
+Certification
+
+difficulty_level:
+Beginner
+
+duration_hours:
+6.0
+
+is_free:
+True
+
+estimated_weeks:
+1.5
+
+certification_related:
+Yes
+
+tags:
+oci,foundations,certification,beginner,oracle
+
+prerequisites:
+N/A
+
+platform_category:
+Cloud
+
+url:
+https://mylearn.oracle.com/ou/learning-path/become-an-oci-foundations-associate-2025/148056
+
+ai_summary:
+This beginner-level course equips learners with foundational knowledge of OCI core services, preparing them for Oracle's OCI Foundations certification. Ideal for SSD data professionals seeking to manage cloud infrastructure effectively, it enhances skills in deploying and securing scalable cloud solutions. Completing this 1.5-week course validates practical expertise, enabling data teams to optimize Oracle Cloud resources, streamline workflows, and support enterprise-level statistical data operations efficiently.
+
+assessment_enabled:
+Yes
+
+assessment_source_url:
+https://docs.oracle.com/en-us/iaas/Content/home.htm
+
+assessment_knowledge_text:
+compute, storage, networking, IAM, compartments, regions, availability domains, cloud fundamentals, scalability, fault tolerance, resource provisioning, security basics [8](https://docs.oracle.com/en-us/iaas/Content/home.htm)
+
+ai_recommendation_reason:
+This beginner OCI Foundations course equips SSD professionals with essential Oracle cloud skills, enabling efficient core service integration and certification readiness, enhancing enterprise cloud operations and supporting data-driven decision-making in statistical system environments.
+
+--------------------------------------------------
+
+
+Course #34
+
+course_id:
+OC-02
+
+career_track:
+OCI
+
+skill:
+OCI Architecture
+
+course_name:
+Become an OCI Architect Professional (2025)
+
+provider:
+Oracle
+
+learning_style:
+Certification
+
+difficulty_level:
+Advanced
+
+duration_hours:
+37.0
+
+is_free:
+True
+
+estimated_weeks:
+10.0
+
+certification_related:
+Yes
+
+tags:
+oci,architecture,certification,advanced,oracle
+
+prerequisites:
+OCI Fundamentals
+
+platform_category:
+Cloud
+
+url:
+https://mylearn.oracle.com/ou/learning-path/become-an-oci-architect-professional-2025/148057
+
+ai_summary:
+This advanced course equips learners with expert OCI architecture skills, emphasizing enterprise-grade cloud solution design and deployment. Suitable for cloud architects and SSD data professionals with OCI Fundamentals, it deepens expertise in scalable, secure OCI infrastructures. The certification validates proficiency in optimizing data workflows and infrastructure resilience, enhancing SSD teams' capability to architect robust, compliant cloud systems for complex statistical data environments.
+
+assessment_enabled:
+Yes
+
+assessment_source_url:
+https://docs.oracle.com/en-us/iaas/Content/home.htm
+
+assessment_knowledge_text:
+cloud architecture, high availability, load balancing, VCN, subnets, fault domains, disaster recovery, scalability, microservices, security architecture, best practices [8](https://docs.oracle.com/en-us/iaas/Content/home.htm)
+
+ai_recommendation_reason:
+This advanced OCI Architect Professional course delivers expert cloud architecture skills, essential for SSD professionals managing complex Oracle environments, enabling certified mastery to optimize enterprise infrastructure and drive secure, scalable statistical system deployments.
+
+--------------------------------------------------
+
+
+Course #35
+
+course_id:
+OC-03
+
+career_track:
+OCI
+
+skill:
+OCI Autonomous Database
+
+course_name:
+Become an Oracle AI Autonomous Database Professional (2025)
+
+provider:
+Oracle
+
+learning_style:
+Certification
+
+difficulty_level:
+Intermediate
+
+duration_hours:
+6.0
+
+is_free:
+True
+
+estimated_weeks:
+2.0
+
+certification_related:
+Yes
+
+tags:
+oci,autonomous-database,certification,intermediate,oracle
+
+prerequisites:
+SQL
+
+platform_category:
+Cloud
+
+url:
+https://mylearn.oracle.com/ou/learning-path/become-an-oracle-ai-autonomous-database-professional-2025/148511
+
+ai_summary:
+This intermediate certification course equips learners to expertly manage Oracle AI Autonomous Databases on OCI, enhancing efficiency in cloud data operations. Ideal for data professionals with SQL knowledge aiming to deepen expertise in autonomous database implementation and maintenance. For SSD data teams, it streamlines database automation, optimizes data workflows, and supports advanced AI-driven analytics, driving robust enterprise data solutions. Completion validates skills critical for modern cloud database management.
+
+assessment_enabled:
+Yes
+
+assessment_source_url:
+https://docs.oracle.com/en/cloud/paas/autonomous-database/
+
+assessment_knowledge_text:
+autonomous database, self-tuning, self-scaling, backups, patching, SQL workload, data warehouse, transaction processing, performance optimization, cloud database [8](https://docs.oracle.com/en-us/iaas/Content/home.htm)
+
+ai_recommendation_reason:
+This course equips SSD professionals with advanced OCI Autonomous Database skills, enhancing data-driven decision-making and automation. Ideal for intermediates pursuing certification, it drives enterprise efficiency and innovation through Oracle’s AI-powered cloud solutions.
+
+--------------------------------------------------
+
+
+Course #36
+
+course_id:
+OC-04
+
+career_track:
+OCI
+
+skill:
+Oracle AI & Analytics
+
+course_name:
+Become An Oracle Analytics Cloud Professional (2025)
+
+provider:
+Oracle
+
+learning_style:
+Certification
+
+difficulty_level:
+Intermediate
+
+duration_hours:
+34.0
+
+is_free:
+True
+
+estimated_weeks:
+9.0
+
+certification_related:
+Yes
+
+tags:
+oci,analytics,certification,intermediate,oracle
+
+prerequisites:
+SQL
+
+platform_category:
+Analytics
+
+url:
+https://mylearn.oracle.com/ou/learning-path/become-an-oracle-analytics-cloud-professional-2025/147801
+
+ai_summary:
+This intermediate certification course equips learners with advanced Oracle Analytics Cloud skills, focusing on data analysis, visualization, and AI-powered insights within OCI. Ideal for data analysts and BI professionals with SQL knowledge, it enhances practical expertise in enterprise analytics. SSD data professionals benefit by mastering scalable, automated data solutions, improving decision-making accuracy and operational efficiency across statistical systems. Completion validates capability in leveraging Oracle’s analytics platform for impactful business intelligence.
+
+assessment_enabled:
+Yes
+
+assessment_source_url:
+https://www.oracle.com/artificial-intelligence/
+
+assessment_knowledge_text:
+machine learning, AI services, data analytics, predictive modeling, NLP, data pipelines, visualization, big data processing, model training, inference, analytics cloud [8](https://docs.oracle.com/en-us/iaas/Content/home.htm)
+
+ai_recommendation_reason:
+This intermediate OCI certification enhances Oracle AI & Analytics skills, empowering SSD professionals to optimize enterprise data insights, streamline decision-making, and advance cloud analytics competence for strategic business impact. Ideal for analysts and data scientists.
+
+--------------------------------------------------
+
+
+Course #37
+
+course_id:
+OC-05
+
+career_track:
+OCI
+
+skill:
+Oracle AI & Analytics
+
+course_name:
+Become an OCI Generative AI Professional
+
+provider:
+Oracle
+
+learning_style:
+Certification
+
+difficulty_level:
+Advanced
+
+duration_hours:
+14.0
+
+is_free:
+True
+
+estimated_weeks:
+4.0
+
+certification_related:
+Yes
+
+tags:
+oci,generative-ai,certification,advanced,oracle
+
+prerequisites:
+OCI Fundamentals
+
+platform_category:
+AI
+
+url:
+https://mylearn.oracle.com/ou/learning-path/become-an-oci-generative-ai-professional/148888
+
+ai_summary:
+Become an OCI Generative AI Professional equips learners to design, deploy, and optimize generative AI solutions using Oracle Cloud Infrastructure. Ideal for advanced AI specialists and data engineers, the course deepens expertise in OCI’s AI tools, enabling precise, scalable analytics. For SSD data professionals, it enhances capabilities in building intelligent models that improve data interpretation and decision-making, accelerating enterprise AI integration and innovation. Prerequisite: OCI Fundamentals. Certification included. Duration: 4 weeks.
+
+assessment_enabled:
+Yes
+
+assessment_source_url:
+https://www.oracle.com/artificial-intelligence/
+
+assessment_knowledge_text:
+machine learning, AI services, data analytics, predictive modeling, NLP, data pipelines, visualization, big data processing, model training, inference, analytics cloud [8](https://docs.oracle.com/en-us/iaas/Content/home.htm)
+
+ai_recommendation_reason:
+This advanced OCI Generative AI certification equips SSD professionals with practical AI skills to develop enterprise-grade solutions, enhancing analytics capabilities and driving data-driven decision-making in Oracle Cloud environments. Ideal for experts aiming to lead AI initiatives.
+
+--------------------------------------------------
+
+
+Course #38
+
+course_id:
+OC-06
+
+career_track:
+OCI
+
+skill:
+OCI Core Services
+
+course_name:
+Become An OCI Foundations Associate (2025)
+
+provider:
+Oracle
+
+learning_style:
+Video Courses
+
+difficulty_level:
+Beginner
+
+duration_hours:
+6.0
+
+is_free:
+True
+
+estimated_weeks:
+2.0
+
+certification_related:
+Yes
+
+tags:
+oci,foundations,video,beginner,oracle
+
+prerequisites:
+N/A
+
+platform_category:
+Cloud
+
+url:
+https://mylearn.oracle.com/ou/learning-path/become-an-oci-foundations-associate-2025/148056
+
+ai_summary:
+This beginner-level Oracle course equips learners with foundational OCI Core Services knowledge through video-based instruction. Ideal for IT professionals and data specialists new to cloud technology, it covers essential cloud concepts and Oracle infrastructure. For SSD data professionals, it enhances cloud deployment skills, enabling efficient management and integration of statistical data workloads within OCI environments, supporting robust enterprise analytics and decision-making. Certification validates practical expertise in OCI foundations.
+
+assessment_enabled:
+Yes
+
+assessment_source_url:
+https://docs.oracle.com/en-us/iaas/Content/home.htm
+
+assessment_knowledge_text:
+compute, storage, networking, IAM, compartments, regions, availability domains, cloud fundamentals, scalability, fault tolerance, resource provisioning, security basics [8](https://docs.oracle.com/en-us/iaas/Content/home.htm)
+
+ai_recommendation_reason:
+This beginner OCI Foundations course equips SSD professionals with essential Oracle Cloud skills, enabling efficient deployment and management of core services, thereby enhancing enterprise data infrastructure reliability and scalability. Ideal for those integrating cloud solutions in statistical systems.
+
+--------------------------------------------------
+
+
+Course #39
+
+course_id:
+OC-07
+
+career_track:
+OCI
+
+skill:
+OCI Autonomous Database
+
+course_name:
+Become an Oracle AI Autonomous Database Professional (2025)
+
+provider:
+Oracle
+
+learning_style:
+Video Courses
+
+difficulty_level:
+Intermediate
+
+duration_hours:
+6.0
+
+is_free:
+True
+
+estimated_weeks:
+2.0
+
+certification_related:
+Yes
+
+tags:
+oci,autonomous-database,video,intermediate,oracle
+
+prerequisites:
+SQL
+
+platform_category:
+Cloud
+
+url:
+https://mylearn.oracle.com/ou/learning-path/become-an-oracle-ai-autonomous-database-professional-2025/148511
+
+ai_summary:
+This intermediate video course equips learners to manage and optimize OCI Autonomous Databases, advancing SQL skills toward Oracle certification. Ideal for data professionals in cloud environments, it enhances proficiency in automation, performance tuning, and security specific to autonomous databases. For SSD data teams, it streamlines data handling, boosts operational efficiency, and supports scalable, secure cloud analytics essential for enterprise statistical modeling and decision-making.
+
+assessment_enabled:
+Yes
+
+assessment_source_url:
+https://docs.oracle.com/en/cloud/paas/autonomous-database/
+
+assessment_knowledge_text:
+autonomous database, self-tuning, self-scaling, backups, patching, SQL workload, data warehouse, transaction processing, performance optimization, cloud database [8](https://docs.oracle.com/en-us/iaas/Content/home.htm)
+
+ai_recommendation_reason:
+This intermediate video course equips SSD professionals with critical Oracle AI Autonomous Database skills, enhancing data-driven decision-making and automation efficiency essential for modern enterprise cloud environments. Ideal for those advancing OCI expertise in statistical systems.
+
+--------------------------------------------------
+
+
+Course #40
+
+course_id:
+OC-08
+
+career_track:
+OCI
+
+skill:
+Oracle AI & Analytics
+
+course_name:
+Become An Oracle Analytics Cloud Professional (2025)
+
+provider:
+Oracle
+
+learning_style:
+Video Courses
+
+difficulty_level:
+Intermediate
+
+duration_hours:
+34.0
+
+is_free:
+True
+
+estimated_weeks:
+9.0
+
+certification_related:
+Yes
+
+tags:
+oci,analytics,video,intermediate,oracle
+
+prerequisites:
+SQL
+
+platform_category:
+Analytics
+
+url:
+https://mylearn.oracle.com/ou/learning-path/become-an-oracle-analytics-cloud-professional-2025/147801
+
+ai_summary:
+The "Become An Oracle Analytics Cloud Professional (2025)" course equips learners with intermediate Oracle Analytics Cloud skills, emphasizing AI-driven data analysis and visualization. Ideal for SSD data professionals familiar with SQL, it enhances capabilities in OCI analytics to drive data-informed decisions. Through comprehensive video instruction, participants gain practical expertise in deploying scalable analytics solutions, boosting SSD’s efficiency and insight generation. Certification validates proficiency, supporting career advancement in enterprise analytics.
+
+assessment_enabled:
+Yes
+
+assessment_source_url:
+https://www.oracle.com/artificial-intelligence/
+
+assessment_knowledge_text:
+machine learning, AI services, data analytics, predictive modeling, NLP, data pipelines, visualization, big data processing, model training, inference, analytics cloud [8](https://docs.oracle.com/en-us/iaas/Content/home.htm)
+
+ai_recommendation_reason:
+This intermediate video course equips SSD professionals with Oracle AI & Analytics skills on OCI, enhancing data-driven decision-making and enterprise insights, essential for optimizing statistical system performance and analytics strategy in complex business environments.
+
+--------------------------------------------------
+
+
+Course #41
+
+course_id:
+OC-09
+
+career_track:
+OCI
+
+skill:
+Oracle AI & Analytics
+
+course_name:
+Become an OCI Generative AI Professional
+
+provider:
+Oracle
+
+learning_style:
+Video Courses
+
+difficulty_level:
+Advanced
+
+duration_hours:
+14.0
+
+is_free:
+True
+
+estimated_weeks:
+4.0
+
+certification_related:
+Yes
+
+tags:
+oci,generative-ai,video,advanced,oracle
+
+prerequisites:
+OCI Fundamentals
+
+platform_category:
+AI
+
+url:
+https://mylearn.oracle.com/ou/learning-path/become-an-oci-generative-ai-professional/148888
+
+ai_summary:
+This advanced course equips learners with expertise in deploying and managing generative AI solutions on Oracle Cloud Infrastructure. Ideal for data scientists and AI engineers with OCI fundamentals, it deepens skills in Oracle AI & Analytics for scalable, enterprise-grade models. SSD data professionals will leverage this to optimize predictive analytics, enhance automated insights, and drive data-driven decision-making within statistical systems frameworks, accelerating innovation and operational efficiency.
+
+assessment_enabled:
+Yes
+
+assessment_source_url:
+https://www.oracle.com/artificial-intelligence/
+
+assessment_knowledge_text:
+machine learning, AI services, data analytics, predictive modeling, NLP, data pipelines, visualization, big data processing, model training, inference, analytics cloud [8](https://docs.oracle.com/en-us/iaas/Content/home.htm)
+
+ai_recommendation_reason:
+"Become an OCI Generative AI Professional delivers advanced, hands-on expertise in Oracle AI tools, ideal for SSD professionals seeking to enhance enterprise analytics, optimize AI-driven decision-making, and integrate cutting-edge generative models within OCI environments efficiently."
+
+--------------------------------------------------
+
+
+Course #42
+
+course_id:
+DE-15
+
+career_track:
+Data Engineering
+
+skill:
+SQL
+
+course_name:
+SQL Course for Beginners [Full Course]
+
+provider:
+YouTube
+
+learning_style:
+Video Courses
+
+difficulty_level:
+Beginner
+
+duration_hours:
+3.0
+
+is_free:
+True
+
+estimated_weeks:
+1.0
+
+certification_related:
+No
+
+tags:
+data-engineering,sql,youtube,beginner,full-course
+
+prerequisites:
+N/A
+
+platform_category:
+Analytics
+
+url:
+https://www.youtube.com/watch?v=7S_tz1z_5bA
+
+ai_summary:
+This beginner SQL course provides foundational skills in querying, data manipulation, and database management using practical examples. Ideal for SSD data professionals new to SQL, it enables efficient data extraction and reporting critical for analytics workflows. By mastering core SQL concepts, learners enhance their ability to streamline data processes and support enterprise data initiatives within the Statistical Systems Department.
+
+assessment_enabled:
+Yes
+
+assessment_source_url:
+https://docs.oracle.com/en/database/oracle/oracle-database/19/sqlrf/index.html
+
+assessment_knowledge_text:
+SQL fundamentals, relational databases, SELECT INSERT UPDATE DELETE, joins (inner outer), normalization, indexes, constraints, aggregation (GROUP BY HAVING), subqueries, functions, transactions, ACID properties, data types [1](https://docs.oracle.com/en/database/oracle/oracle-database/19/sqlrf/index.html)
+
+ai_recommendation_reason:
+This beginner-friendly video course delivers essential SQL skills for data engineering, enabling SSD professionals to efficiently manage statistical databases and optimize query performance in enterprise analytics environments. Ideal for newcomers seeking practical, job-ready expertise.
+
+--------------------------------------------------
+
+
+Course #43
+
+course_id:
+DE-16
+
+career_track:
+Data Engineering
+
+skill:
+Informatica IDMC
+
+course_name:
+Informatica IDMC - Cloud Data Governance and Catalog (CDGC)
+
+provider:
+Udemy
+
+learning_style:
+Video Courses
+
+difficulty_level:
+Intermediate
+
+duration_hours:
+5.0
+
+is_free:
+False
+
+estimated_weeks:
+2.0
+
+certification_related:
+No
+
+tags:
+data-engineering,informatica,idmc,governance,udemy
+
+prerequisites:
+Informatica IDMC Fundamentals
+
+platform_category:
+Data Engineering
+
+url:
+https://www.udemy.com/course/informatica-idmc-cloud-data-governance-and-catalog-cdgc/?srsltid=AfmBOoo75ikLJKVWkReZqKxWWYr0ZOjdTg3WcbtBd1_J4sN8POnnG3CP&couponCode=PMNVD3025
+
+ai_summary:
+This intermediate course on Udemy teaches practical implementation of Informatica IDMC for Cloud Data Governance and Catalog. Learners will gain hands-on skills in data cataloging, governance policies, and metadata management. Suitable for data engineers and governance specialists with prior IDMC knowledge, it enhances data transparency and compliance. For SSD data professionals, it streamlines data stewardship, improves data quality controls, and accelerates enterprise data governance initiatives.
+
+assessment_enabled:
+Yes
+
+assessment_source_url:
+https://docs.informatica.com/
+
+assessment_knowledge_text:
+ETL pipelines, cloud data integration, mappings, transformations, taskflows, connectors, metadata management, data governance, orchestration, data quality, ingestion, monitoring, IICS architecture, CLAIRE AI [2](https://docs.informatica.com/integration-cloud/cloud-data-integration/current-version/introduction/informatica-resources/informatica-documentation.html)
+
+ai_recommendation_reason:
+This intermediate Udemy course equips data engineers with practical Informatica IDMC skills for effective cloud data governance and cataloging, essential for SSD professionals managing enterprise-scale, compliant, and organized statistical data assets.
+
+--------------------------------------------------
+
+
+Course #44
+
+course_id:
+MA-01
+
+career_track:
+Microsoft Azure
+
+skill:
+Azure
+
+course_name:
+Azure Fundamentals AZ-900
+
+provider:
+Microsoft
+
+learning_style:
+Documentation
+
+difficulty_level:
+Beginner
+
+duration_hours:
+4.5
+
+is_free:
+True
+
+estimated_weeks:
+2.0
+
+certification_related:
+No
+
+tags:
+azure,az900,beginner,microsoft,documentation
+
+prerequisites:
+N/A
+
+platform_category:
+Cloud
+
+url:
+https://learn.microsoft.com/en-us/training/courses/az-900t00
+
+ai_summary:
+Azure Fundamentals AZ-900 by Microsoft delivers foundational Azure knowledge through detailed documentation, ideal for beginners in cloud technology. Learners will understand core Azure services, pricing, and support models. This course suits data professionals in SSD seeking to integrate Azure solutions into statistical workflows, enhancing cloud data management and scalability. It empowers practical deployment and optimization of Azure resources, accelerating data-driven decision-making within enterprise environments.
+
+assessment_enabled:
+Yes
+
+assessment_source_url:
+https://learn.microsoft.com/en-us/azure/
+
+assessment_knowledge_text:
+cloud computing, virtual machines, storage, networking, IAM, PaaS, SaaS, resource groups, subscriptions, scalability, high availability, monitoring, DevOps integration [9](https://learn.microsoft.com/en-us/azure/)
+
+ai_recommendation_reason:
+Azure Fundamentals AZ-900 equips beginners with core Azure skills via official documentation, enabling SSD professionals to confidently manage cloud resources, optimize data workflows, and support enterprise-scale statistical systems efficiently and securely.
+
+--------------------------------------------------
+
+
+Course #45
+
+course_id:
+DE-17
+
+career_track:
+Data Engineering
+
+skill:
+Databricks
+
+course_name:
+Databricks Certified Data Analyst Associate
+
+provider:
+Databricks
+
+learning_style:
+Certification
+
+difficulty_level:
+Intermediate
+
+duration_hours:
+1.0
+
+is_free:
+False
+
+estimated_weeks:
+1.0
+
+certification_related:
+Yes
+
+tags:
+data-engineering,databricks,analyst,certification,intermediate
+
+prerequisites:
+SQL
+
+platform_category:
+Data Engineering
+
+url:
+https://www.databricks.com/learn/certification/data-analyst-associate
+
+ai_summary:
+The Databricks Certified Data Analyst Associate course equips learners with advanced SQL and Databricks skills for data analysis within enterprise environments. Ideal for data analysts and engineers seeking certification, it enhances practical abilities in managing, querying, and visualizing large datasets. For SSD data professionals, the course streamlines data workflows, improves analytical accuracy, and supports scalable decision-making using Databricks’ unified analytics platform. Completion validates intermediate expertise essential for data-driven enterprise roles.
+
+assessment_enabled:
+Yes
+
+assessment_source_url:
+https://learn.microsoft.com/en-us/azure/databricks/
+
+assessment_knowledge_text:
+lakehouse architecture, Apache Spark, notebooks, clusters, data engineering, Delta Lake, data pipelines, workspace, jobs, ML lifecycle, Unity Catalog, data governance, scalable analytics [3](https://learn.microsoft.com/en-us/azure/databricks/)
+
+ai_recommendation_reason:
+This intermediate Databricks course equips SSD professionals with certified data engineering skills, enhancing analytic efficiency and enterprise-scale data processing, ideal for analysts aiming to optimize statistical system workflows and drive informed decision-making within the department.
+
+--------------------------------------------------
+
+
+Course #46
+
+course_id:
+DE-18
+
+career_track:
+Data Engineering
+
+skill:
+Databricks
+
+course_name:
+Databricks Certified Data Engineer Associate
+
+provider:
+Databricks
+
+learning_style:
+Certification
+
+difficulty_level:
+Intermediate
+
+duration_hours:
+1.0
+
+is_free:
+False
+
+estimated_weeks:
+1.0
+
+certification_related:
+Yes
+
+tags:
+data-engineering,databricks,engineer,certification,beginner
+
+prerequisites:
+SQL
+
+platform_category:
+Data Engineering
+
+url:
+https://www.databricks.com/learn/certification/data-engineer-associate
+
+ai_summary:
+The Databricks Certified Data Engineer Associate course equips learners with core Databricks data engineering skills, including data ingestion, transformation, and optimization using Apache Spark. Suitable for intermediate data professionals with SQL knowledge, it prepares them for certification and real-world data pipeline challenges. For SSD data professionals, it enhances expertise in building scalable, efficient data workflows, improving data reliability and analytics readiness in enterprise environments.
+
+assessment_enabled:
+Yes
+
+assessment_source_url:
+https://learn.microsoft.com/en-us/azure/databricks/
+
+assessment_knowledge_text:
+lakehouse architecture, Apache Spark, notebooks, clusters, data engineering, Delta Lake, data pipelines, workspace, jobs, ML lifecycle, Unity Catalog, data governance, scalable analytics [3](https://learn.microsoft.com/en-us/azure/databricks/)
+
+ai_recommendation_reason:
+This intermediate Databricks certification enhances data engineering skills vital for SSD professionals, enabling efficient management of large-scale data pipelines and accelerating enterprise-grade analytics deployment. Ideal for engineers pursuing practical, scalable data solutions.
+
+--------------------------------------------------
+
+
+Course #47
+
+course_id:
+DE-19
+
+career_track:
+Data Engineering
+
+skill:
+Databricks
+
+course_name:
+Databricks Certified Data Engineer Professional
+
+provider:
+Databricks
+
+learning_style:
+Certification
+
+difficulty_level:
+Advanced
+
+duration_hours:
+1.0
+
+is_free:
+False
+
+estimated_weeks:
+1.0
+
+certification_related:
+Yes
+
+tags:
+data-engineering,databricks,engineer,certification,advanced
+
+prerequisites:
+Databricks Fundamentals
+
+platform_category:
+Data Engineering
+
+url:
+https://www.databricks.com/learn/certification/data-engineer-professional
+
+ai_summary:
+The Databricks Certified Data Engineer Professional course equips learners with advanced skills in designing, building, and maintaining data pipelines using Databricks. Ideal for experienced data engineers, it enhances capabilities in scalable data processing and optimization. For SSD data professionals, it streamlines complex data workflows, improves data reliability, and boosts enterprise analytics efficiency through certification-validated expertise.
+
+assessment_enabled:
+Yes
+
+assessment_source_url:
+https://learn.microsoft.com/en-us/azure/databricks/
+
+assessment_knowledge_text:
+lakehouse architecture, Apache Spark, notebooks, clusters, data engineering, Delta Lake, data pipelines, workspace, jobs, ML lifecycle, Unity Catalog, data governance, scalable analytics [3](https://learn.microsoft.com/en-us/azure/databricks/)
+
+ai_recommendation_reason:
+This advanced Databricks certification equips SSD professionals with enterprise-grade data engineering skills, optimizing large-scale data workflows, enhancing pipeline reliability, and driving efficient analytics in statistical systems. Ideal for engineers seeking practical, industry-recognized expertise.
+
+--------------------------------------------------
+
+
+Course #48
+
+course_id:
+MA-02
+
+career_track:
+Microsoft Azure
+
+skill:
+Azure
+
+course_name:
+Azure Administrator AZ-104
+
+provider:
+Microsoft
+
+learning_style:
+Documentation
+
+difficulty_level:
+Intermediate
+
+duration_hours:
+20.0
+
+is_free:
+True
+
+estimated_weeks:
+5.0
+
+certification_related:
+No
+
+tags:
+azure,az104,intermediate,microsoft,documentation
+
+prerequisites:
+N/A
+
+platform_category:
+Cloud
+
+url:
+https://learn.microsoft.com/en-us/training/courses/az-104t00
+
+ai_summary:
+Azure Administrator AZ-104 equips learners to manage Azure subscriptions, configure virtual networks, and implement storage solutions. Ideal for IT professionals transitioning to cloud roles, it enhances skills in Azure resource management and security. For SSD data professionals, the course enables efficient cloud infrastructure setup and maintenance, ensuring reliable data environments and optimized resource utilization in enterprise statistical systems.
+
+assessment_enabled:
+Yes
+
+assessment_source_url:
+https://learn.microsoft.com/en-us/azure/
+
+assessment_knowledge_text:
+cloud computing, virtual machines, storage, networking, IAM, PaaS, SaaS, resource groups, subscriptions, scalability, high availability, monitoring, DevOps integration [9](https://learn.microsoft.com/en-us/azure/)
+
+ai_recommendation_reason:
+Azure Administrator AZ-104 equips SSD professionals with intermediate Azure skills via detailed documentation, enabling efficient cloud resource management and secure infrastructure deployment—critical for optimizing statistical system performance and enterprise scalability. Ideal for Azure-focused admins.
+
+--------------------------------------------------
+
+
+Course #49
+
+course_id:
+DS-01
+
+career_track:
+Data Security
+
+skill:
+Data Security
+
+course_name:
+Data Security Fundamentals
+
+provider:
+Udemy
+
+learning_style:
+Video Courses
+
+difficulty_level:
+Beginner
+
+duration_hours:
+4.0
+
+is_free:
+False
+
+estimated_weeks:
+1.0
+
+certification_related:
+No
+
+tags:
+data-security,security,udemy,beginner
+
+prerequisites:
+N/A
+
+platform_category:
+Security
+
+url:
+https://www.udemy.com/course/data-security-fundamentals/?couponCode=PMNVD3025
+
+ai_summary:
+Data Security Fundamentals on Udemy equips learners with essential data protection techniques and security best practices. Ideal for entry-level data professionals, it strengthens skills in safeguarding sensitive information vital to enterprise operations. SSD data professionals will benefit by enhancing their ability to implement robust security controls, ensuring data integrity and compliance within statistical systems. This one-week video course delivers targeted, applicable knowledge to bolster organizational data security frameworks.
+
+assessment_enabled:
+Yes
+
+assessment_source_url:
+https://learn.microsoft.com/en-us/azure/security/
+
+assessment_knowledge_text:
+encryption, data protection, confidentiality integrity availability (CIA), access control, identity management, data at rest in transit in use, key management, compliance, risk, zero trust [10](https://learn.microsoft.com/en-us/azure/security/fundamentals/data-encryption-best-practices)
+
+ai_recommendation_reason:
+"Data Security Fundamentals offers beginner SSD professionals essential skills to safeguard enterprise data, ensuring compliance and reducing breach risks through practical, video-based instruction tailored to statistical systems environments."
+
+--------------------------------------------------
+
+
+Course #50
+
+course_id:
+DS-02
+
+career_track:
+Data Security
+
+skill:
+Data Security
+
+course_name:
+Data Security, Privacy and Other Regulations
+
+provider:
+National Planning Council
+
+learning_style:
+Documentation
+
+difficulty_level:
+Beginner
+
+duration_hours:
+2.0
+
+is_free:
+True
+
+estimated_weeks:
+1.0
+
+certification_related:
+No
+
+tags:
+data-security,privacy,regulations,documentation
+
+prerequisites:
+N/A
+
+platform_category:
+Security
+
+url:
+https://www.npc.qa/en/nationaldataprogram/pages/data_security_privacy_and_other_regulations.aspx
+
+ai_summary:
+This beginner-level course covers fundamental data security, privacy principles, and regulatory requirements essential for enterprise compliance. Ideal for data professionals seeking practical knowledge in safeguarding organizational data within regulatory frameworks. It equips SSD staff with clear documentation skills to implement secure data handling practices, enhancing data integrity and minimizing legal risks in statistical system operations.
+
+assessment_enabled:
+Yes
+
+assessment_source_url:
+https://www.npc.qa/en/nationaldataprogram/pages/data_security_privacy_and_other_regulations.aspx
+
+assessment_knowledge_text:
+encryption, data protection, confidentiality integrity availability (CIA), access control, identity management, data at rest in transit in use, key management, compliance, risk, zero trust [10](https://learn.microsoft.com/en-us/azure/security/fundamentals/data-encryption-best-practices)
+
+ai_recommendation_reason:
+This beginner-friendly course equips SSD professionals with essential knowledge of data security, privacy, and regulatory compliance, enabling practical risk mitigation and ensuring enterprise data protection aligned with current legal standards.
+
+--------------------------------------------------
+
+
+Course #51
+
+course_id:
+DS-03
+
+career_track:
+Data Security
+
+skill:
+Data Security
+
+course_name:
+AI Security Fundamentals
+
+provider:
+Microsoft
+
+learning_style:
+Documentation
+
+difficulty_level:
+Beginner
+
+duration_hours:
+2.0
+
+is_free:
+True
+
+estimated_weeks:
+1.0
+
+certification_related:
+No
+
+tags:
+data-security,ai-security,microsoft,documentation
+
+prerequisites:
+AI Fundamentals
+
+platform_category:
+Security
+
+url:
+https://learn.microsoft.com/en-us/training/paths/ai-security-fundamentals/
+
+ai_summary:
+AI Security Fundamentals by Microsoft equips learners with practical skills to safeguard AI-driven data systems. Designed for data security professionals with AI Basics knowledge, it covers AI risk mitigation, secure model deployment, and data protection strategies. This course enables SSD data professionals to implement robust AI security protocols, ensuring compliance and minimizing vulnerabilities in enterprise environments. Through focused documentation, learners gain actionable insights to enhance data security in AI applications within one week.
+
+assessment_enabled:
+Yes
+
+assessment_source_url:
+https://learn.microsoft.com/en-us/training/paths/ai-security-fundamentals/
+
+assessment_knowledge_text:
+encryption, data protection, confidentiality integrity availability (CIA), access control, identity management, data at rest in transit in use, key management, compliance, risk, zero trust [10](https://learn.microsoft.com/en-us/azure/security/fundamentals/data-encryption-best-practices)
+
+ai_recommendation_reason:
+AI Security Fundamentals equips SSD professionals with essential data protection techniques against AI threats, enhancing enterprise security compliance and risk management through Microsoft’s documentation-based, beginner-friendly approach. Ideal for those initiating AI-related data security responsibilities.
+
+--------------------------------------------------
+

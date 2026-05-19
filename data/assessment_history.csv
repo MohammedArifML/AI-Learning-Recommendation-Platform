@@ -1,3 +1,4 @@
 timestamp,learner_name,learner_email,learning_track,skill,question_count,score,percentage,selected_user,assessment_id,performance_band
 2026-05-18 07:20:46,,marif@npc.qa,Data Analysis,Oracle BI,5,1,20.0,Mohammed Arif,655493,Needs Improvement
 2026-05-18 07:21:37,,test@test.qa,Data Analysis,Python for Data Engineering,5,1,20.0,Test User,191790,Needs Improvement
+2026-05-19 13:20:57,,test@test.qa,Data Analysis,Oracle BI,5,1,20.0,Test User,934229,Needs Improvement
