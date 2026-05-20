@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 
+#-----------------------------------
 # Page Config
 # -----------------------------------
 
@@ -9,16 +10,6 @@ st.set_page_config(
     page_icon="🧭",
     layout="wide"
 )
-
-# ------------------------------------------------------
-# LOAD GOVERNMENT THEME CSS
-# ------------------------------------------------------
-
-with open("styles/government_theme.css") as f:
-    st.markdown(
-        f"<style>{f.read()}</style>",
-        unsafe_allow_html=True
-    )
 
 # -----------------------------------
 # Sidebar Branding
@@ -82,7 +73,7 @@ section[data-testid="stSidebar"] {
     width: 320px !important;
     background-color: #f5f7fb;
 }
-            
+
 .main .block-container {
     max-width: 1200px;
 }
@@ -116,15 +107,20 @@ st.markdown("---")
 st.markdown(
     """
     <div style='padding: 1rem 0;'>
-        <h1 style='color:#8A1538;'>AI-powered learning intelligence platform</h1>
-        <h4 style='color:gray;'>Pilot AI-Powered Workforce Learning & Assessment Ecosystem</h4>
+        <h1>✨ AI-Powered Learning Intelligence Platform</h1>
+        <h4 style='color:gray;'>
+        Pilot AI-Powered Workforce Learning & Assessment Ecosystem
+        </h4>
     </div>
     """,
     unsafe_allow_html=True
 )
 
 st.info(
-    "Current Status: Pilot / Proof of Concept Demonstration Platform"
+    """
+Current Status:
+Pilot / Proof of Concept Demonstration Platform
+"""
 )
 
 # ------------------------------------------------------
@@ -136,17 +132,21 @@ st.markdown("## Executive Summary")
 summary_col1, summary_col2 = st.columns([2, 1])
 
 with summary_col1:
+
     st.markdown(
         """
-        This platform demonstrates how Artificial Intelligence can be utilized to modernize organizational learning, employee upskilling, intelligent assessments, and workforce capability development.
+This platform demonstrates how Artificial Intelligence can be utilized to modernize organizational learning, employee upskilling, intelligent assessments, and workforce capability development.
 
-        The application combines AI-powered assessment generation, personalized learning recommendations, analytics, and employee-focused learning workflows into a unified pilot ecosystem.
+The application combines AI-powered assessment generation, personalized learning recommendations, conversational AI assistance, analytics, and employee-focused learning workflows into a unified pilot ecosystem.
 
-        The primary objective of the platform is to showcase the future potential of AI-assisted learning systems within enterprise and government environments.
+The platform includes a contextual enterprise AI chatbot capable of understanding platform capabilities, learning pathways, assessments, analytics, course catalogs, and workforce learning intelligence using a dynamically generated AI knowledge corpus.
+
+The primary objective of the platform is to showcase the future potential of AI-assisted learning systems within enterprise and government environments.
         """
     )
 
 with summary_col2:
+
     st.container(border=True)
 
     st.metric("Platform Type", "AI Pilot")
@@ -162,53 +162,74 @@ st.divider()
 
 st.markdown("## Core Platform Capabilities")
 
-cap_col1, cap_col2, cap_col3 = st.columns(3)
+cap_col1, cap_col2 = st.columns(2)
+cap_col3, cap_col4 = st.columns(2)
 
 with cap_col1:
+
     st.container(border=True)
 
     st.markdown("### 🎯 Learning Recommendations")
 
     st.markdown(
         """
-        - Personalized learning suggestions
-        - Skill-based recommendations
-        - Career-aligned courses
-        - Difficulty-based filtering
-        - Category-wise learning paths
-        - Learning style customization
+- Personalized learning suggestions
+- Skill-based recommendations
+- Career-aligned courses
+- Difficulty-based filtering
+- Category-wise learning paths
+- Learning style customization
         """
     )
 
 with cap_col2:
+
     st.container(border=True)
 
     st.markdown("### 🧠 AI Assessment Engine")
 
     st.markdown(
         """
-        - AI-generated assessments
-        - Dynamic question generation
-        - Multi-level difficulty support
-        - Instant evaluation
-        - Assessment scoring
-        - Interactive workflows
+- AI-generated assessments
+- Dynamic question generation
+- Multi-level difficulty support
+- Instant evaluation
+- Assessment scoring
+- Interactive workflows
         """
     )
 
 with cap_col3:
+
     st.container(border=True)
 
     st.markdown("### 📊 Analytics & Insights")
 
     st.markdown(
         """
-        - Learner performance metrics
-        - Recommendation insights
-        - Assessment analytics
-        - Skill tracking
-        - Learning dashboards
-        - Future predictive analytics
+- Learner performance metrics
+- Recommendation insights
+- Assessment analytics
+- Skill tracking
+- Learning dashboards
+- Future predictive analytics
+        """
+    )
+
+with cap_col4:
+
+    st.container(border=True)
+
+    st.markdown("### 🔮 Contextual AI Chatbot")
+
+    st.markdown(
+        """
+- Conversational enterprise AI assistant
+- Context-aware multi-turn conversations
+- AI-generated platform intelligence
+- Dynamic knowledge corpus integration
+- Learning guidance and recommendations
+- Course discovery with direct URLs
         """
     )
 
@@ -226,6 +247,9 @@ ai_features = pd.DataFrame({
         "Recommendation Engine",
         "Adaptive Learning Logic",
         "Skill Mapping",
+        "Enterprise AI Chatbot",
+        "Dynamic Knowledge Corpus",
+        "Contextual Conversation Memory",
         "Future AI Mentor",
         "Predictive Analytics"
     ],
@@ -234,6 +258,9 @@ ai_features = pd.DataFrame({
         "Implemented",
         "Pilot Logic",
         "Planned",
+        "Implemented",
+        "Implemented",
+        "Implemented",
         "Planned",
         "Planned"
     ],
@@ -242,6 +269,9 @@ ai_features = pd.DataFrame({
         "Personalized Learning",
         "Adaptive Learning Experience",
         "Competency Development",
+        "AI Workforce Assistant",
+        "Platform Intelligence",
+        "Conversational AI Experience",
         "Employee Guidance",
         "Learning Intelligence"
     ]
@@ -266,6 +296,8 @@ tech_df = pd.DataFrame({
         "Frontend",
         "Backend",
         "AI Integration",
+        "Conversational AI",
+        "Knowledge Engineering",
         "Data Processing",
         "UI Styling",
         "Deployment"
@@ -274,6 +306,8 @@ tech_df = pd.DataFrame({
         "Streamlit",
         "Python",
         "OpenAI GPT Models",
+        "OpenAI GPT-4o-mini",
+        "AI-Generated Knowledge Corpus",
         "Pandas",
         "Custom CSS",
         "Streamlit Community Cloud"
@@ -282,6 +316,8 @@ tech_df = pd.DataFrame({
         "Interactive UI",
         "Application Logic",
         "AI Question Generation",
+        "Enterprise AI Chatbot",
+        "Dynamic Platform Intelligence",
         "Data Manipulation",
         "Government Theme Styling",
         "Pilot Hosting"
@@ -305,6 +341,7 @@ st.markdown("## Solution Architecture")
 arch_col1, arch_col2 = st.columns([1, 1])
 
 with arch_col1:
+
     st.markdown("### Application Flow")
 
     st.code(
@@ -324,6 +361,7 @@ Result Dashboard
     )
 
 with arch_col2:
+
     st.markdown("### Modular Components")
 
     st.code(
@@ -340,6 +378,77 @@ with arch_col2:
 st.divider()
 
 # ------------------------------------------------------
+# AI CHATBOT ARCHITECTURE
+# ------------------------------------------------------
+
+st.markdown("## AI Chatbot Architecture")
+
+chat_col1, chat_col2 = st.columns([1, 1])
+
+with chat_col1:
+
+    st.markdown("### Conversational AI Workflow")
+
+    st.code(
+        """
+User Query
+     ↓
+Contextual Conversation Memory
+     ↓
+Enterprise Knowledge Corpus
+     ↓
+OpenAI GPT Processing
+     ↓
+AI Learning Intelligence Response
+        """
+    )
+
+with chat_col2:
+
+    st.markdown("### Knowledge Corpus Sources")
+
+    st.code(
+        """
+courses.csv
+assessment_history.csv
+generated_questions.json
+roadmaps.json
+platform metadata
+analytics summaries
+AI recommendation intelligence
+        """
+    )
+
+st.divider()
+
+# ------------------------------------------------------
+# KNOWLEDGE CORPUS
+# ------------------------------------------------------
+
+st.markdown("## AI Knowledge Corpus Engine")
+
+st.markdown(
+    """
+The platform utilizes a dynamically generated enterprise AI knowledge corpus which serves as the intelligence foundation for the contextual chatbot system.
+
+The corpus is automatically generated using AI-assisted synthesis from platform data sources including:
+
+- Course catalogs
+- AI recommendation summaries
+- Assessment data
+- Analytics insights
+- Learning tracks
+- Workforce intelligence
+- Platform metadata
+- Future roadmap information
+
+The knowledge corpus can be regenerated at any time to reflect the latest platform state, enabling continuously evolving AI intelligence without modifying chatbot logic.
+"""
+)
+
+st.divider()
+
+# ------------------------------------------------------
 # BUSINESS VALUE
 # ------------------------------------------------------
 
@@ -348,34 +457,36 @@ st.markdown("## Organizational Value")
 value_col1, value_col2 = st.columns(2)
 
 with value_col1:
+
     st.container(border=True)
 
     st.markdown("### 🚀 Strategic Benefits")
 
     st.markdown(
         """
-        - Supports workforce upskilling
-        - Accelerates digital transformation
-        - Enhances learning experiences
-        - Reduces manual assessment efforts
-        - Encourages continuous learning culture
-        - Enables AI-assisted capability development
+- Supports workforce upskilling
+- Accelerates digital transformation
+- Enhances learning experiences
+- Reduces manual assessment efforts
+- Encourages continuous learning culture
+- Enables AI-assisted capability development
         """
     )
 
 with value_col2:
+
     st.container(border=True)
 
     st.markdown("### 🏛️ Potential Government Use Cases")
 
     st.markdown(
         """
-        - Employee training programs
-        - Technical skill development
-        - Internal learning ecosystems
-        - AI-assisted assessments
-        - Department-level learning analytics
-        - Workforce capability intelligence
+- Employee training programs
+- Technical skill development
+- Internal learning ecosystems
+- AI-assisted assessments
+- Department-level learning analytics
+- Workforce capability intelligence
         """
     )
 
@@ -396,7 +507,10 @@ roadmap_data = {
         "AI Learning Assistant",
         "Skill Gap Analysis",
         "Advanced Analytics Dashboard",
-        "Certification Tracking"
+        "Certification Tracking",
+        "Semantic Enterprise Search",
+        "Advanced RAG Architecture",
+        "AI Copilot Integration"
     ],
     "Priority": [
         "High",
@@ -405,6 +519,9 @@ roadmap_data = {
         "Medium",
         "Medium",
         "High",
+        "Medium",
+        "Medium",
+        "Medium",
         "Medium",
         "Medium"
     ],
@@ -416,6 +533,9 @@ roadmap_data = {
         "Phase 3",
         "Phase 2",
         "Phase 2",
+        "Phase 3",
+        "Phase 3",
+        "Phase 3",
         "Phase 3"
     ]
 }
@@ -439,44 +559,47 @@ st.markdown("## Governance & Security Considerations")
 gov_col1, gov_col2, gov_col3 = st.columns(3)
 
 with gov_col1:
+
     st.container(border=True)
 
     st.markdown("### 🔐 Security")
 
     st.markdown(
         """
-        - Enterprise authentication
-        - Secure API handling
-        - Access management
-        - Session controls
+- Enterprise authentication
+- Secure API handling
+- Access management
+- Session controls
         """
     )
 
 with gov_col2:
+
     st.container(border=True)
 
     st.markdown("### 📜 Governance")
 
     st.markdown(
         """
-        - AI governance policies
-        - Audit logging
-        - Compliance alignment
-        - Responsible AI usage
+- AI governance policies
+- Audit logging
+- Compliance alignment
+- Responsible AI usage
         """
     )
 
 with gov_col3:
+
     st.container(border=True)
 
     st.markdown("### ☁️ Scalability")
 
     st.markdown(
         """
-        - Cloud deployment readiness
-        - Modular architecture
-        - Expandable AI services
-        - Enterprise integration support
+- Cloud deployment readiness
+- Modular architecture
+- Expandable AI services
+- Enterprise integration support
         """
     )
 
@@ -488,19 +611,22 @@ st.divider()
 
 st.markdown("## Platform Snapshot")
 
-metric_col1, metric_col2, metric_col3, metric_col4 = st.columns(4)
+metric_col1, metric_col2, metric_col3, metric_col4, metric_col5 = st.columns(5)
 
 with metric_col1:
-    st.metric("Pages", "8+")
+    st.metric("Pages", "10+")
 
 with metric_col2:
-    st.metric("AI Features", "5+")
+    st.metric("AI Features", "8+")
 
 with metric_col3:
     st.metric("Architecture", "Modular")
 
 with metric_col4:
     st.metric("Status", "Pilot")
+
+with metric_col5:
+    st.metric("AI Corpus", "Dynamic")
 
 st.divider()
 

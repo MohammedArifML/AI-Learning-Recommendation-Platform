@@ -82,7 +82,7 @@ Most Assessed Skill:
 # ASK ASSISTANT
 # -----------------------------------
 
-def ask_ai_assistant(user_question):
+def ask_ai_assistant(user_question, chat_history):
 
     knowledge_base = load_knowledge_base()
     
@@ -125,18 +125,34 @@ Analytics Summary:
 {analytics_summary}
 """
 
+    # -----------------------------------
+    # BUILD CHAT HISTORY
+    # -----------------------------------
+
+    conversation_messages = [
+        {
+            "role": "system",
+            "content": system_prompt
+        }
+    ]
+
+    # Add previous messages
+    for message in chat_history[-8:]:
+
+        conversation_messages.append({
+            "role": message["role"],
+            "content": message["content"]
+        })
+
+    # Add current question
+    conversation_messages.append({
+        "role": "user",
+        "content": user_question
+    })
+
     response = client.chat.completions.create(
         model="gpt-4.1-mini",
-        messages=[
-            {
-                "role": "system",
-                "content": system_prompt
-            },
-            {
-                "role": "user",
-                "content": user_question
-            }
-        ],
+        messages=conversation_messages,
         temperature=0.3
     )
 
